@@ -751,6 +751,7 @@ class USDataSource(DataSource):
             "op_margin": _f(ov.get("OperatingMarginTTM")) * 100,
             "target": _f(ov.get("AnalystTargetPrice")),
             "sector": ov.get("Sector", ""),
+            "market_cap": _f(ov.get("MarketCapitalization")),   # 품질팩터 시총
         }
         try:
             inc = self._get(self.AV_BASE, {"function": "INCOME_STATEMENT",
@@ -778,6 +779,110 @@ class USDataSource(DataSource):
             log.warning("[US] %s 뉴스 조회 실패: %s", ticker, e)
             return 0
 
+    # --- Finnhub: 재무제표(품질 팩터) — Alpha Vantage 한도 회피 위해 Finnhub 사용 ---
+    WACC_DEFAULT_US = 9.0   # ROIC 비교용 자본비용 가정치(%)
+
+    def _us_quality(self, ticker: str, price: float, market_cap: float) -> QualityData:
+        """
+        Finnhub /stock/financials-reported(annual)로 US-GAAP 재무제표(당기+전기) 파싱
+        → F-Score/FCF/ROIC/Altman/Accruals 입력 산출. 1콜/종목(Finnhub 60/분).
+        """
+        if not self.finnhub_key:
+            return QualityData()
+        try:
+            j = self._get(f"{self.FH_BASE}/stock/financials-reported",
+                          {"symbol": ticker, "freq": "annual", "token": self.finnhub_key})
+        except Exception as e:
+            log.warning("[US] %s 재무제표 조회 실패: %s", ticker, e)
+            return QualityData()
+        data = j.get("data") or []
+        if len(data) < 1:
+            return QualityData()
+        # 최신 연간 보고서 + 그보다 이전 연도 보고서(수정신고 중복 회피)
+        cur_year = data[0].get("year")
+        cur = data[0].get("report") or {}
+        prev = {}
+        for d in data[1:]:
+            if d.get("year") and cur_year and d["year"] < cur_year:
+                prev = d.get("report") or {}
+                break
+
+        def pick(report: dict, section: str, *concepts: str):
+            """concept명은 'us-gaap_Assets'처럼 네임스페이스 접두사가 붙음 → 접미사로 매칭."""
+            want = set(concepts)
+            for it in report.get(section, []) or []:
+                c = it.get("concept") or ""
+                short = c.split("_", 1)[1] if "_" in c else c
+                if short in want or c in want:
+                    v = it.get("value")
+                    if isinstance(v, (int, float)):
+                        return float(v)
+                    fv = _f(v)
+                    if fv:
+                        return fv
+            return None
+
+        def bs(r, *c): return pick(r, "bs", *c)
+        def ic(r, *c): return pick(r, "ic", *c)
+        def cf(r, *c): return pick(r, "cf", *c)
+
+        def ratio(a, b, scale=1.0):
+            return None if (a is None or b in (None, 0)) else a / b * scale
+
+        # 당기
+        ta = bs(cur, "Assets")
+        tl = bs(cur, "Liabilities")
+        ca = bs(cur, "AssetsCurrent")
+        cl = bs(cur, "LiabilitiesCurrent")
+        re = bs(cur, "RetainedEarningsAccumulatedDeficit")
+        rev = ic(cur, "Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax",
+                 "SalesRevenueNet")
+        gp = ic(cur, "GrossProfit")
+        cogs = ic(cur, "CostOfRevenue", "CostOfGoodsAndServicesSold")
+        if gp is None and rev is not None and cogs is not None:
+            gp = rev - cogs
+        oi = ic(cur, "OperatingIncomeLoss")
+        ni = ic(cur, "NetIncomeLoss")
+        cfo = cf(cur, "NetCashProvidedByUsedInOperatingActivities")
+        capex = cf(cur, "PaymentsToAcquirePropertyPlantAndEquipment")
+        # 전기
+        ta_p = bs(prev, "Assets")
+        tl_p = bs(prev, "Liabilities")
+        ca_p = bs(prev, "AssetsCurrent")
+        cl_p = bs(prev, "LiabilitiesCurrent")
+        rev_p = ic(prev, "Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax",
+                   "SalesRevenueNet")
+        gp_p = ic(prev, "GrossProfit")
+        cogs_p = ic(prev, "CostOfRevenue", "CostOfGoodsAndServicesSold")
+        if gp_p is None and rev_p is not None and cogs_p is not None:
+            gp_p = rev_p - cogs_p
+        ni_p = ic(prev, "NetIncomeLoss")
+
+        # 시총: AV OVERVIEW 우선, 없으면(한도초과) Finnhub 주식수×주가로 폴백
+        mcap = market_cap if market_cap else None
+        if mcap is None and price:
+            shares = bs(cur, "CommonStockSharesOutstanding", "CommonStockSharesIssued")
+            if shares:
+                mcap = shares * price
+        wc = (ca - cl) if (ca is not None and cl is not None) else None
+        fcf = (cfo - abs(capex)) if (cfo is not None and capex is not None) else cfo
+        return QualityData(
+            roa=ratio(ni, ta, 100), roa_prev=ratio(ni_p, ta_p, 100),
+            cfo=cfo, net_income=ni,
+            leverage=ratio(tl, ta), leverage_prev=ratio(tl_p, ta_p),
+            current_ratio=ratio(ca, cl), current_ratio_prev=ratio(ca_p, cl_p),
+            shares_out=None, shares_out_prev=None,
+            gross_margin=ratio(gp, rev, 100), gross_margin_prev=ratio(gp_p, rev_p, 100),
+            asset_turnover=ratio(rev, ta), asset_turnover_prev=ratio(rev_p, ta_p),
+            fcf=fcf, market_cap=mcap,
+            nopat=(oi * 0.79) if oi is not None else None,    # 세후영업이익(미국 세율 21% 가정)
+            invested_capital=((ta - cl) if (ta is not None and cl is not None) else None),
+            wacc=self.WACC_DEFAULT_US,
+            working_capital=wc, retained_earnings=re,
+            ebit=oi, total_assets=ta, total_liabilities=tl, sales=rev,
+            total_accruals=ratio((ni - cfo) if (ni is not None and cfo is not None) else None, ta),
+        )
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.alpha_key or self.twelve_key):
@@ -790,7 +895,10 @@ class USDataSource(DataSource):
                 tech = self._tech(ticker) if self.twelve_key else {}
                 fund = self._fundamentals(ticker) if self.alpha_key else {}
                 news = self._news_count(ticker)
-                raw.append((ticker, name, themes, tech, fund, news))
+                # Finnhub 재무제표 → 품질 팩터 (시총은 AV OVERVIEW, 없으면 price×0)
+                quality = self._us_quality(
+                    ticker, tech.get("price", 0.0), fund.get("market_cap", 0.0))
+                raw.append((ticker, name, themes, tech, fund, news, quality))
             except Exception as e:
                 log.warning("[US] %s 수집 실패: %s", ticker, e)
 
@@ -800,7 +908,7 @@ class USDataSource(DataSource):
 
         # 섹터 평균 PER/PBR
         per_by_sector, pbr_by_sector = defaultdict(list), defaultdict(list)
-        for _, _, _, _, fund, _ in raw:
+        for _, _, _, _, fund, _, _ in raw:
             sec = fund.get("sector", "")
             if fund.get("per", 0) > 0:
                 per_by_sector[sec].append(fund["per"])
@@ -811,7 +919,7 @@ class USDataSource(DataSource):
             return sum(xs) / len(xs) if xs else 0.0
 
         stocks = []
-        for ticker, name, themes, tech, fund, news in raw:
+        for ticker, name, themes, tech, fund, news, quality in raw:
             sec = fund.get("sector", "")
             price = tech.get("price", 0.0)
             stocks.append(Stock(
@@ -850,8 +958,9 @@ class USDataSource(DataSource):
                 theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),
-                # TODO(데이터 연동): quality(Alpha Vantage BALANCE_SHEET+CASH_FLOW 또는 FMP →
-                #   F-Score/FCF/ROIC/Altman/Accruals), analyst_ext(Finnhub 추정치·서프라이즈),
+                # Finnhub 재무제표 → F-Score/FCF/ROIC/Altman/Accruals (LIVE)
+                quality=quality,
+                # TODO(추가 데이터): analyst_ext(Finnhub 추정치·서프라이즈),
                 #   insider(Finnhub Form4), red_flag
             ))
         log.info("[US] %d/%d 종목 수집 완료", len(stocks), len(self.universe))

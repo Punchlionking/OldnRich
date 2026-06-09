@@ -381,6 +381,7 @@ class KoreaDataSource(DataSource):
             "pbr": _f(o.get("pbr")),
             "volume": _f(o.get("acml_vol")),
             "sector": o.get("bstp_kor_isnm", ""),
+            "shares": _f(o.get("lstn_stcn")),   # 상장주식수 → 시가총액 계산용
         }
 
     def _daily(self, ticker: str, days: int = 400) -> tuple[list[float], list[float]]:
@@ -429,11 +430,147 @@ class KoreaDataSource(DataSource):
             log.warning("[KR] %s 손익 조회 실패: %s", ticker, e)
         return roe, op_margin, rev, op
 
+    # --- DART 재무제표 (품질 팩터: F-Score/FCF/ROIC/Altman/Accruals) --------
+    DART_BASE = "https://opendart.fss.or.kr/api"
+    WACC_DEFAULT_KR = 8.5   # ROIC 비교용 자본비용 가정치(%). 추후 베타 기반 산출로 대체 가능.
+
+    def _load_corp_map(self) -> dict:
+        """DART corpCode.xml(zip) 1회 다운로드 → {종목코드6자리: 고유번호8자리}."""
+        if getattr(self, "_corp_map", None) is not None:
+            return self._corp_map
+        self._corp_map = {}
+        try:
+            import io, zipfile
+            import xml.etree.ElementTree as ET
+            r = self._requests().get(f"{self.DART_BASE}/corpCode.xml",
+                                     params={"crtfc_key": self.dart_key}, timeout=20)
+            r.raise_for_status()
+            zf = zipfile.ZipFile(io.BytesIO(r.content))
+            xml = zf.read(zf.namelist()[0])
+            root = ET.fromstring(xml)
+            for item in root.iter("list"):
+                stock = (item.findtext("stock_code") or "").strip()
+                corp = (item.findtext("corp_code") or "").strip()
+                if stock and corp:
+                    self._corp_map[stock] = corp
+            log.info("[KR] DART corpCode 매핑 %d건 로드", len(self._corp_map))
+        except Exception as e:
+            log.warning("[KR] DART corpCode 로드 실패: %s", e)
+        return self._corp_map
+
+    def _dart_financials(self, corp_code: str) -> dict | None:
+        """
+        fnlttSinglAcntAll(전체 재무제표)에서 BS·IS·CF 주요계정을 당기/전기로 파싱.
+        최근 사업연도(연결 우선, 없으면 별도)를 시도. 반환: {계정: (당기, 전기)} 또는 None.
+        """
+        this_year = dt.date.today().year
+        for year in (this_year - 1, this_year - 2):       # 최근 확정 사업연도부터
+            for fs_div in ("CFS", "OFS"):                  # 연결 → 별도 폴백
+                try:
+                    r = self._requests().get(
+                        f"{self.DART_BASE}/fnlttSinglAcntAll.json",
+                        params={"crtfc_key": self.dart_key, "corp_code": corp_code,
+                                "bsns_year": str(year), "reprt_code": "11011",  # 사업보고서
+                                "fs_div": fs_div}, timeout=15)
+                    j = r.json()
+                    if j.get("status") != "000" or not j.get("list"):
+                        continue
+                    return self._parse_dart_accounts(j["list"], year)
+                except Exception as e:
+                    log.warning("[KR] DART 재무 조회 실패(%s/%s/%s): %s",
+                                corp_code, year, fs_div, e)
+        return None
+
+    @staticmethod
+    def _parse_dart_accounts(rows: list, year: int) -> dict:
+        """DART 계정 리스트 → 표준 항목 dict. 값은 (당기, 전기) 튜플(없으면 None)."""
+        # 손익은 IS/CIS 모두에 흩어질 수 있어 합쳐서 검색
+        income = [r for r in rows if r.get("sj_div") in ("IS", "CIS")]
+        bs = [r for r in rows if r.get("sj_div") == "BS"]
+        cf = [r for r in rows if r.get("sj_div") == "CF"]
+
+        def find(items, *cands):
+            for r in items:
+                nm = (r.get("account_nm") or "").replace(" ", "").replace("(", "").replace(")", "")
+                for c in cands:
+                    if c in nm:
+                        return (_f(r.get("thstrm_amount")), _f(r.get("frmtrm_amount")))
+            return (None, None)
+
+        rev = find(income, "수익매출액", "매출액", "영업수익")
+        cogs = find(income, "매출원가")
+        gp = find(income, "매출총이익")
+        if gp[0] is None and rev[0] is not None and cogs[0] is not None:
+            gp = (rev[0] - cogs[0],
+                  (rev[1] - cogs[1]) if (rev[1] is not None and cogs[1] is not None) else None)
+        return {
+            "total_assets": find(bs, "자산총계"),
+            "total_liabilities": find(bs, "부채총계"),
+            "current_assets": find(bs, "유동자산"),
+            "current_liabilities": find(bs, "유동부채"),
+            "retained_earnings": find(bs, "이익잉여금", "이익잉여금결손금"),
+            "revenue": rev,
+            "gross_profit": gp,
+            "operating_income": find(income, "영업이익", "영업이익손실"),
+            "net_income": find(income, "당기순이익", "당기순이익손실", "분기순이익"),
+            "cfo": find(cf, "영업활동현금흐름", "영업활동으로인한현금흐름"),
+            "capex": find(cf, "유형자산의취득"),
+        }
+
+    def _build_quality(self, fin: dict | None, price: float, shares: float) -> QualityData:
+        """파싱된 DART 재무항목 → QualityData. 분모 0/None은 안전 처리."""
+        if not fin:
+            return QualityData()
+
+        def cur(k):
+            v = fin.get(k);  return v[0] if v else None
+        def pre(k):
+            v = fin.get(k);  return v[1] if v else None
+        def ratio(a, b, scale=1.0):
+            if a is None or b in (None, 0):
+                return None
+            return a / b * scale
+
+        ta, ta_p = cur("total_assets"), pre("total_assets")
+        tl, tl_p = cur("total_liabilities"), pre("total_liabilities")
+        ca, ca_p = cur("current_assets"), pre("current_assets")
+        cl, cl_p = cur("current_liabilities"), pre("current_liabilities")
+        rev, rev_p = cur("revenue"), pre("revenue")
+        gp, gp_p = cur("gross_profit"), pre("gross_profit")
+        oi = cur("operating_income")
+        ni, ni_p = cur("net_income"), pre("net_income")
+        cfo = cur("cfo")
+        capex = cur("capex")
+        mcap = price * shares if (price and shares) else None
+
+        wc = (ca - cl) if (ca is not None and cl is not None) else None
+        fcf = (cfo - abs(capex)) if (cfo is not None and capex is not None) else cfo
+
+        return QualityData(
+            roa=ratio(ni, ta, 100), roa_prev=ratio(ni_p, ta_p, 100),
+            cfo=cfo, net_income=ni,
+            leverage=ratio(tl, ta), leverage_prev=ratio(tl_p, ta_p),
+            current_ratio=ratio(ca, cl), current_ratio_prev=ratio(ca_p, cl_p),
+            shares_out=shares or None, shares_out_prev=None,   # KIS는 전기 주식수 미제공
+            gross_margin=ratio(gp, rev, 100), gross_margin_prev=ratio(gp_p, rev_p, 100),
+            asset_turnover=ratio(rev, ta), asset_turnover_prev=ratio(rev_p, ta_p),
+            fcf=fcf, market_cap=mcap,
+            nopat=(oi * 0.78) if oi is not None else None,        # 세후영업이익(세율 22% 가정)
+            invested_capital=((ta - cl) if (ta is not None and cl is not None) else None),
+            wacc=self.WACC_DEFAULT_KR,
+            working_capital=wc, retained_earnings=cur("retained_earnings"),
+            ebit=oi, total_assets=ta, total_liabilities=tl, sales=rev,
+            total_accruals=(ratio((ni - cfo) if (ni is not None and cfo is not None) else None, ta)),
+        )
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.kis_key and self.kis_secret):
             log.info("[KR] KIS 키 없음 → Mock 데이터 사용")
             return MockDataSource("KR").fetch_universe()
+
+        # DART corpCode 매핑 1회 로드 (키 있을 때만 → 품질 팩터 활성화)
+        corp_map = self._load_corp_map() if self.dart_key else {}
 
         raw = []
         for ticker, name, themes in self.universe:
@@ -441,7 +578,13 @@ class KoreaDataSource(DataSource):
                 q = self._quote(ticker)
                 closes, vols = self._daily(ticker)
                 roe, opm, rev, op = self._financials(ticker)
-                raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op))
+                # DART 재무제표 → 품질 팩터 입력
+                quality = QualityData()
+                corp = corp_map.get(ticker)
+                if corp:
+                    fin = self._dart_financials(corp)
+                    quality = self._build_quality(fin, q["price"], q.get("shares", 0.0))
+                raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op, quality))
             except Exception as e:
                 log.warning("[KR] %s 수집 실패: %s", ticker, e)
 
@@ -461,7 +604,7 @@ class KoreaDataSource(DataSource):
             return sum(xs) / len(xs) if xs else 0.0
 
         stocks = []
-        for ticker, name, themes, q, closes, vols, roe, opm, rev, op in raw:
+        for ticker, name, themes, q, closes, vols, roe, opm, rev, op, quality in raw:
             avg_vol20 = avg(vols[-20:]) if vols else q["volume"]
             macd_last, macd_sig, macd_prev = ind.macd(closes)
             stocks.append(Stock(
@@ -493,8 +636,9 @@ class KoreaDataSource(DataSource):
                 theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),
-                # TODO(데이터 연동): quality(DART 재무제표 → F-Score/FCF/ROIC/Altman/Accruals),
-                #   analyst_ext(FnGuide 추정치), governance(DART 배당·자사주·밸류업),
+                # DART 재무제표 → F-Score/FCF/ROIC/Altman/Accruals (LIVE)
+                quality=quality,
+                # TODO(추가 데이터): analyst_ext(FnGuide 추정치), governance(DART 배당·자사주·밸류업),
                 #   insider(DART 지분변동), red_flag(감사의견·감사인교체)
             ))
         log.info("[KR] %d/%d 종목 수집 완료", len(stocks), len(self.universe))

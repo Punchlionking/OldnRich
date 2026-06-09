@@ -223,27 +223,35 @@ def score_mom_12_1(s: Stock) -> CriterionResult:
 # ---------------------------------------------------------------------------
 def score_fscore(s: Stock) -> CriterionResult:
     q = s.quality
-    needed = [q.roa, q.roa_prev, q.cfo, q.net_income, q.leverage, q.leverage_prev,
-              q.current_ratio, q.current_ratio_prev, q.shares_out, q.shares_out_prev,
-              q.gross_margin, q.gross_margin_prev, q.asset_turnover, q.asset_turnover_prev]
-    if any(v is None for v in needed):
+
+    def gt(a, b):   # a,b 중 None 있으면 평가 불가(None) 반환
+        return None if (a is None or b is None) else (a > b)
+
+    # 9개 항목 (평가 불가 항목은 None → 채점에서 제외하고 비율로 환산)
+    items = [
+        (q.roa is not None) and (q.roa > 0),                 # 1 수익성
+        (q.cfo is not None) and (q.cfo > 0),                 # 2 영업현금흐름
+        gt(q.roa, q.roa_prev),                               # 3 ROA 개선
+        gt(q.cfo, q.net_income),                             # 4 현금이익질(낮은 발생액)
+        gt(q.leverage_prev, q.leverage),                     # 5 부채 감소(전기>당기)
+        gt(q.current_ratio, q.current_ratio_prev),           # 6 유동성 개선
+        gt(q.shares_out_prev, q.shares_out)                  # 7 미증자(전기>=당기)
+            if (q.shares_out is not None and q.shares_out_prev is not None) else None,
+        gt(q.gross_margin, q.gross_margin_prev),             # 8 마진 개선
+        gt(q.asset_turnover, q.asset_turnover_prev),         # 9 효율 개선
+    ]
+    evaluable = [bool(x) for x in items if x is not None]
+    if len(evaluable) < 5:
         return _result("fscore", 0.0, "재무제표(F-Score) 데이터 미연동", available=False)
 
-    pts = 0
-    pts += 1 if q.roa > 0 else 0                                  # 1 수익성
-    pts += 1 if q.cfo > 0 else 0                                  # 2 영업현금흐름
-    pts += 1 if q.roa > q.roa_prev else 0                         # 3 ROA 개선
-    pts += 1 if q.cfo > q.net_income else 0                       # 4 발생액(현금이익질)
-    pts += 1 if q.leverage < q.leverage_prev else 0              # 5 부채 감소
-    pts += 1 if q.current_ratio > q.current_ratio_prev else 0    # 6 유동성 개선
-    pts += 1 if q.shares_out <= q.shares_out_prev else 0         # 7 미증자
-    pts += 1 if q.gross_margin > q.gross_margin_prev else 0      # 8 마진 개선
-    pts += 1 if q.asset_turnover > q.asset_turnover_prev else 0  # 9 효율 개선
-
-    score = _scale(pts, 3, 9)   # 3점 이하 0, 9점 만점
+    pts = sum(1 for x in evaluable if x)
+    n = len(evaluable)
+    pts9 = round(pts / n * 9)                # 9점 만점 환산(평가 가능 항목 기준)
+    score = _scale(pts9, 3, 9)
+    note = "우량" if pts9 >= T.FSCORE_GOOD else "보통" if pts9 >= 4 else "부실 주의"
+    suffix = "" if n == 9 else f" (평가 {n}개 항목 환산)"
     reason = (
-        f"Piotroski F-Score {pts}/9 (수익성·재무건전성·영업효율 종합) "
-        f"— {'우량' if pts >= T.FSCORE_GOOD else '보통' if pts >= 4 else '부실 주의'}"
+        f"Piotroski F-Score {pts9}/9 (수익성·재무건전성·영업효율 종합) — {note}{suffix}"
     )
     return _result("fscore", score, reason)
 

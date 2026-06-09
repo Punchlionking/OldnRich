@@ -91,7 +91,9 @@ def pct_change(closes: list[float], lookback: int = 5) -> float:
 # 통계적 팩터용 가격 시계열 계산
 # ---------------------------------------------------------------------------
 def momentum_12_1(closes: list[float], skip: int = 21, lookback: int = 252,
-                  min_lookback: int = 80) -> float | None:
+                  min_lookback: int = 60) -> float | None:
+    # min_lookback=60: KIS 일봉 100행 제한(가용≈78일)에서도 KR 모멘텀 활성화.
+    #   시장 내부에서만 정규화하므로 KR(~78일)·US(~250일) 각각 일관 비교됨.
     """
     크로스섹션 모멘텀 (12-1개월) 수익률(%).
 

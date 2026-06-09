@@ -1,0 +1,598 @@
+{
+  "generated_at": "2026-06-07T13:33:02.686540+00:00",
+  "version": 1,
+  "markets": {
+    "KR": [
+      {
+        "ticker": "373220",
+        "name": "LG에너지솔루션",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 83118,
+        "overall_score": 62.5,
+        "target_horizon": "중기",
+        "primary_criterion": "target_gap",
+        "primary_label": "목표가 갭",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 125,766 vs 현재가 83,118, 상승여력 +51% (애널리스트 8명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 92.1,
+            "horizon": "단기",
+            "reason": "'2차전지' 테마 거래량이 평소 대비 3.4배 급증, 섹터 강도 상위 20%",
+            "risk": "보통"
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 92.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 000660 최근 5일 +31% 급등, 본 종목은 +1%에 그쳐 갭 존재 (상관계수 0.68)",
+            "risk": "보통"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 66.5,
+            "horizon": "중기",
+            "reason": "신뢰 소스 1곳에서 최근 7일간 9회 언급 (최근 언급 1일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 58.1,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 3.0배, 최근 5일 +8%, 뉴스량 1.3배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 55.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 21.7·PBR 2.6 대비 PER 9.8·PBR 3.6로 7% 저평가, ROE 18%·영업이익률 15%로 수익성 양호",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "012450",
+        "name": "한화에어로스페이스",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 98284,
+        "overall_score": 56.6,
+        "target_horizon": "중기",
+        "primary_criterion": "target_gap",
+        "primary_label": "목표가 갭",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 139,926 vs 현재가 98,284, 상승여력 +42% (애널리스트 5명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 78.5,
+            "horizon": "중기",
+            "reason": "연관 대장주 005930 최근 5일 +14% 급등, 본 종목은 +0%에 그쳐 갭 존재 (상관계수 0.77)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 76.0,
+            "horizon": "단기",
+            "reason": "'방산' 테마 거래량이 평소 대비 2.5배 급증, 섹터 강도 상위 56%",
+            "risk": "보통"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 69.4,
+            "horizon": "중기",
+            "reason": "신뢰 소스 2곳에서 최근 7일간 9회 언급 (최근 언급 4일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 55.0,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 3.4배, 최근 5일 -0%, 뉴스량 0.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 43.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 16.1·PBR 3.0 대비 PER 23.3·PBR 3.9로 -36% 저평가, ROE 20%·영업이익률 14%로 수익성 양호",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "005930",
+        "name": "삼성전자",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 91154,
+        "overall_score": 55.2,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 91.2,
+            "horizon": "단기",
+            "reason": "RSI 20(과매도 반등), MACD 골든크로스 발생, 볼린저밴드 위치 16%(하단 지지)",
+            "risk": "보통"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 95.6,
+            "horizon": "중기",
+            "reason": "신뢰 소스 4곳에서 최근 7일간 5회 언급 (최근 언급 2일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 84.9,
+            "horizon": "단기",
+            "reason": "'반도체' 테마 거래량이 평소 대비 2.8배 급증, 섹터 강도 상위 38%",
+            "risk": "보통"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 50.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 12.3·PBR 2.2 대비 PER 18.1·PBR 0.7로 10% 저평가, ROE 8%·영업이익률 23%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 44.3,
+            "horizon": "중기",
+            "reason": "연관 대장주 068270 최근 5일 +7% 급등, 본 종목은 +1%에 그쳐 갭 존재 (상관계수 0.68)",
+            "risk": "보통"
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 40.0,
+            "horizon": "장기",
+            "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +45%",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 45564,
+        "overall_score": 53.5,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 82.4,
+            "horizon": "단기",
+            "reason": "RSI 36(과매도 반등), MACD 골든크로스 발생, 볼린저밴드 위치 32%(하단 지지)",
+            "risk": "보통"
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 84.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 068270 최근 5일 +32% 급등, 본 종목은 +7%에 그쳐 갭 존재 (상관계수 0.39)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 77.9,
+            "horizon": "단기",
+            "reason": "'반도체' 테마 거래량이 평소 대비 3.2배 급증, 섹터 강도 상위 55%",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 69.0,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 3.5배, 최근 5일 +5%, 뉴스량 7.9배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 55.0,
+            "horizon": "장기",
+            "reason": "최근 2분기 연속 매출·영업이익 동반 증가, 매출 YoY +58%",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "105560",
+        "name": "KB금융",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 58939,
+        "overall_score": 46.8,
+        "target_horizon": "장기",
+        "primary_criterion": "undervalued",
+        "primary_label": "저평가 우량주",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 82.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 14.1·PBR 3.5 대비 PER 12.0·PBR 1.3로 39% 저평가, ROE 21%·영업이익률 15%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 70.0,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 3.6배, 최근 5일 +22%, 뉴스량 0.2배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 59.9,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 69,535 vs 현재가 58,939, 상승여력 +18% (애널리스트 17명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 47.1,
+            "horizon": "단기",
+            "reason": "RSI 41, 볼린저밴드 위치 66%(하단 지지)",
+            "risk": "보통"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 40.1,
+            "horizon": "중기",
+            "reason": "신뢰 소스 4곳에서 최근 7일간 1회 언급 (최근 언급 3일 전)",
+            "risk": "보통"
+          }
+        ]
+      }
+    ],
+    "US": [
+      {
+        "ticker": "NVDA",
+        "name": "NVIDIA",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 179.73,
+        "overall_score": 63.8,
+        "target_horizon": "중기",
+        "primary_criterion": "beneficiary",
+        "primary_label": "간접 수혜주",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 90.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 TSLA 최근 5일 +20% 급등, 본 종목은 +0%에 그쳐 갭 존재 (상관계수 0.75)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 85.4,
+            "horizon": "단기",
+            "reason": "'AI' 테마 거래량이 평소 대비 2.8배 급증, 섹터 강도 상위 36%",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 81.5,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 2.3배, 최근 5일 +23%, 뉴스량 4.4배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 80.4,
+            "horizon": "단기",
+            "reason": "RSI 51, MACD 골든크로스 발생, 볼린저밴드 위치 3%(하단 지지)",
+            "risk": "보통"
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 50.6,
+            "horizon": "장기",
+            "reason": "최근 3분기 연속 매출·영업이익 동반 증가, 매출 YoY +21%",
+            "risk": "보통"
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 49.5,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 233 vs 현재가 180, 상승여력 +30% (애널리스트 0명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 46.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 16.6·PBR 3.8 대비 PER 27.1·PBR 1.8로 -5% 저평가, ROE 25%·영업이익률 14%로 수익성 양호",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "UNH",
+        "name": "UnitedHealth",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 73.37,
+        "overall_score": 60.6,
+        "target_horizon": "중기",
+        "primary_criterion": "target_gap",
+        "primary_label": "목표가 갭",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 99 vs 현재가 73, 상승여력 +35% (애널리스트 19명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 90.3,
+            "horizon": "단기",
+            "reason": "'Healthcare' 테마 거래량이 평소 대비 3.0배 급증, 섹터 강도 상위 24%",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 90.3,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 7.9배, 최근 5일 +12%, 뉴스량 3.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 87.6,
+            "horizon": "중기",
+            "reason": "신뢰 소스 4곳에서 최근 7일간 5회 언급 (최근 언급 4일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 77.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 15.6·PBR 3.9 대비 PER 6.5·PBR 1.5로 60% 저평가, ROE 6%·영업이익률 27%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 58.0,
+            "horizon": "단기",
+            "reason": "RSI 56, 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "TSLA",
+        "name": "Tesla",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 401.49,
+        "overall_score": 57.3,
+        "target_horizon": "중기",
+        "primary_criterion": "target_gap",
+        "primary_label": "목표가 갭",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 528 vs 현재가 401, 상승여력 +32% (애널리스트 9명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주",
+            "score": 93.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 META 최근 5일 +32% 급등, 본 종목은 +3%에 그쳐 갭 존재 (상관계수 0.73)",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 71.6,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 2.8배, 최근 5일 +23%, 뉴스량 2.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 69.0,
+            "horizon": "중기",
+            "reason": "신뢰 소스 4곳에서 최근 7일간 3회 언급 (최근 언급 2일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 58.2,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 20.4·PBR 3.8 대비 PER 20.3·PBR 4.3로 -6% 저평가, ROE 24%·영업이익률 31%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 40.0,
+            "horizon": "장기",
+            "reason": "최근 1분기 연속 매출·영업이익 동반 증가, 매출 YoY +63%",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "MSFT",
+        "name": "Microsoft",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 309.25,
+        "overall_score": 44.9,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 91.8,
+            "horizon": "단기",
+            "reason": "'AI' 테마 거래량이 평소 대비 3.0배 급증, 섹터 강도 상위 20%",
+            "risk": "보통"
+          },
+          {
+            "key": "blog",
+            "label": "신뢰 소스 언급",
+            "score": 62.4,
+            "horizon": "중기",
+            "reason": "신뢰 소스 3곳에서 최근 7일간 3회 언급 (최근 언급 1일 전)",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 62.3,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 11.6배, 최근 5일 +2%, 뉴스량 1.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 54.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 21.4·PBR 3.9 대비 PER 18.9·PBR 2.5로 23% 저평가, ROE 13%·영업이익률 10%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 45.4,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 351 vs 현재가 309, 상승여력 +14% (애널리스트 7명 커버)",
+            "risk": "보통"
+          }
+        ]
+      },
+      {
+        "ticker": "MU",
+        "name": "Micron",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 330.56,
+        "overall_score": 41.5,
+        "target_horizon": "장기",
+        "primary_criterion": "undervalued",
+        "primary_label": "저평가 우량주",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 69.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 24.7·PBR 2.4 대비 PER 13.2·PBR 1.2로 48% 저평가, ROE 16%·영업이익률 5%로 수익성 양호",
+            "risk": "보통"
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 63.8,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 4.7배, 최근 5일 +5%, 뉴스량 1.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음"
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 57.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 387 vs 현재가 331, 상승여력 +17% (애널리스트 6명 커버)",
+            "risk": "보통"
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 55.0,
+            "horizon": "장기",
+            "reason": "최근 2분기 연속 매출·영업이익 동반 증가, 매출 YoY +47%",
+            "risk": "보통"
+          }
+        ]
+      }
+    ]
+  }
+}

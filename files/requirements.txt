@@ -1,0 +1,7 @@
+# 엔진 코어는 표준 라이브러리만으로 동작합니다 (Mock 모드).
+# 아래는 실제 API 연동/지표 계산 시 권장 라이브러리입니다.
+
+requests>=2.31        # REST API 호출 (KIS, DART, Alpha Vantage, Finnhub 등)
+pandas>=2.0           # 시계열/재무 데이터 가공
+# 기술지표를 직접 계산할 경우 (Twelve Data 내장지표를 쓰면 불필요):
+# ta>=0.11            # RSI/MACD/볼린저 등 순수 파이썬 지표

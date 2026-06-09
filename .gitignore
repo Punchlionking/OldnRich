@@ -1,0 +1,35 @@
+# ===== 보안: API 키 절대 커밋 금지 =====
+.env
+**/.env
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# ===== Android / Gradle =====
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/.idea/
+android/captures/
+*.iml
+.cxx/
+
+# ===== OS / IDE =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===== 중복/불필요 =====
+files.zip
+
+# ===== 임시 =====
+check_keys.py
+
+# 참고: recommendations.json 은 GitHub Actions가 갱신/커밋하므로 추적함(무시 안 함)

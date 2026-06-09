@@ -36,6 +36,7 @@ jobs:
         run: pip install requests
 
       - name: 추천 엔진 실행
+        id: engine
         env:
           # API 키는 GitHub Secrets에서 주입 (코드/로그에 노출 안 됨)
           KIS_VIRTUAL: "1"
@@ -48,16 +49,28 @@ jobs:
           # 저장소 루트에 고정 출력 → 앱이 raw URL로 받음
           OUTPUT_PATH: ${{ github.workspace }}/recommendations.json
           PYTHONIOENCODING: "utf-8"
-        run: python -m files.main
+        run: |
+          echo "::group::엔진 실행"
+          python -m files.main
+          echo "::endgroup::"
+          echo "=== 생성 확인 ==="
+          ls -l recommendations.json
+          python -c "import json; d=json.load(open('recommendations.json')); print('KR', len(d['markets']['KR']), 'US', len(d['markets']['US']))"
 
       - name: 변경분 커밋 & 푸시
+        id: commit
         run: |
+          set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add recommendations.json
+          echo "=== git status ==="
+          git status --short
           if git diff --staged --quiet; then
             echo "변경 없음 — 커밋 생략"
           else
             git commit -m "chore: 추천 종목 갱신 $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            # 워크플로우 실행 중 main이 갱신됐을 수 있어 rebase 후 푸시(비-fast-forward 방지)
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

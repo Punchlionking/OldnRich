@@ -17,15 +17,20 @@ import os
 #   weight: 종합점수에 합산될 때의 가중치 (합이 1이 아니어도 됨)
 #   horizon: 이 기준으로 뽑혔을 때 붙는 타겟 시점
 # ---------------------------------------------------------------------------
+# ── 모멘텀형 가중치 ──
+#   단기 트레이딩 지향: 차트·테마·수혜·호재 신호를 고가중,
+#   가치(저평가)·실적은 보조 지표로 저가중.
+#   ※ '호재 모멘텀(rumor)'은 검증 안 된 고위험 신호라 모멘텀형에서도
+#     안전한 신호(quant·theme) 아래로 절제한다.
 CRITERIA = {
-    "undervalued":  {"label": "저평가 우량주",   "weight": 1.0, "horizon": "장기"},
-    "theme":        {"label": "테마 급부상",     "weight": 0.8, "horizon": "단기"},
-    "rumor":        {"label": "호재 모멘텀",     "weight": 0.5, "horizon": "단기"},  # 고위험 → 가중치 낮춤
-    "quant":        {"label": "퀀트·차트 신호",  "weight": 0.9, "horizon": "단기"},
-    "target_gap":   {"label": "목표가 갭",       "weight": 1.0, "horizon": "중기"},
-    "beneficiary":  {"label": "간접 수혜주",     "weight": 0.8, "horizon": "중기"},
-    "earnings":     {"label": "꾸준한 실적 성장", "weight": 1.0, "horizon": "장기"},
-    "blog":         {"label": "신뢰 소스 언급",  "weight": 0.6, "horizon": "중기"},
+    "quant":        {"label": "퀀트·차트 신호",  "weight": 1.3, "horizon": "단기"},  # 모멘텀 핵심
+    "theme":        {"label": "테마 급부상",     "weight": 1.2, "horizon": "단기"},  # 테마 급등 포착
+    "beneficiary":  {"label": "간접 수혜주",     "weight": 1.1, "horizon": "중기"},  # 대장주 추격
+    "target_gap":   {"label": "목표가 갭",       "weight": 0.9, "horizon": "중기"},
+    "rumor":        {"label": "호재 모멘텀",     "weight": 0.8, "horizon": "단기"},  # 고위험 → 절제
+    "blog":         {"label": "신뢰 소스 언급",  "weight": 0.8, "horizon": "중기"},
+    "undervalued":  {"label": "저평가 우량주",   "weight": 0.6, "horizon": "장기"},  # 가치 → 보조
+    "earnings":     {"label": "꾸준한 실적 성장", "weight": 0.6, "horizon": "장기"},  # 실적 → 보조
 }
 
 # 추천 이유로 채택할 기준의 최소 점수 (이보다 낮으면 카드에 표시 안 함)

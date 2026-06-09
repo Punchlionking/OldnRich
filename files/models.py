@@ -117,6 +117,7 @@ class CriterionResult:
     horizon: str                # "장기" | "중기" | "단기"
     reason: str                 # 사용자에게 보여줄 추천 이유 문장
     risk: str = "보통"          # "보통" | "높음"
+    available: bool = True      # False면 '데이터 없음' → 종합점수 계산에서 제외
 
 
 @dataclass

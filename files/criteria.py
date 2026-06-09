@@ -27,7 +27,8 @@ def _scale(x: float, lo: float, hi: float) -> float:
     return max(0.0, min(100.0, v))
 
 
-def _result(key: str, score: float, reason: str) -> CriterionResult:
+def _result(key: str, score: float, reason: str,
+            available: bool = True) -> CriterionResult:
     meta = CRITERIA[key]
     return CriterionResult(
         key=key,
@@ -36,6 +37,7 @@ def _result(key: str, score: float, reason: str) -> CriterionResult:
         horizon=meta["horizon"],
         reason=reason,
         risk="높음" if key in {"rumor"} else "보통",
+        available=available,
     )
 
 
@@ -81,7 +83,11 @@ def score_theme(s: Stock) -> CriterionResult:
         f"'{theme_name}' 테마 거래량이 평소 대비 {t.theme_volume_surge:.1f}배 급증, "
         f"섹터 강도 상위 {100 - t.sector_strength_pct:.0f}%"
     )
-    return _result("theme", score, reason)
+    # 데이터소스가 중립 기본값(surge=1.0, strength=50)으로 채운 경우 = 실데이터 없음
+    available = not (t.theme_volume_surge <= 1.0 and abs(t.sector_strength_pct - 50.0) < 1e-6)
+    if not available:
+        reason = "테마 거래량·섹터 강도 데이터 없음"
+    return _result("theme", score, reason, available=available)
 
 
 # ---------------------------------------------------------------------------
@@ -105,7 +111,12 @@ def score_rumor(s: Stock) -> CriterionResult:
         f"거래량 20일 평균 대비 {vol_ratio:.1f}배, 최근 5일 {td.price_change_5d:+.0f}%, "
         f"뉴스량 {news_surge:.1f}배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)"
     )
-    return _result("rumor", score, reason)
+    # 뉴스·감성 데이터가 전혀 없으면(중립 기본값) 호재 모멘텀으로 보기 어려움 → 제외
+    no_signal = (sd.sentiment_score == 0.0 and sd.sentiment_prev == 0.0
+                 and sd.news_count_today == 0)
+    if no_signal:
+        reason = "뉴스·감성 데이터 없음"
+    return _result("rumor", score, reason, available=not no_signal)
 
 
 # ---------------------------------------------------------------------------
@@ -144,7 +155,7 @@ def score_quant(s: Stock) -> CriterionResult:
 def score_target_gap(s: Stock) -> CriterionResult:
     a, td = s.analyst, s.tech
     if a.target_mean <= 0 or td.current_price <= 0:
-        return _result("target_gap", 0.0, "목표가 데이터 없음")
+        return _result("target_gap", 0.0, "목표가 데이터 없음", available=False)
     upside = (a.target_mean - td.current_price) / td.current_price
     gap_score = _scale(upside, 0.0, T.TARGET_GAP_GOOD)
     # 애널리스트 수가 적으면 신뢰도 할인
@@ -165,7 +176,7 @@ def score_target_gap(s: Stock) -> CriterionResult:
 def score_beneficiary(s: Stock) -> CriterionResult:
     b = s.beneficiary
     if not b.leader_ticker:
-        return _result("beneficiary", 0.0, "연관 대장주 없음")
+        return _result("beneficiary", 0.0, "연관 대장주 없음", available=False)
     leader_score = _scale(b.leader_change_5d, 0, T.BENEFICIARY_LEADER_SURGE * 1.5)
     lag = b.leader_change_5d - b.own_change_5d        # 따라잡을 여지
     lag_score = _scale(lag, 0, T.BENEFICIARY_LEADER_SURGE)
@@ -187,7 +198,7 @@ def score_earnings(s: Stock) -> CriterionResult:
     f = s.financial
     rev, op = f.revenue_quarters, f.op_income_quarters
     if len(rev) < T.EARNINGS_MIN_QUARTERS or len(op) < T.EARNINGS_MIN_QUARTERS:
-        return _result("earnings", 0.0, "실적 시계열 데이터 부족")
+        return _result("earnings", 0.0, "실적 시계열 데이터 부족", available=False)
 
     # rev[0]가 최신. 최신→과거로 내려가며 직전 분기보다 컸던 횟수 카운트.
     def consecutive_growth(series: list[float]) -> int:
@@ -225,7 +236,7 @@ def score_earnings(s: Stock) -> CriterionResult:
 def score_blog(s: Stock) -> CriterionResult:
     b = s.blog
     if b.mention_count_7d == 0:
-        return _result("blog", 0.0, "최근 신뢰 소스 언급 없음")
+        return _result("blog", 0.0, "최근 신뢰 소스 언급 없음", available=False)
     freq_score = _scale(b.mention_count_7d, 1, T.BLOG_HOT_MENTIONS)
     diversity_score = _scale(b.source_count, 1, 4)      # 서로 다른 소스 4곳이면 만점
     recency_score = _scale(7 - b.days_since_last, 0, 7)

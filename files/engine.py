@@ -13,24 +13,32 @@ from .criteria import evaluate_all
 
 
 def _overall_score(results: list[CriterionResult]) -> float:
-    """기준별 점수를 가중 합산해 0~100 종합점수로 환산."""
-    total_w = sum(CRITERIA[r.key]["weight"] for r in results)
+    """기준별 점수를 가중 합산해 0~100 종합점수로 환산.
+
+    데이터가 없는 기준(available=False)은 분자·분모 모두에서 제외한다.
+    → '데이터가 없을 뿐'인 기준이 0점으로 종합점수를 끌어내리는 것을 방지.
+    """
+    usable = [r for r in results if r.available]
+    total_w = sum(CRITERIA[r.key]["weight"] for r in usable)
     if total_w == 0:
         return 0.0
-    weighted = sum(r.score * CRITERIA[r.key]["weight"] for r in results)
+    weighted = sum(r.score * CRITERIA[r.key]["weight"] for r in usable)
     return round(weighted / total_w, 1)
 
 
 def _build_recommendation(stock: Stock) -> Recommendation:
     results = evaluate_all(stock)
 
+    # 대표 기준은 '데이터 있는' 기준 중에서만 고름.
+    usable = [r for r in results if r.available] or results
     # 가중치를 반영한 '대표 기준' = (점수 × 가중치)가 가장 큰 기준
-    primary = max(results, key=lambda r: r.score * CRITERIA[r.key]["weight"])
+    primary = max(usable, key=lambda r: r.score * CRITERIA[r.key]["weight"])
 
     # 카드에 보여줄 추천 이유: 대표기준을 맨 앞에 고정하고,
-    # 나머지는 임계점 이상인 기준만 점수 높은 순으로 뒤에 붙임.
+    # 나머지는 임계점 이상이고 데이터 있는 기준만 점수 높은 순으로 뒤에 붙임.
     others = sorted(
-        [r for r in results if r.score >= REASON_MIN_SCORE and r.key != primary.key],
+        [r for r in results
+         if r.available and r.score >= REASON_MIN_SCORE and r.key != primary.key],
         key=lambda r: r.score,
         reverse=True,
     )

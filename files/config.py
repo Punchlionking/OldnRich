@@ -17,21 +17,62 @@ import os
 #   weight: 종합점수에 합산될 때의 가중치 (합이 1이 아니어도 됨)
 #   horizon: 이 기준으로 뽑혔을 때 붙는 타겟 시점
 # ---------------------------------------------------------------------------
-# ── 모멘텀형 가중치 ──
-#   단기 트레이딩 지향: 차트·테마·수혜·호재 신호를 고가중,
-#   가치(저평가)·실적은 보조 지표로 저가중.
-#   ※ '호재 모멘텀(rumor)'은 검증 안 된 고위험 신호라 모멘텀형에서도
-#     안전한 신호(quant·theme) 아래로 절제한다.
+# ── 모멘텀형 가중치 (확장 팩터 포함) ──
+#   단기 트레이딩 지향: 모멘텀/차트/테마/수혜를 고가중,
+#   품질·가치 팩터는 '밸류 트랩 방어' 목적의 보조 지표로 저가중.
+#   ※ rumor(호재)는 검증 안 된 고위험이라 안전 신호 아래로 절제.
+#
+#   group: 표시/그룹핑용. tier: 데이터 가용 단계
+#     "live"    = 현재 데이터로 계산됨
+#     "data"    = 로직 완성·재무제표 연동 시 자동 작동(현재 available=False)
+#     "source"  = 신규 데이터소스 필요(스캐폴드)
 CRITERIA = {
-    "quant":        {"label": "퀀트·차트 신호",  "weight": 1.3, "horizon": "단기"},  # 모멘텀 핵심
-    "theme":        {"label": "테마 급부상",     "weight": 1.2, "horizon": "단기"},  # 테마 급등 포착
-    "beneficiary":  {"label": "간접 수혜주",     "weight": 1.1, "horizon": "중기"},  # 대장주 추격
-    "target_gap":   {"label": "목표가 갭",       "weight": 0.9, "horizon": "중기"},
-    "rumor":        {"label": "호재 모멘텀",     "weight": 0.8, "horizon": "단기"},  # 고위험 → 절제
-    "blog":         {"label": "신뢰 소스 언급",  "weight": 0.8, "horizon": "중기"},
-    "undervalued":  {"label": "저평가 우량주",   "weight": 0.6, "horizon": "장기"},  # 가치 → 보조
-    "earnings":     {"label": "꾸준한 실적 성장", "weight": 0.6, "horizon": "장기"},  # 실적 → 보조
+    # ── 통계적 모멘텀/차트 (강한 신호, 고가중) ──
+    "mom_12_1":     {"label": "중기 모멘텀(12-1)", "weight": 1.3, "horizon": "중기", "group": "통계", "tier": "live"},
+    "quant":        {"label": "퀀트·차트 신호",   "weight": 1.1, "horizon": "단기", "group": "통계", "tier": "live"},
+    "theme":        {"label": "테마 급부상",      "weight": 1.1, "horizon": "단기", "group": "테마", "tier": "live"},
+    "beneficiary":  {"label": "간접 수혜주(리드-래그)", "weight": 1.0, "horizon": "중기", "group": "통계", "tier": "live"},
+    # ── 추정치/이벤트 (예측력 높음) ──
+    "est_revision": {"label": "추정치 상향·서프라이즈", "weight": 0.9, "horizon": "중기", "group": "이벤트", "tier": "source"},
+    "target_gap":   {"label": "목표가 갭",        "weight": 0.7, "horizon": "중기", "group": "이벤트", "tier": "data"},
+    "rumor":        {"label": "호재 모멘텀",      "weight": 0.7, "horizon": "단기", "group": "이벤트", "tier": "data"},
+    "insider":      {"label": "내부자 군집매수",  "weight": 0.6, "horizon": "중기", "group": "이벤트", "tier": "source"},
+    # ── 품질/가치 (밸류 트랩 방어, 보조) ──
+    "fscore":       {"label": "퀄리티(F-Score)",  "weight": 0.7, "horizon": "장기", "group": "품질", "tier": "data"},
+    "fcf_yield":    {"label": "FCF 수익률",       "weight": 0.6, "horizon": "장기", "group": "품질", "tier": "data"},
+    "roic":         {"label": "자본효율(ROIC)",   "weight": 0.6, "horizon": "장기", "group": "품질", "tier": "data"},
+    "accruals":     {"label": "발생액 품질",      "weight": 0.5, "horizon": "장기", "group": "품질", "tier": "data"},
+    "undervalued":  {"label": "저평가 우량주",    "weight": 0.5, "horizon": "장기", "group": "가치", "tier": "live"},
+    "earnings":     {"label": "꾸준한 실적 성장",  "weight": 0.5, "horizon": "장기", "group": "가치", "tier": "live"},
+    # ── 정성/국장 특화 ──
+    "governance":   {"label": "지배구조·주주환원", "weight": 0.7, "horizon": "중기", "group": "정성", "tier": "source"},
+    "blog":         {"label": "신뢰 소스 언급",   "weight": 0.6, "horizon": "중기", "group": "정성", "tier": "data"},
 }
+
+
+# ---------------------------------------------------------------------------
+# 결합 방식 (가장 효과 큰 부분): 횡단면 정규화 + 배제 필터 + 리스크 조정
+# ---------------------------------------------------------------------------
+class Combination:
+    # 각 팩터 원점수를 시장 내 횡단면에서 '백분위 순위(0~100)'로 변환 후 가중합.
+    #   "percentile" = 백분위 순위(이상치에 강건, 권장)
+    #   "zscore"     = 표준화 후 0~100 매핑
+    #   "raw"        = (구버전) 원점수 그대로 가중평균
+    NORMALIZE = "percentile"
+
+    # 저변동성 이상현상 반영: 최종점수에 (1-λ)·종합 + λ·(저변동성 점수).
+    #   변동성이 낮을수록 가점. 0이면 리스크 조정 끔.
+    RISK_LAMBDA = 0.15
+
+
+# ---------------------------------------------------------------------------
+# 배제(스크리닝) 필터 — '사는 신호'보다 먼저 적용해 영구적 자본 훼손 회피
+# ---------------------------------------------------------------------------
+class Exclusion:
+    # Altman Z-Score: 이 값 미만이면 부도위험 → 추천에서 제외 (데이터 있을 때만)
+    ALTMAN_Z_MIN = 1.8
+    # 적신호(감사의견 비적정·잦은 감사인 교체 등) 발견 시 제외
+    EXCLUDE_ON_RED_FLAG = True
 
 # 추천 이유로 채택할 기준의 최소 점수 (이보다 낮으면 카드에 표시 안 함)
 REASON_MIN_SCORE = 40.0
@@ -80,6 +121,24 @@ class Thresholds:
 
     # #8 블로그
     BLOG_HOT_MENTIONS = 5                # 7일 언급수 이 이상이면 강한 신호
+
+    # ── 확장 팩터 ──
+    # 중기 모멘텀(12-1): 이 수익률(%) 이상이면 만점권
+    MOM_12_1_STRONG = 40.0
+    # 리드-래그: 시차 상관이 이 값 이상이고 best_lag>0이면 '진짜 추종'
+    LEADLAG_MIN_CORR = 0.3
+    # Piotroski F-Score: 0~9. 이 값 이상이면 우량
+    FSCORE_GOOD = 7
+    # FCF Yield(%): 이 값 이상이면 만점권
+    FCF_YIELD_GOOD = 8.0
+    # ROIC - WACC 스프레드(%p): 이 값 이상이면 가치창출 양호
+    ROIC_SPREAD_GOOD = 5.0
+    # Accruals 비율: 이 값 이상이면 이익의 질 낮음(감점)
+    ACCRUALS_BAD = 0.10
+    # 추정치 상향(%): 이 값 이상이면 강한 상향 추세
+    EST_REVISION_GOOD = 5.0
+    # 총주주환원율(%): 이 값 이상이면 주주환원 우수
+    PAYOUT_GOOD = 5.0
 
 
 # ---------------------------------------------------------------------------

@@ -85,3 +85,102 @@ def pct_change(closes: list[float], lookback: int = 5) -> float:
     if len(closes) <= lookback or closes[-lookback - 1] == 0:
         return 0.0
     return (closes[-1] / closes[-lookback - 1] - 1.0) * 100.0
+
+
+# ---------------------------------------------------------------------------
+# 통계적 팩터용 가격 시계열 계산
+# ---------------------------------------------------------------------------
+def momentum_12_1(closes: list[float], skip: int = 21, lookback: int = 252,
+                  min_lookback: int = 80) -> float | None:
+    """
+    크로스섹션 모멘텀 (12-1개월) 수익률(%).
+
+    최근 1개월(skip≈21거래일)을 제외한 과거 12개월(lookback≈252거래일) 수익률.
+    직전 1개월은 단기 반전 노이즈라 빼는 것이 학술적 표준.
+
+    데이터가 252일보다 짧으면(예: KIS 일봉 100행 제한) 가용 기간으로 lookback을
+    자동 축소한다. 횡단면 정규화는 '같은 시장 내부'에서만 이뤄지므로, 시장마다
+    lookback이 달라도 시장 내 비교 일관성은 유지된다. min_lookback 미만이면 None.
+    """
+    avail = len(closes) - 1 - skip
+    if avail < min_lookback:
+        return None
+    lb = min(lookback, avail)
+    start = closes[-(lb + skip + 1)]
+    end = closes[-(skip + 1)]
+    if start <= 0:
+        return None
+    return (end / start - 1.0) * 100.0
+
+
+def annualized_volatility(closes: list[float], window: int = 120) -> float | None:
+    """
+    연율화 변동성(%). 최근 window 거래일의 일간수익률 표준편차 × √252.
+    저변동성 이상현상(리스크 조정 랭킹)에 사용. 데이터 부족 시 None.
+    """
+    if len(closes) < window + 1:
+        # 가능한 만큼이라도 쓰되 최소 20일은 필요
+        if len(closes) < 21:
+            return None
+        window = len(closes) - 1
+    rets = []
+    seg = closes[-(window + 1):]
+    for i in range(1, len(seg)):
+        if seg[i - 1] > 0:
+            rets.append(seg[i] / seg[i - 1] - 1.0)
+    if len(rets) < 2:
+        return None
+    mean = sum(rets) / len(rets)
+    var = sum((r - mean) ** 2 for r in rets) / (len(rets) - 1)
+    return (var ** 0.5) * (252 ** 0.5) * 100.0
+
+
+def _pearson(xs: list[float], ys: list[float]) -> float:
+    """피어슨 상관계수. 길이 불일치/분산0 시 0."""
+    n = min(len(xs), len(ys))
+    if n < 3:
+        return 0.0
+    xs, ys = xs[-n:], ys[-n:]
+    mx, my = sum(xs) / n, sum(ys) / n
+    sxy = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+    sxx = sum((x - mx) ** 2 for x in xs)
+    syy = sum((y - my) ** 2 for y in ys)
+    if sxx <= 0 or syy <= 0:
+        return 0.0
+    return sxy / (sxx * syy) ** 0.5
+
+
+def _returns(closes: list[float]) -> list[float]:
+    out = []
+    for i in range(1, len(closes)):
+        if closes[i - 1] > 0:
+            out.append(closes[i] / closes[i - 1] - 1.0)
+        else:
+            out.append(0.0)
+    return out
+
+
+def lead_lag(own_closes: list[float], leader_closes: list[float],
+             max_lag: int = 5) -> tuple[int, float]:
+    """
+    리드-래그 관계 추정 (그레인저 인과의 경량 프록시).
+
+    대장주 수익률을 lag일 앞당겨 본 종목 수익률과의 상관을 최대화하는
+    (best_lag, best_corr)을 반환. best_lag>0 이고 corr이 충분히 높으면
+    "본 종목이 대장주를 best_lag일 시차로 따라간다"고 해석.
+
+    동시점 상관(lag=0)보다 시차 상관이 더 높아야 '진짜 추종'으로 본다.
+    """
+    own_r = _returns(own_closes)
+    lead_r = _returns(leader_closes)
+    if len(own_r) < max_lag + 5 or len(lead_r) < max_lag + 5:
+        return (0, _pearson(own_r, lead_r))
+    best_lag, best_corr = 0, _pearson(own_r, lead_r)
+    for lag in range(1, max_lag + 1):
+        # leader(t-lag) vs own(t): leader를 lag만큼 과거로
+        lead_shift = lead_r[:-lag]
+        own_aligned = own_r[lag:]
+        c = _pearson(own_aligned, lead_shift)
+        if c > best_corr:
+            best_lag, best_corr = lag, c
+    return (best_lag, best_corr)

@@ -13,7 +13,7 @@
 from __future__ import annotations
 
 from .models import Stock, CriterionResult
-from .config import CRITERIA, Thresholds as T
+from .config import CRITERIA, Thresholds as T, Exclusion
 
 
 # ---------------------------------------------------------------------------
@@ -174,20 +174,219 @@ def score_target_gap(s: Stock) -> CriterionResult:
 #   - 대장주는 급등했는데 본 종목은 아직 덜 오른 '갭'을 노림
 # ---------------------------------------------------------------------------
 def score_beneficiary(s: Stock) -> CriterionResult:
+    """대장주 급등 + 본 종목 미반영 갭 + '리드-래그(시차 추종)' 검증.
+
+    단순 동시점 상관은 우연의 동조를 잡을 위험이 커서, 시차 상관(lead_lag)으로
+    '대장주를 며칠 시차를 두고 따라가는지'를 함께 본다.
+    """
     b = s.beneficiary
     if not b.leader_ticker:
         return _result("beneficiary", 0.0, "연관 대장주 없음", available=False)
     leader_score = _scale(b.leader_change_5d, 0, T.BENEFICIARY_LEADER_SURGE * 1.5)
     lag = b.leader_change_5d - b.own_change_5d        # 따라잡을 여지
     lag_score = _scale(lag, 0, T.BENEFICIARY_LEADER_SURGE)
-    corr_score = b.correlation * 100.0
-    score = 0.35 * leader_score + 0.4 * lag_score + 0.25 * corr_score
 
+    # 리드-래그: best_lag>0 이고 시차 상관이 임계 이상이면 '진짜 추종'으로 가점.
+    has_leadlag = b.lead_lag_days > 0 and b.lead_lag_corr >= T.LEADLAG_MIN_CORR
+    ll_score = _scale(b.lead_lag_corr, T.LEADLAG_MIN_CORR, 0.8) if has_leadlag else \
+        b.correlation * 60.0   # 시차관계 없으면 동시점 상관을 약하게만 인정
+    score = 0.3 * leader_score + 0.35 * lag_score + 0.35 * ll_score
+
+    if has_leadlag:
+        rel = f"대장주를 약 {b.lead_lag_days}일 시차로 추종(시차상관 {b.lead_lag_corr:.2f})"
+    else:
+        rel = f"동시점 상관 {b.correlation:.2f}(시차 추종관계 약함)"
     reason = (
         f"연관 대장주 {b.leader_ticker} 최근 5일 {b.leader_change_5d:+.0f}% 급등, "
-        f"본 종목은 {b.own_change_5d:+.0f}%에 그쳐 갭 존재 (상관계수 {b.correlation:.2f})"
+        f"본 종목은 {b.own_change_5d:+.0f}%에 그쳐 갭 존재 — {rel}"
     )
     return _result("beneficiary", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #9 중기 모멘텀 (12-1개월) — 통계적으로 가장 강건한 모멘텀 팩터 (LIVE)
+# ---------------------------------------------------------------------------
+def score_mom_12_1(s: Stock) -> CriterionResult:
+    m = s.tech.mom_12_1
+    if m is None:
+        return _result("mom_12_1", 0.0, "12개월 가격 데이터 부족", available=False)
+    score = _scale(m, -10.0, T.MOM_12_1_STRONG)
+    reason = (
+        f"최근 1개월 제외 과거 12개월 수익률 {m:+.0f}% "
+        f"— 학술적으로 검증된 중기 모멘텀 팩터"
+    )
+    return _result("mom_12_1", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #10 퀄리티 종합점수 — Piotroski F-Score (0~9) [데이터 연동 시 작동]
+# ---------------------------------------------------------------------------
+def score_fscore(s: Stock) -> CriterionResult:
+    q = s.quality
+    needed = [q.roa, q.roa_prev, q.cfo, q.net_income, q.leverage, q.leverage_prev,
+              q.current_ratio, q.current_ratio_prev, q.shares_out, q.shares_out_prev,
+              q.gross_margin, q.gross_margin_prev, q.asset_turnover, q.asset_turnover_prev]
+    if any(v is None for v in needed):
+        return _result("fscore", 0.0, "재무제표(F-Score) 데이터 미연동", available=False)
+
+    pts = 0
+    pts += 1 if q.roa > 0 else 0                                  # 1 수익성
+    pts += 1 if q.cfo > 0 else 0                                  # 2 영업현금흐름
+    pts += 1 if q.roa > q.roa_prev else 0                         # 3 ROA 개선
+    pts += 1 if q.cfo > q.net_income else 0                       # 4 발생액(현금이익질)
+    pts += 1 if q.leverage < q.leverage_prev else 0              # 5 부채 감소
+    pts += 1 if q.current_ratio > q.current_ratio_prev else 0    # 6 유동성 개선
+    pts += 1 if q.shares_out <= q.shares_out_prev else 0         # 7 미증자
+    pts += 1 if q.gross_margin > q.gross_margin_prev else 0      # 8 마진 개선
+    pts += 1 if q.asset_turnover > q.asset_turnover_prev else 0  # 9 효율 개선
+
+    score = _scale(pts, 3, 9)   # 3점 이하 0, 9점 만점
+    reason = (
+        f"Piotroski F-Score {pts}/9 (수익성·재무건전성·영업효율 종합) "
+        f"— {'우량' if pts >= T.FSCORE_GOOD else '보통' if pts >= 4 else '부실 주의'}"
+    )
+    return _result("fscore", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #11 FCF 수익률 — 이익보다 조작 어려운 현금흐름 기반 밸류 [데이터 연동 시]
+# ---------------------------------------------------------------------------
+def score_fcf_yield(s: Stock) -> CriterionResult:
+    q = s.quality
+    if q.fcf is None or not q.market_cap:
+        return _result("fcf_yield", 0.0, "현금흐름·시총(FCF) 데이터 미연동", available=False)
+    base = q.enterprise_value if q.enterprise_value else q.market_cap
+    if base <= 0:
+        return _result("fcf_yield", 0.0, "FCF 기준 분모 오류", available=False)
+    fcf_yield = q.fcf / base * 100.0
+    score = _scale(fcf_yield, 0.0, T.FCF_YIELD_GOOD)
+    reason = (
+        f"FCF 수익률 {fcf_yield:.1f}% (잉여현금흐름/기업가치) "
+        f"— 회계조정에 강건한 현금 기반 밸류"
+    )
+    return _result("fcf_yield", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #12 자본효율 — ROIC vs WACC [데이터 연동 시]
+# ---------------------------------------------------------------------------
+def score_roic(s: Stock) -> CriterionResult:
+    q = s.quality
+    if q.nopat is None or not q.invested_capital or q.wacc is None:
+        return _result("roic", 0.0, "ROIC/WACC 데이터 미연동", available=False)
+    roic = q.nopat / q.invested_capital * 100.0
+    spread = roic - q.wacc
+    score = _scale(spread, -5.0, T.ROIC_SPREAD_GOOD * 2)
+    reason = (
+        f"ROIC {roic:.1f}% vs WACC {q.wacc:.1f}% → 스프레드 {spread:+.1f}%p "
+        f"({'가치창출' if spread > 0 else '가치훼손'}) — 부채 레버리지에 안 휘둘리는 효율 지표"
+    )
+    return _result("roic", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #13 발생액 품질 — 이익 대비 비현금 발생액 비중(높을수록 나쁨) [데이터 연동 시]
+# ---------------------------------------------------------------------------
+def score_accruals(s: Stock) -> CriterionResult:
+    q = s.quality
+    if q.total_accruals is None:
+        # net_income, cfo, total_assets 로 직접 계산 시도
+        if q.net_income is not None and q.cfo is not None and q.total_assets:
+            accr = (q.net_income - q.cfo) / q.total_assets
+        else:
+            return _result("accruals", 0.0, "발생액 데이터 미연동", available=False)
+    else:
+        accr = q.total_accruals
+    # 발생액이 낮을수록(현금이익질 높을수록) 고득점
+    score = _scale(-accr, -T.ACCRUALS_BAD, T.ACCRUALS_BAD)
+    reason = (
+        f"발생액 비율 {accr:+.2f} "
+        f"({'현금흐름이 이익을 뒷받침' if accr < 0.05 else '이익 대비 현금 부족 주의'}) "
+        f"— Sloan 발생액 이상현상 필터"
+    )
+    return _result("accruals", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #14 추정치 상향 & 어닝 서프라이즈 (PEAD) [신규 소스 필요]
+# ---------------------------------------------------------------------------
+def score_est_revision(s: Stock) -> CriterionResult:
+    e = s.analyst_ext
+    if e.estimate_revision_pct is None and e.earnings_surprise_pct is None:
+        return _result("est_revision", 0.0,
+                       "추정치 시계열·서프라이즈 소스 미연동(Finnhub/FnGuide)", available=False)
+    rev = e.estimate_revision_pct or 0.0
+    surp = e.earnings_surprise_pct or 0.0
+    rev_score = _scale(rev, -2.0, T.EST_REVISION_GOOD)
+    surp_score = _scale(surp, 0.0, 10.0)
+    score = 0.6 * rev_score + 0.4 * surp_score
+    reason = (
+        f"EPS 추정치 {rev:+.1f}% 조정"
+        + (f", 직전 실적 컨센서스 {surp:+.1f}% 상회" if surp else "")
+        + " — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)"
+    )
+    return _result("est_revision", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #15 지배구조·주주환원 (국장 핵심, 코리아 디스카운트 해소) [신규 소스 필요]
+# ---------------------------------------------------------------------------
+def score_governance(s: Stock) -> CriterionResult:
+    g = s.governance
+    if g.total_payout_ratio is None and g.valueup_enrolled is None:
+        return _result("governance", 0.0,
+                       "DART 배당·자사주·밸류업 공시 미연동", available=False)
+    payout = g.total_payout_ratio or 0.0
+    payout_score = _scale(payout, 0.0, T.PAYOUT_GOOD * 2)
+    bonus = (20 if g.buyback_cancel else 0) + (20 if g.valueup_enrolled else 0)
+    gov = g.governance_score if g.governance_score is not None else 50.0
+    score = min(100.0, 0.5 * payout_score + 0.2 * gov + bonus)
+    tags = []
+    if g.valueup_enrolled:
+        tags.append("밸류업 편입")
+    if g.buyback_cancel:
+        tags.append("자사주 소각")
+    reason = (
+        f"총주주환원율 {payout:.1f}%"
+        + (f", {', '.join(tags)}" if tags else "")
+        + " — 리레이팅 직접 트리거(코리아 디스카운트 해소)"
+    )
+    return _result("governance", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# #16 내부자 군집매수 [신규 소스 필요]
+# ---------------------------------------------------------------------------
+def score_insider(s: Stock) -> CriterionResult:
+    ins = s.insider
+    if ins.net_insider_buy_90d is None:
+        return _result("insider", 0.0,
+                       "내부자 거래(DART 지분변동/SEC Form4) 미연동", available=False)
+    if ins.net_insider_buy_90d <= 0:
+        return _result("insider", 20.0, "최근 90일 내부자 순매도/중립", available=True)
+    buyers = ins.buyer_count_90d or 1
+    score = min(100.0, 40.0 + buyers * 15.0)   # 매수 내부자 많을수록 강한 신호
+    reason = f"최근 90일 내부자 {buyers}명 군집 매수(순매수 우위) — 긍정 신호"
+    return _result("insider", score, reason)
+
+
+# ---------------------------------------------------------------------------
+# Altman Z-Score — 부도위험 '배제 필터' (매수신호 아님)
+#   반환: (z_score 또는 None, 데이터유무)
+# ---------------------------------------------------------------------------
+def altman_z(s: Stock) -> float | None:
+    q = s.quality
+    needed = [q.working_capital, q.retained_earnings, q.ebit,
+              q.total_assets, q.total_liabilities, q.sales, q.market_cap]
+    if any(v is None for v in needed) or q.total_assets <= 0 or q.total_liabilities <= 0:
+        return None
+    ta, tl = q.total_assets, q.total_liabilities
+    z = (1.2 * (q.working_capital / ta)
+         + 1.4 * (q.retained_earnings / ta)
+         + 3.3 * (q.ebit / ta)
+         + 0.6 * (q.market_cap / tl)
+         + 1.0 * (q.sales / ta))
+    return z
 
 
 # ---------------------------------------------------------------------------
@@ -251,17 +450,29 @@ def score_blog(s: Stock) -> CriterionResult:
 
 # 모든 기준을 순서대로 실행하는 레지스트리
 ALL_CRITERIA = [
-    score_undervalued,
-    score_theme,
-    score_rumor,
+    # 통계/모멘텀
+    score_mom_12_1,
     score_quant,
-    score_target_gap,
+    score_theme,
     score_beneficiary,
+    # 이벤트
+    score_est_revision,
+    score_target_gap,
+    score_rumor,
+    score_insider,
+    # 품질/가치
+    score_fscore,
+    score_fcf_yield,
+    score_roic,
+    score_accruals,
+    score_undervalued,
     score_earnings,
+    # 정성
+    score_governance,
     score_blog,
 ]
 
 
 def evaluate_all(stock: Stock) -> list[CriterionResult]:
-    """한 종목을 8개 기준으로 모두 평가."""
+    """한 종목을 모든 기준으로 평가."""
     return [fn(stock) for fn in ALL_CRITERIA]

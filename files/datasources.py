@@ -41,6 +41,7 @@ from collections import defaultdict
 from .models import (
     Stock, FinancialData, TechData, SentimentData,
     AnalystData, ThemeData, BeneficiaryData, BlogData,
+    QualityData, AnalystExtData, GovernanceData, InsiderData, RedFlagData,
 )
 from . import indicators as ind
 
@@ -121,9 +122,39 @@ class MockDataSource(DataSource):
         rev.reverse()                          # [0]이 최신이 되도록
         op = [v * r.uniform(0.08, 0.25) for v in rev]
 
+        # 일봉 종가 시계열(약 260거래일) 생성 — 모멘텀/변동성/리드-래그용
+        drift = r.uniform(-0.0008, 0.0018)     # 종목별 추세
+        vol_daily = r.uniform(0.012, 0.035)    # 종목별 변동성
+        closes = self._synth_closes(price, 260, drift, vol_daily)
+        mom = ind.momentum_12_1(closes)
+        volat = ind.annualized_volatility(closes)
+
+        # 재무제표 기반 품질팩터 입력(Mock) — 실데이터 연동 전 데모용
+        total_assets = base * r.uniform(8, 20)
+        net_income = op[0] * r.uniform(0.6, 0.9)
+        cfo = net_income * r.uniform(0.7, 1.4)
+        quality = QualityData(
+            roa=net_income / total_assets * 100, roa_prev=r.uniform(2, 12),
+            cfo=cfo, net_income=net_income,
+            leverage=r.uniform(0.1, 0.5), leverage_prev=r.uniform(0.1, 0.5),
+            current_ratio=r.uniform(0.9, 2.5), current_ratio_prev=r.uniform(0.9, 2.5),
+            shares_out=1e8, shares_out_prev=1e8 * r.uniform(0.98, 1.03),
+            gross_margin=r.uniform(15, 45), gross_margin_prev=r.uniform(15, 45),
+            asset_turnover=r.uniform(0.4, 1.2), asset_turnover_prev=r.uniform(0.4, 1.2),
+            fcf=cfo - base * r.uniform(0.05, 0.2),
+            market_cap=total_assets * r.uniform(0.8, 3.0),  # 재무제표와 단위 정합
+            nopat=op[0] * 0.78, invested_capital=total_assets * r.uniform(0.5, 0.8),
+            wacc=r.uniform(6, 11),
+            working_capital=total_assets * r.uniform(0.05, 0.3),
+            retained_earnings=total_assets * r.uniform(0.1, 0.5),
+            ebit=op[0], total_assets=total_assets,
+            total_liabilities=total_assets * r.uniform(0.2, 0.7),
+            sales=rev[0],
+        )
+
         leader_pool = [u[0] for u in (_KR_UNIVERSE if self.market == "KR" else _US_UNIVERSE)
                        if u[0] != ticker]
-
+        has_leader = r.random() > 0.4
         return Stock(
             ticker=ticker, name=name, market=self.market, currency=currency,
             financial=FinancialData(
@@ -138,17 +169,18 @@ class MockDataSource(DataSource):
                 op_income_quarters=op,
             ),
             tech=TechData(
-                current_price=price,
+                current_price=closes[-1],
                 volume=r.uniform(1e6, 2e7),
                 avg_volume_20d=r.uniform(1e6, 1e7),
-                price_change_5d=r.uniform(-12, 25),
-                rsi_14=r.uniform(20, 80),
+                price_change_5d=ind.pct_change(closes, 5),
+                rsi_14=ind.rsi(closes),
                 macd=r.uniform(-2, 2),
                 macd_signal=r.uniform(-2, 2),
                 macd_prev_diff=r.uniform(-1.5, 1.5),
-                bb_position=r.uniform(0, 1),
+                bb_position=ind.bollinger_position(closes),
                 ma20=price * r.uniform(0.95, 1.05),
                 ma60=price * r.uniform(0.9, 1.1),
+                mom_12_1=mom, volatility=volat, closes=closes,
             ),
             sentiment=SentimentData(
                 news_count_today=r.randint(0, 30),
@@ -166,17 +198,48 @@ class MockDataSource(DataSource):
                 sector_strength_pct=r.uniform(20, 99),
             ),
             beneficiary=BeneficiaryData(
-                leader_ticker=r.choice(leader_pool) if r.random() > 0.4 else None,
+                leader_ticker=r.choice(leader_pool) if has_leader else None,
                 leader_change_5d=r.uniform(5, 35),
                 own_change_5d=r.uniform(-3, 12),
                 correlation=r.uniform(0.3, 0.9),
+                lead_lag_days=r.randint(1, 4) if has_leader and r.random() > 0.4 else 0,
+                lead_lag_corr=r.uniform(0.3, 0.7) if has_leader else 0.0,
             ),
             blog=BlogData(
                 mention_count_7d=r.randint(0, 9),
                 source_count=r.randint(0, 4),
                 days_since_last=r.uniform(0, 8),
             ),
+            quality=quality,
+            analyst_ext=AnalystExtData(
+                estimate_revision_pct=r.uniform(-5, 10),
+                earnings_surprise_pct=r.uniform(-3, 12),
+                days_since_earnings=r.uniform(1, 60),
+            ),
+            governance=GovernanceData(
+                total_payout_ratio=r.uniform(0, 12) if self.market == "KR" else r.uniform(0, 8),
+                buyback_cancel=r.random() > 0.7,
+                valueup_enrolled=r.random() > 0.6 if self.market == "KR" else None,
+                governance_score=r.uniform(30, 90),
+            ) if self.market == "KR" or r.random() > 0.5 else GovernanceData(),
+            insider=InsiderData(
+                net_insider_buy_90d=r.uniform(-1e9, 3e9),
+                buyer_count_90d=r.randint(0, 4),
+            ),
         )
+
+    @staticmethod
+    def _synth_closes(last_price: float, n: int, drift: float, vol: float) -> list[float]:
+        """기하 브라운 운동 비슷한 합성 종가 시계열(과거→최신). 마지막이 현재가 근처."""
+        import random as _rnd
+        rng = _rnd.Random(hash((round(last_price, 2), n)) & 0xFFFFFFFF)
+        # 현재가에서 거꾸로 생성 후 뒤집기
+        prices = [last_price]
+        for _ in range(n - 1):
+            step = drift + vol * rng.gauss(0, 1)
+            prices.append(prices[-1] / (1.0 + step))
+        prices.reverse()
+        return [max(1.0, p) for p in prices]
 
 
 # ---------------------------------------------------------------------------
@@ -320,9 +383,10 @@ class KoreaDataSource(DataSource):
             "sector": o.get("bstp_kor_isnm", ""),
         }
 
-    def _daily(self, ticker: str, days: int = 120) -> tuple[list[float], list[float]]:
+    def _daily(self, ticker: str, days: int = 400) -> tuple[list[float], list[float]]:
+        # 모멘텀(12-1)에 ~252거래일 필요 → 달력일 400일(≈280거래일) 조회
         end = dt.date.today()
-        start = end - dt.timedelta(days=days * 2)   # 휴장일 감안해 넉넉히
+        start = end - dt.timedelta(days=days)
         d = self._get("/uapi/domestic-stock/v1/quotations/inquire-daily-itemchartprice",
                       "FHKST03010100",
                       {"FID_COND_MRKT_DIV_CODE": "J", "FID_INPUT_ISCD": ticker,
@@ -418,13 +482,20 @@ class KoreaDataSource(DataSource):
                     bb_position=ind.bollinger_position(closes),
                     ma20=avg(closes[-20:]) if closes else 0.0,
                     ma60=avg(closes[-60:]) if closes else 0.0,
+                    # LIVE: 일봉으로 중기 모멘텀·변동성 계산
+                    mom_12_1=ind.momentum_12_1(closes),
+                    volatility=ind.annualized_volatility(closes),
+                    closes=closes,
                 ),
-                # 아래는 KIS 외 소스 필요 → 중립 기본값(엔진이 자동으로 저점수 처리)
+                # 아래는 KIS 외 소스 필요 → 중립 기본값(엔진이 자동으로 제외 처리)
                 sentiment=SentimentData(0, 1.0, 0.0, 0.0),
                 analyst=AnalystData(target_mean=0.0, num_analysts=0),   # TODO: 네이버/FnGuide 목표가
                 theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),
+                # TODO(데이터 연동): quality(DART 재무제표 → F-Score/FCF/ROIC/Altman/Accruals),
+                #   analyst_ext(FnGuide 추정치), governance(DART 배당·자사주·밸류업),
+                #   insider(DART 지분변동), red_flag(감사의견·감사인교체)
             ))
         log.info("[KR] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks
@@ -488,7 +559,8 @@ class USDataSource(DataSource):
         rsi_v = self._td("rsi", ticker, {"interval": "1day", "time_period": 14, "outputsize": 1})
         macd_v = self._td("macd", ticker, {"interval": "1day", "outputsize": 2})
         bb_v = self._td("bbands", ticker, {"interval": "1day", "time_period": 20, "outputsize": 1})
-        ts = self._td("time_series", ticker, {"interval": "1day", "outputsize": 10})
+        # 모멘텀(12-1)·변동성 계산 위해 ~290거래일 조회 (콜 수 증가 없음, outputsize만 ↑)
+        ts = self._td("time_series", ticker, {"interval": "1day", "outputsize": 290})
 
         price = _f(quote.get("close"))
         # RSI
@@ -505,12 +577,13 @@ class USDataSource(DataSource):
         lower = _f(bvals[0].get("lower_band")) if bvals else 0.0
         bb_pos = (price - lower) / (upper - lower) if upper > lower else 0.5
         bb_pos = max(0.0, min(1.0, bb_pos))
-        # 5일 등락률
+        # 5일 등락률 + 종가 시계열(과거→최신)
         tvals = ts.get("values", [])
         closes_newest_first = [_f(v.get("close")) for v in tvals]
         change_5d = 0.0
         if len(closes_newest_first) > 5 and closes_newest_first[5]:
             change_5d = (closes_newest_first[0] / closes_newest_first[5] - 1.0) * 100.0
+        closes = [c for c in reversed(closes_newest_first) if c > 0]
 
         return {
             "price": price,
@@ -518,6 +591,9 @@ class USDataSource(DataSource):
             "avg_volume": _f(quote.get("average_volume"), _f(quote.get("volume"))),
             "rsi": rsi, "macd": macd_last, "macd_signal": macd_sig, "macd_prev": macd_prev,
             "bb_pos": bb_pos, "change_5d": change_5d,
+            "closes": closes,
+            "mom_12_1": ind.momentum_12_1(closes),
+            "volatility": ind.annualized_volatility(closes),
         }
 
     # --- Alpha Vantage: 펀더멘털 & 목표가 ----------------------------------
@@ -614,6 +690,10 @@ class USDataSource(DataSource):
                     macd_prev_diff=tech.get("macd_prev", 0.0),
                     bb_position=tech.get("bb_pos", 0.5),
                     ma20=price, ma60=price,
+                    # LIVE: Twelve Data 일봉으로 중기 모멘텀·변동성 계산
+                    mom_12_1=tech.get("mom_12_1"),
+                    volatility=tech.get("volatility"),
+                    closes=tech.get("closes", []),
                 ),
                 sentiment=SentimentData(
                     news_count_today=news, avg_news_count=5.0,
@@ -626,6 +706,9 @@ class USDataSource(DataSource):
                 theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),
+                # TODO(데이터 연동): quality(Alpha Vantage BALANCE_SHEET+CASH_FLOW 또는 FMP →
+                #   F-Score/FCF/ROIC/Altman/Accruals), analyst_ext(Finnhub 추정치·서프라이즈),
+                #   insider(Finnhub Form4), red_flag
             ))
         log.info("[US] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks

@@ -404,25 +404,43 @@ fun DisclaimerCard() {
 }
 
 fun criterionColor(key: String): Color = when (key) {
-    "undervalued" -> Color(0xFF16A34A)   // 초록
-    "theme"       -> Color(0xFFA855F7)   // 보라
-    "rumor"       -> Color(0xFFEF4444)   // 빨강
-    "quant"       -> Color(0xFF0EA5E9)   // 하늘
-    "target_gap"  -> Color(0xFFF97316)   // 주황
-    "beneficiary" -> Color(0xFF6366F1)   // 인디고
-    "earnings"    -> Color(0xFF10B981)   // 에메랄드
-    "blog"        -> Color(0xFFF59E0B)   // 앰버
-    else          -> Color(0xFF6B7280)
+    "undervalued"  -> Color(0xFF16A34A)   // 초록
+    "theme"        -> Color(0xFFA855F7)   // 보라
+    "rumor"        -> Color(0xFFEF4444)   // 빨강
+    "quant"        -> Color(0xFF0EA5E9)   // 하늘
+    "target_gap"   -> Color(0xFFF97316)   // 주황
+    "beneficiary"  -> Color(0xFF6366F1)   // 인디고
+    "earnings"     -> Color(0xFF10B981)   // 에메랄드
+    "blog"         -> Color(0xFFF59E0B)   // 앰버
+    // v2 확장 팩터
+    "mom_12_1"     -> Color(0xFF2563EB)   // 블루 (모멘텀)
+    "fscore"       -> Color(0xFF059669)   // 딥그린 (퀄리티)
+    "fcf_yield"    -> Color(0xFF0D9488)   // 틸
+    "roic"         -> Color(0xFF7C3AED)   // 바이올렛
+    "accruals"     -> Color(0xFF65A30D)   // 라임
+    "est_revision" -> Color(0xFFDB2777)   // 핑크 (이벤트)
+    "governance"   -> Color(0xFF0891B2)   // 시안 (국장 특화)
+    "insider"      -> Color(0xFFCA8A04)   // 골드
+    else           -> Color(0xFF6B7280)
 }
 
 fun criterionEmoji(key: String): String = when (key) {
-    "undervalued" -> "💎"
-    "theme"       -> "🔥"
-    "rumor"       -> "📡"
-    "quant"       -> "📊"
-    "target_gap"  -> "🎯"
-    "beneficiary" -> "🔗"
-    "earnings"    -> "📈"
-    "blog"        -> "📰"
-    else          -> "•"
+    "undervalued"  -> "💎"
+    "theme"        -> "🔥"
+    "rumor"        -> "📡"
+    "quant"        -> "📊"
+    "target_gap"   -> "🎯"
+    "beneficiary"  -> "🔗"
+    "earnings"     -> "📈"
+    "blog"         -> "📰"
+    // v2 확장 팩터
+    "mom_12_1"     -> "🚀"
+    "fscore"       -> "🏅"
+    "fcf_yield"    -> "💵"
+    "roic"         -> "⚙️"
+    "accruals"     -> "🧾"
+    "est_revision" -> "🔼"
+    "governance"   -> "🏛️"
+    "insider"      -> "🤝"
+    else           -> "•"
 }

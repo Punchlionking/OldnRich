@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-09T14:29:48.430381+00:00",
+  "generated_at": "2026-06-09T14:55:19.474903+00:00",
   "version": 1,
   "markets": {
     "KR": [
@@ -9,7 +9,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 1296000,
-        "overall_score": 78.6,
+        "overall_score": 61.9,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -25,6 +25,33 @@
             "available": true
           },
           {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 18.9% vs WACC 8.5% → 스프레드 +10.4%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 71.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "undervalued",
             "label": "저평가 우량주",
             "score": 51.1,
@@ -36,12 +63,12 @@
         ]
       },
       {
-        "ticker": "068270",
-        "name": "셀트리온",
+        "ticker": "105560",
+        "name": "KB금융",
         "market": "KR",
         "currency": "KRW",
-        "current_price": 170000,
-        "overall_score": 70.1,
+        "current_price": 154800,
+        "overall_score": 61.8,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -50,18 +77,18 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 48.9,
+            "score": 61.3,
             "horizon": "단기",
-            "reason": "RSI 41, 볼린저밴드 위치 18%(하단 지지)",
+            "reason": "RSI 49, 볼린저밴드 위치 46%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 66.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 44.4·PBR 5.2 대비 PER 40.1·PBR 2.3로 33% 저평가, ROE 7%·영업이익률 28%로 수익성 양호",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 74.7,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +27% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -73,18 +100,36 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 322000,
-        "overall_score": 49.1,
-        "target_horizon": "장기",
-        "primary_criterion": "undervalued",
-        "primary_label": "저평가 우량주",
+        "overall_score": 59.0,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "보통",
         "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +95% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
             "score": 95.5,
             "horizon": "장기",
             "reason": "업종 평균 PER 167.5·PBR 7.9 대비 PER 49.1·PBR 5.0로 54% 저평가, ROE 19%·영업이익률 43%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 85.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
@@ -96,27 +141,13 @@
             "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +69%",
             "risk": "보통",
             "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "000270",
-        "name": "기아",
-        "market": "KR",
-        "currency": "KRW",
-        "current_price": 164300,
-        "overall_score": 44.8,
-        "target_horizon": "장기",
-        "primary_criterion": "undervalued",
-        "primary_label": "저평가 우량주",
-        "risk_level": "보통",
-        "reasons": [
+          },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 70.2,
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
             "horizon": "장기",
-            "reason": "업종 평균 PER 20.8·PBR 2.6 대비 PER 8.6·PBR 1.0로 60% 저평가, ROE 12%·영업이익률 7%로 수익성 양호",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           }
@@ -128,18 +159,54 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 2215000,
-        "overall_score": 38.3,
-        "target_horizon": "장기",
-        "primary_criterion": "earnings",
-        "primary_label": "꾸준한 실적 성장",
+        "overall_score": 55.8,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "보통",
         "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +122% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
           {
             "key": "earnings",
             "label": "꾸준한 실적 성장",
             "score": 40.0,
             "horizon": "장기",
             "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +198%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 26.5% vs WACC 8.5% → 스프레드 +18.0%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 79.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
@@ -153,6 +220,47 @@
             "available": true
           }
         ]
+      },
+      {
+        "ticker": "035420",
+        "name": "NAVER",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 257000,
+        "overall_score": 38.8,
+        "target_horizon": "장기",
+        "primary_criterion": "fcf_yield",
+        "primary_label": "FCF 수익률",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 57.7,
+            "horizon": "장기",
+            "reason": "FCF 수익률 4.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 65.5,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 46.8,
+            "horizon": "단기",
+            "reason": "RSI 60, 볼린저밴드 위치 77%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
       }
     ],
     "US": [
@@ -161,7 +269,7 @@
         "name": "Amazon",
         "market": "US",
         "currency": "USD",
-        "current_price": 247.72,
+        "current_price": 246.25,
         "overall_score": 71.3,
         "target_horizon": "단기",
         "primary_criterion": "quant",
@@ -171,9 +279,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 54.3,
+            "score": 57.8,
             "horizon": "단기",
-            "reason": "RSI 40, 볼린저밴드 위치 10%(하단 지지)",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 6%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -193,8 +301,8 @@
         "name": "Apple",
         "market": "US",
         "currency": "USD",
-        "current_price": 294.28,
-        "overall_score": 70.4,
+        "current_price": 293.62,
+        "overall_score": 68.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -203,9 +311,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 48.7,
+            "score": 50.5,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 8%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 6%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -225,7 +333,7 @@
         "name": "Alphabet",
         "market": "US",
         "currency": "USD",
-        "current_price": 367.29,
+        "current_price": 365.32,
         "overall_score": 64.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
@@ -244,9 +352,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 41.8,
+            "score": 45.0,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 21%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 17%(하단 지지)",
             "risk": "보통",
             "available": true
           }
@@ -257,8 +365,8 @@
         "name": "NVIDIA",
         "market": "US",
         "currency": "USD",
-        "current_price": 207.15,
-        "overall_score": 61.0,
+        "current_price": 207.56,
+        "overall_score": 58.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -276,9 +384,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 46.8,
+            "score": 45.9,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 12%(하단 지지)",
+            "reason": "RSI 46, 볼린저밴드 위치 13%(하단 지지)",
             "risk": "보통",
             "available": true
           }
@@ -289,7 +397,7 @@
         "name": "UnitedHealth",
         "market": "US",
         "currency": "USD",
-        "current_price": 412.07,
+        "current_price": 411.1,
         "overall_score": 36.6,
         "target_horizon": "단기",
         "primary_criterion": "rumor",
@@ -299,7 +407,7 @@
           {
             "key": "rumor",
             "label": "호재 모멘텀",
-            "score": 31.9,
+            "score": 31.6,
             "horizon": "단기",
             "reason": "거래량 20일 평균 대비 0.0배, 최근 5일 +9%, 뉴스량 17.4배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
             "risk": "높음",

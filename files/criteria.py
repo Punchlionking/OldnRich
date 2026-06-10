@@ -327,10 +327,26 @@ def score_est_revision(s: Stock) -> CriterionResult:
     surp = e.earnings_surprise_pct or 0.0
     rev_score = _scale(rev, -2.0, T.EST_REVISION_GOOD)
     surp_score = _scale(surp, 0.0, 10.0)
-    score = 0.6 * rev_score + 0.4 * surp_score
+
+    # PEAD 감쇠: 어닝 서프라이즈의 표류 효과는 발표 후 ~45일 강하고 이후 약화.
+    days = e.days_since_earnings
+    decay = 1.0
+    if days is not None:
+        if days <= 45:
+            decay = 1.0
+        elif days >= 120:
+            decay = 0.2
+        else:
+            decay = 1.0 - 0.8 * (days - 45) / 75.0
+    surp_score *= decay
+
+    score = 0.55 * rev_score + 0.45 * surp_score
+    drift = ""
+    if surp and days is not None and days <= 60:
+        drift = f" (발표 {days:.0f}일 경과, 표류 유효구간)"
     reason = (
-        f"EPS 추정치 {rev:+.1f}% 조정"
-        + (f", 직전 실적 컨센서스 {surp:+.1f}% 상회" if surp else "")
+        f"애널리스트 강세 비중 {rev:+.1f}%p 변화"
+        + (f", 직전 실적 컨센서스 {surp:+.1f}% 상회{drift}" if surp else "")
         + " — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)"
     )
     return _result("est_revision", score, reason)

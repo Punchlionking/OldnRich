@@ -952,6 +952,67 @@ class USDataSource(DataSource):
             total_accruals=ratio((ni - cfo) if (ni is not None and cfo is not None) else None, ta),
         )
 
+    def _us_analyst_ext(self, ticker: str) -> AnalystExtData:
+        """
+        Finnhub로 PEAD 신호:
+          · /stock/earnings        → 최근 어닝 서프라이즈(%) + 발표 후 경과일
+          · /stock/recommendation  → 애널리스트 강세 비중의 전월 대비 변화(추정치 방향 프록시)
+        """
+        if not self.finnhub_key:
+            return AnalystExtData()
+        surprise_pct = None
+        days_since = None
+        revision_pp = None
+        # 어닝 서프라이즈
+        try:
+            er = self._get(f"{self.FH_BASE}/stock/earnings",
+                           {"symbol": ticker, "limit": 6, "token": self.finnhub_key})
+            if isinstance(er, list):
+                today = dt.date.today()
+                for e0 in er:                       # 최신순 → 이미 '발표된' 최근 실적 선택
+                    if e0.get("actual") is None:
+                        continue                    # 미래/미발표 분기 건너뜀
+                    period = e0.get("period")
+                    d0 = None
+                    if period:
+                        try:
+                            d0 = dt.date.fromisoformat(period)
+                        except Exception:
+                            d0 = None
+                    if d0 is not None and d0 > today:
+                        continue                    # 분기말이 미래면 건너뜀
+                    sp = e0.get("surprisePercent")
+                    surprise_pct = float(sp) if sp is not None else None
+                    if d0 is not None:
+                        days_since = float((today - d0).days)
+                    break
+        except Exception as e:
+            log.warning("[US] %s 어닝 조회 실패: %s", ticker, e)
+        # 추천 트렌드 변화(강세 비중 전월 대비)
+        try:
+            rec = self._get(f"{self.FH_BASE}/stock/recommendation",
+                            {"symbol": ticker, "token": self.finnhub_key})
+            if isinstance(rec, list) and len(rec) >= 2:
+                def bull_frac(x):
+                    tot = (x.get("strongBuy", 0) + x.get("buy", 0) + x.get("hold", 0)
+                           + x.get("sell", 0) + x.get("strongSell", 0))
+                    if tot <= 0:
+                        return None
+                    return (x.get("strongBuy", 0) + x.get("buy", 0)) / tot * 100.0
+                now, prev = bull_frac(rec[0]), bull_frac(rec[1])
+                if now is not None and prev is not None:
+                    revision_pp = now - prev
+        except Exception as e:
+            log.warning("[US] %s 추천트렌드 조회 실패: %s", ticker, e)
+
+        if surprise_pct is None and revision_pp is None:
+            return AnalystExtData()
+        return AnalystExtData(
+            estimate_revision_pct=revision_pp,
+            earnings_surprise_pct=surprise_pct,
+            days_since_earnings=days_since,
+        )
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.alpha_key or self.twelve_key):
@@ -967,7 +1028,8 @@ class USDataSource(DataSource):
                 # Finnhub 재무제표 → 품질 팩터 (시총은 AV OVERVIEW, 없으면 price×0)
                 quality = self._us_quality(
                     ticker, tech.get("price", 0.0), fund.get("market_cap", 0.0))
-                raw.append((ticker, name, themes, tech, fund, news, quality))
+                analyst_ext = self._us_analyst_ext(ticker)   # PEAD: 서프라이즈+추정치 방향
+                raw.append((ticker, name, themes, tech, fund, news, quality, analyst_ext))
             except Exception as e:
                 log.warning("[US] %s 수집 실패: %s", ticker, e)
 
@@ -977,7 +1039,7 @@ class USDataSource(DataSource):
 
         # 섹터 평균 PER/PBR
         per_by_sector, pbr_by_sector = defaultdict(list), defaultdict(list)
-        for _, _, _, _, fund, _, _ in raw:
+        for _, _, _, _, fund, _, _, _ in raw:
             sec = fund.get("sector", "")
             if fund.get("per", 0) > 0:
                 per_by_sector[sec].append(fund["per"])
@@ -988,7 +1050,7 @@ class USDataSource(DataSource):
             return sum(xs) / len(xs) if xs else 0.0
 
         stocks = []
-        for ticker, name, themes, tech, fund, news, quality in raw:
+        for ticker, name, themes, tech, fund, news, quality, analyst_ext in raw:
             sec = fund.get("sector", "")
             price = tech.get("price", 0.0)
             stocks.append(Stock(
@@ -1029,8 +1091,9 @@ class USDataSource(DataSource):
                 blog=BlogData(),
                 # Finnhub 재무제표 → F-Score/FCF/ROIC/Altman/Accruals (LIVE)
                 quality=quality,
-                # TODO(추가 데이터): analyst_ext(Finnhub 추정치·서프라이즈),
-                #   insider(Finnhub Form4), red_flag
+                # Finnhub → 어닝 서프라이즈·추정치 방향(PEAD) (LIVE)
+                analyst_ext=analyst_ext,
+                # TODO(추가 데이터): insider(Finnhub Form4), red_flag
             ))
         log.info("[US] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks

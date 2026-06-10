@@ -510,7 +510,38 @@ class KoreaDataSource(DataSource):
 
     # --- DART 재무제표 (품질 팩터: F-Score/FCF/ROIC/Altman/Accruals) --------
     DART_BASE = "https://opendart.fss.or.kr/api"
+    NAVER_BASE = "https://m.stock.naver.com/api/stock"   # 컨센서스 목표주가(약관 확인 필요)
     WACC_DEFAULT_KR = 8.5   # ROIC 비교용 자본비용 가정치(%). 추후 베타 기반 산출로 대체 가능.
+
+    def _naver_consensus(self, ticker: str) -> dict | None:
+        """
+        네이버 금융 컨센서스 → 목표주가 '상승여력 비율'과 추정 리포트 수.
+
+        ⚠ 네이버 약관상 비공식 사용이므로 배포 전 검토 필요.
+        목표주가/현재가를 '같은(실거래) 스케일'에서 비율로 계산해 반환 →
+        호출측이 KIS 가격에 곱해 절대값 불일치(모의가 vs 실거래가) 문제를 회피.
+        """
+        hdr = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+        try:
+            ic = self._requests().get(f"{self.NAVER_BASE}/{ticker}/integration",
+                                      headers=hdr, timeout=10).json()
+        except Exception as e:
+            log.warning("[KR] 네이버 컨센서스 조회 실패 %s: %s", ticker, e)
+            return None
+        c = ic.get("consensusInfo") or {}
+        target = _f((c.get("priceTargetMean") or "").replace(",", ""))
+        num = len(ic.get("researches") or [])
+        if target <= 0:
+            return None
+        try:
+            bc = self._requests().get(f"{self.NAVER_BASE}/{ticker}/basic",
+                                      headers=hdr, timeout=10).json()
+            nprice = _f((bc.get("closePrice") or "").replace(",", ""))
+        except Exception:
+            nprice = 0.0
+        if nprice <= 0:
+            return None
+        return {"upside": target / nprice - 1.0, "num": num}
 
     def _load_corp_map(self) -> dict:
         """DART corpCode.xml(zip) 1회 다운로드 → {종목코드6자리: 고유번호8자리}."""
@@ -768,8 +799,9 @@ class KoreaDataSource(DataSource):
                     quality = self._build_quality(fin, q["price"], q.get("shares", 0.0))
                     governance = self._dart_governance(corp)
                     insider = self._dart_insider(corp)
+                naver = self._naver_consensus(ticker)   # 컨센서스 목표가(상승여력)
                 raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op,
-                            quality, governance, insider))
+                            quality, governance, insider, naver))
             except Exception as e:
                 log.warning("[KR] %s 수집 실패: %s", ticker, e)
 
@@ -790,9 +822,18 @@ class KoreaDataSource(DataSource):
 
         stocks = []
         for (ticker, name, themes, q, closes, vols, roe, opm, rev, op,
-             quality, governance, insider) in raw:
+             quality, governance, insider, naver) in raw:
             avg_vol20 = avg(vols[-20:]) if vols else q["volume"]
             macd_last, macd_sig, macd_prev = ind.macd(closes)
+            # 네이버 컨센서스 상승여력을 KIS 가격에 적용(스케일 일치)
+            kis_price = q["price"] or (closes[-1] if closes else 0.0)
+            if naver and kis_price > 0:
+                analyst = AnalystData(
+                    target_mean=kis_price * (1.0 + naver["upside"]),
+                    num_analysts=max(3, min(naver["num"], 25)) if naver["num"] else 5,
+                )
+            else:
+                analyst = AnalystData(target_mean=0.0, num_analysts=0)
             stocks.append(Stock(
                 ticker=ticker, name=name, market="KR", currency="KRW",
                 financial=FinancialData(
@@ -818,7 +859,7 @@ class KoreaDataSource(DataSource):
                 ),
                 # 아래는 KIS 외 소스 필요 → 중립 기본값(엔진이 자동으로 제외 처리)
                 sentiment=SentimentData(0, 1.0, 0.0, 0.0),
-                analyst=AnalystData(target_mean=0.0, num_analysts=0),   # TODO: 네이버/FnGuide 목표가
+                analyst=analyst,   # 네이버 컨센서스 목표가 (LIVE)
                 theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),

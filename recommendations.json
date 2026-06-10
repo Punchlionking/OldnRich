@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-10T13:06:41.541253+00:00",
-  "version": 1,
+  "generated_at": "2026-06-10T13:54:07.191977+00:00",
+  "version": 2,
   "markets": {
     "KR": [
       {
@@ -8,132 +8,19 @@
         "name": "KB금융",
         "market": "KR",
         "currency": "KRW",
-        "current_price": 108023,
-        "overall_score": 65.8,
+        "current_price": 154000,
+        "overall_score": 60.9,
         "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "보통",
         "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 88.9,
-            "horizon": "단기",
-            "reason": "RSI 44, MACD 골든크로스 발생, 볼린저밴드 위치 3%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "blog",
-            "label": "신뢰 소스 언급",
-            "score": 87.9,
-            "horizon": "중기",
-            "reason": "신뢰 소스 4곳에서 최근 7일간 7회 언급 (최근 언급 4일 전)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 51.3,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 83.5,
+            "score": 36.9,
             "horizon": "단기",
-            "reason": "'금융' 테마 거래량이 평소 대비 2.5배 급증, 섹터 강도 상위 41%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 40.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 4.0배, 최근 5일 -3%, 뉴스량 0.4배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 61.7,
-            "horizon": "중기",
-            "reason": "EPS 추정치 +1.4% 조정, 직전 실적 컨센서스 +8.2% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 78.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 19.8·PBR 1.8 대비 PER 15.1·PBR 0.7로 42% 저평가, ROE 24%·영업이익률 8%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 55.0,
-            "horizon": "장기",
-            "reason": "최근 2분기 연속 매출·영업이익 동반 증가, 매출 YoY +50%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "governance",
-            "label": "지배구조·주주환원",
-            "score": 49.6,
-            "horizon": "중기",
-            "reason": "총주주환원율 8.4% — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 42.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 005930 최근 5일 +8% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.72(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "005930",
-        "name": "삼성전자",
-        "market": "KR",
-        "currency": "KRW",
-        "current_price": 91154,
-        "overall_score": 56.3,
-        "target_horizon": "중기",
-        "primary_criterion": "beneficiary",
-        "primary_label": "간접 수혜주(리드-래그)",
-        "risk_level": "보통",
-        "reasons": [
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 77.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 247540 최근 5일 +24% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 대장주를 약 2일 시차로 추종(시차상관 0.48)",
+            "reason": "'금융' 테마 거래량이 평소 대비 0.9배 급증, 섹터 강도 상위 8%",
             "risk": "보통",
             "available": true
           },
@@ -147,187 +34,29 @@
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "blog",
-            "label": "신뢰 소스 언급",
-            "score": 82.5,
-            "horizon": "중기",
-            "reason": "신뢰 소스 4곳에서 최근 7일간 4회 언급 (최근 언급 2일 전)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "governance",
             "label": "지배구조·주주환원",
-            "score": 76.1,
+            "score": 63.4,
             "horizon": "중기",
-            "reason": "총주주환원율 9.9%, 자사주 소각 — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
+            "reason": "총주주환원율 27.0%, 자사주 소각 — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 46.0,
-            "horizon": "단기",
-            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 36%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 51.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 40.0,
-            "horizon": "장기",
-            "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +45%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 50.1,
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 77.7,
             "horizon": "중기",
-            "reason": "EPS 추정치 -0.1% 조정, 직전 실적 컨센서스 +8.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 46.5,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 12.3·PBR 2.2 대비 PER 15.1·PBR 3.0로 -30% 저평가, ROE 24%·영업이익률 22%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "042700",
-        "name": "한미반도체",
-        "market": "KR",
-        "currency": "KRW",
-        "current_price": 113913,
-        "overall_score": 55.7,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 52.6,
-            "horizon": "단기",
-            "reason": "RSI 45, 볼린저밴드 위치 30%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 45.2,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 7.0배, 최근 5일 -1%, 뉴스량 1.7배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 96.1,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 22.2·PBR 3.1 대비 PER 12.5·PBR 0.8로 59% 저평가, ROE 22%·영업이익률 18%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "governance",
-            "label": "지배구조·주주환원",
-            "score": 76.8,
-            "horizon": "중기",
-            "reason": "총주주환원율 4.3%, 밸류업 편입, 자사주 소각 — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 55.0,
-            "horizon": "장기",
-            "reason": "최근 2분기 연속 매출·영업이익 동반 증가, 매출 YoY +67%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 61.0,
-            "horizon": "단기",
-            "reason": "'반도체' 테마 거래량이 평소 대비 1.6배 급증, 섹터 강도 상위 5%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 56.8,
-            "horizon": "중기",
-            "reason": "EPS 추정치 +3.1% 조정, 직전 실적 컨센서스 +3.2% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +29% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 62.7,
+            "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 135,346 vs 현재가 113,913, 상승여력 +19% (애널리스트 15명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "blog",
-            "label": "신뢰 소스 언급",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "신뢰 소스 0곳에서 최근 7일간 8회 언급 (최근 언급 5일 전)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 49.4,
-            "horizon": "장기",
-            "reason": "발생액 비율 +0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "증권사 평균 목표가 203,053 vs 현재가 154,000, 상승여력 +32% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           }
@@ -338,94 +67,248 @@
         "name": "삼성바이오로직스",
         "market": "KR",
         "currency": "KRW",
-        "current_price": 114121,
-        "overall_score": 54.1,
-        "target_horizon": "중기",
-        "primary_criterion": "est_revision",
-        "primary_label": "추정치 상향·서프라이즈",
+        "current_price": 1298000,
+        "overall_score": 56.4,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
         "risk_level": "보통",
         "reasons": [
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 85.6,
-            "horizon": "중기",
-            "reason": "EPS 추정치 +3.3% 조정, 직전 실적 컨센서스 +11.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "최근 5분기 연속 매출·영업이익 동반 증가, 매출 YoY +44%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "governance",
-            "label": "지배구조·주주환원",
-            "score": 84.9,
-            "horizon": "중기",
-            "reason": "총주주환원율 10.5%, 밸류업 편입 — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 173,077 vs 현재가 114,121, 상승여력 +52% (애널리스트 7명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 47.1,
+            "score": 57.0,
             "horizon": "단기",
-            "reason": "RSI 59, 볼린저밴드 위치 95%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 14%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "blog",
-            "label": "신뢰 소스 언급",
-            "score": 54.7,
-            "horizon": "중기",
-            "reason": "신뢰 소스 0곳에서 최근 7일간 8회 언급 (최근 언급 5일 전)",
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 44.9,
-            "horizon": "단기",
-            "reason": "'바이오' 테마 거래량이 평소 대비 1.8배 급증, 섹터 강도 상위 68%",
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 18.9% vs WACC 8.5% → 스프레드 +10.4%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 50.3,
+            "score": 71.0,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 2,083,500 vs 현재가 1,298,000, 상승여력 +61% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 51.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 44.2·PBR 5.2 대비 PER 48.9·PBR 8.1로 -34% 저평가, ROE 20%·영업이익률 46%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "068270",
-        "name": "셀트리온",
+        "ticker": "005930",
+        "name": "삼성전자",
         "market": "KR",
         "currency": "KRW",
-        "current_price": 83058,
-        "overall_score": 49.5,
+        "current_price": 302500,
+        "overall_score": 53.8,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +93% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 95.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 163.0·PBR 7.6 대비 PER 46.1·PBR 4.7로 55% 저평가, ROE 19%·영업이익률 43%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 85.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 45.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 042700 최근 5일 -2% 급등, 본 종목은 -16%에 그쳐 갭 존재 — 동시점 상관 0.58(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 40.0,
+            "horizon": "장기",
+            "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +69%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "governance",
+            "label": "지배구조·주주환원",
+            "score": 61.3,
+            "horizon": "중기",
+            "reason": "총주주환원율 25.1%, 자사주 소각 — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 427,917 vs 현재가 302,500, 상승여력 +41% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "000660",
+        "name": "SK하이닉스",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 2048000,
+        "overall_score": 53.6,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +125% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 40.0,
+            "horizon": "장기",
+            "reason": "최근 0분기 연속 매출·영업이익 동반 증가, 매출 YoY +198%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 85.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 3명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 71.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 163.0·PBR 7.6 대비 PER 34.7·PBR 11.7로 12% 저평가, ROE 61%·영업이익률 72%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 26.5% vs WACC 8.5% → 스프레드 +18.0%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 79.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 2,712,083 vs 현재가 2,048,000, 상승여력 +32% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "012450",
+        "name": "한화에어로스페이스",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 1031000,
+        "overall_score": 53.5,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -434,63 +317,81 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 90.7,
+            "score": 32.3,
             "horizon": "단기",
-            "reason": "'바이오' 테마 거래량이 평소 대비 3.4배 급증, 섹터 강도 상위 23%",
+            "reason": "'방산' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 19%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 88.3,
-            "horizon": "중기",
-            "reason": "EPS 추정치 +3.6% 조정, 직전 실적 컨센서스 +10.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 57.5,
-            "horizon": "단기",
-            "reason": "RSI 33(과매도 반등), MACD 골든크로스 발생, 볼린저밴드 위치 14%(하단 지지)",
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 55.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 4.4% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 51.0,
+            "score": 74.5,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "governance",
-            "label": "지배구조·주주환원",
-            "score": 66.0,
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 43.7,
+            "horizon": "장기",
+            "reason": "ROIC 10.0% vs WACC 8.5% → 스프레드 +1.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 70.0,
             "horizon": "중기",
-            "reason": "총주주환원율 11.3% — 리레이팅 직접 트리거(코리아 디스카운트 해소)",
+            "reason": "최근 90일 내부자 2명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 1,831,667 vs 현재가 1,031,000, 상승여력 +78% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 40.1,
+            "horizon": "단기",
+            "reason": "RSI 27(과매도 반등), 볼린저밴드 위치 13%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 46.6,
+            "score": 43.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 21.6·PBR 3.5 대비 PER 28.8·PBR 1.6로 10% 저평가, ROE 5%·영업이익률 34%로 수익성 양호",
+            "reason": "업종 평균 PER 20.5·PBR 2.6 대비 PER 36.1·PBR 5.5로 -93% 저평가, ROE 23%·영업이익률 11%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "blog",
-            "label": "신뢰 소스 언급",
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
             "score": 50.0,
-            "horizon": "중기",
-            "reason": "신뢰 소스 0곳에서 최근 7일간 9회 언급 (최근 언급 7일 전)",
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
             "risk": "보통",
             "available": true
           }
@@ -503,19 +404,19 @@
         "name": "Amazon",
         "market": "US",
         "currency": "USD",
-        "current_price": 244.19,
-        "overall_score": 66.6,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
+        "current_price": 240.53,
+        "overall_score": 59.6,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "보통",
         "reasons": [
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 62.3,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 2%(하단 지지)",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +40% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -538,11 +439,11 @@
             "available": true
           },
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "증권사 평균 목표가 313 vs 현재가 241, 상승여력 +30% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -552,15 +453,6 @@
             "score": 87.8,
             "horizon": "장기",
             "reason": "발생액 비율 -0.08 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 84.2,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 313 vs 현재가 244, 상승여력 +28% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -589,8 +481,8 @@
         "name": "Apple",
         "market": "US",
         "currency": "USD",
-        "current_price": 290.55,
-        "overall_score": 62.3,
+        "current_price": 288.88,
+        "overall_score": 58.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -599,9 +491,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 56.3,
+            "score": 57.8,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 0%(하단 지지)",
+            "reason": "RSI 41, 볼린저밴드 위치 0%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -628,7 +520,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +49% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +48% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -653,100 +545,32 @@
         ]
       },
       {
-        "ticker": "GOOGL",
-        "name": "Alphabet",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 364.26,
-        "overall_score": 58.9,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +165% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 20.7% vs WACC 9.0% → 스프레드 +11.7%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 46.8,
-            "horizon": "단기",
-            "reason": "RSI 44, 볼린저밴드 위치 16%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 55.6,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 432 vs 현재가 364, 상승여력 +19% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 77.3,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 55.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 24.5·PBR 7.7 대비 PER 27.8·PBR 9.3로 -17% 저평가, ROE 39%·영업이익률 36%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "AVGO",
         "name": "Broadcom",
         "market": "US",
         "currency": "USD",
-        "current_price": 392.16,
-        "overall_score": 55.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
+        "current_price": 374.56,
+        "overall_score": 55.0,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
         "risk_level": "보통",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 58.8,
+            "horizon": "단기",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 5%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 43.6,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +110% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "연관 대장주 GOOGL 최근 5일 +2% 급등, 본 종목은 -22%에 그쳐 갭 존재 — 동시점 상관 0.29(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -755,16 +579,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 522 vs 현재가 392, 상승여력 +33% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 70.0,
-            "horizon": "장기",
-            "reason": "최근 4분기 연속 매출·영업이익 동반 증가, 매출 YoY +48%",
+            "reason": "증권사 평균 목표가 522 vs 현재가 375, 상승여력 +39% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -778,11 +593,20 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 48.6,
-            "horizon": "단기",
-            "reason": "RSI 42, 볼린저밴드 위치 16%(하단 지지)",
+            "key": "earnings",
+            "label": "꾸준한 실적 성장",
+            "score": 70.0,
+            "horizon": "장기",
+            "reason": "최근 4분기 연속 매출·영업이익 동반 증가, 매출 YoY +48%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +106% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -807,68 +631,77 @@
         ]
       },
       {
-        "ticker": "PLTR",
-        "name": "Palantir",
+        "ticker": "GOOGL",
+        "name": "Alphabet",
         "market": "US",
         "currency": "USD",
-        "current_price": 132.07,
-        "overall_score": 46.9,
-        "target_horizon": "장기",
-        "primary_criterion": "fscore",
-        "primary_label": "퀄리티(F-Score)",
+        "current_price": 365.71,
+        "overall_score": 54.4,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "보통",
         "reasons": [
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "earnings",
-            "label": "꾸준한 실적 성장",
-            "score": 80.0,
-            "horizon": "장기",
-            "reason": "최근 5분기 연속 매출·영업이익 동반 증가, 매출 YoY +85%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 184 vs 현재가 132, 상승여력 +39% (애널리스트 5명 커버)",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 34.5,
+            "horizon": "단기",
+            "reason": "'Adtech' 테마 거래량이 평소 대비 0.0배 급증, 섹터 강도 상위 14%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "roic",
             "label": "자본효율(ROIC)",
-            "score": 69.7,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "ROIC 14.5% vs WACC 9.0% → 스프레드 +5.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "reason": "ROIC 20.7% vs WACC 9.0% → 스프레드 +11.7%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +152% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 54.2,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 432 vs 현재가 366, 상승여력 +18% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 78.6,
+            "score": 77.3,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 46.3,
+            "score": 42.6,
             "horizon": "단기",
-            "reason": "RSI 42, 볼린저밴드 위치 28%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 21%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -877,21 +710,90 @@
             "label": "저평가 우량주",
             "score": 55.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 72.8·PBR 22.6 대비 PER 150.1·PBR 37.5로 -86% 저평가, ROE 33%·영업이익률 46%로 수익성 양호",
+            "reason": "업종 평균 PER 24.5·PBR 7.7 대비 PER 27.8·PBR 9.3로 -17% 저평가, ROE 39%·영업이익률 36%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "META",
+        "name": "Meta",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 589.0,
+        "overall_score": 53.7,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 34.5,
+            "horizon": "단기",
+            "reason": "'Adtech' 테마 거래량이 평소 대비 0.0배 급증, 섹터 강도 상위 14%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 69.5,
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.15 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 20.3% vs WACC 9.0% → 스프레드 +11.3%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "증권사 평균 목표가 829 vs 현재가 589, 상승여력 +41% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 50.1,
+            "horizon": "단기",
+            "reason": "RSI 41, 볼린저밴드 위치 16%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 75.2,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 24.5·PBR 7.7 대비 PER 21.3·PBR 6.1로 17% 저평가, ROE 33%·영업이익률 41%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       }
     ]
+  },
+  "market_meta": {
+    "KR": {
+      "source": "real",
+      "as_of": "2026-06-10T13:54:07.191977+00:00"
+    },
+    "US": {
+      "source": "real",
+      "as_of": "2026-06-10T13:54:07.191977+00:00"
+    }
   }
 }

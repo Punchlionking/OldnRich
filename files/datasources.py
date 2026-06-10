@@ -58,6 +58,82 @@ def _f(value, default: float = 0.0) -> float:
         return default
 
 
+def enrich_theme_beneficiary(stocks: list[Stock]) -> None:
+    """
+    이미 수집한 데이터(종목별 테마·거래량·일봉)만으로 '테마 급부상'과
+    '간접 수혜주'를 계산해 채운다(추가 API 호출 없음). stocks를 제자리 수정.
+
+    · 테마 거래량 급증 = Σ(테마내 당일거래량) / Σ(20일평균거래량)
+    · 섹터 강도        = 테마 5일 평균수익률의 '테마간 백분위'
+    · 대장주           = 같은 테마에서 5일수익률 최고 종목
+    · 수혜주           = 대장주보다 덜 오른 동일테마 종목 + 일봉 리드-래그
+    """
+    if not stocks:
+        return
+    from collections import defaultdict as _dd
+
+    theme_members: dict[str, list[Stock]] = _dd(list)
+    for s in stocks:
+        for t in (s.theme.themes or []):
+            theme_members[t].append(s)
+    if not theme_members:
+        return
+
+    # 테마별 거래량 급증배수 + 5일 평균수익률
+    surge, ret5 = {}, {}
+    for t, members in theme_members.items():
+        vol = sum(m.tech.volume for m in members)
+        avgvol = sum(m.tech.avg_volume_20d for m in members) or 1.0
+        surge[t] = vol / avgvol if avgvol else 1.0
+        rets = [m.tech.price_change_5d for m in members]
+        ret5[t] = sum(rets) / len(rets) if rets else 0.0
+
+    ret_arr = list(ret5.values())
+
+    def pctile(v: float) -> float:
+        n = len(ret_arr)
+        if n <= 1:
+            return 50.0
+        less = sum(1 for x in ret_arr if x < v)
+        eq = sum(1 for x in ret_arr if x == v)
+        return (less + 0.5 * eq) / n * 100.0
+
+    # 종목별: 가장 뜨거운(거래량 급증 큰) 테마 기준으로 테마 지표 부여
+    for s in stocks:
+        themes = s.theme.themes or []
+        if not themes:
+            continue
+        best_t = max(themes, key=lambda t: surge.get(t, 0.0))
+        s.theme.theme_volume_surge = surge.get(best_t, 1.0)
+        s.theme.sector_strength_pct = pctile(ret5.get(best_t, 0.0))
+        # 대표 테마를 맨 앞으로(추천 이유 문구에 핫테마가 나오도록)
+        s.theme.themes = [best_t] + [t for t in themes if t != best_t]
+
+    # 간접 수혜주: 테마별 대장주 대비 미반영 갭
+    for t, members in theme_members.items():
+        if len(members) < 2:
+            continue
+        leader = max(members, key=lambda m: m.tech.price_change_5d)
+        for m in members:
+            if m is leader or m.tech.price_change_5d >= leader.tech.price_change_5d:
+                continue
+            # 여러 테마에 걸치면 '대장주가 가장 급등한' 케이스를 채택
+            if (m.beneficiary.leader_ticker is None
+                    or leader.tech.price_change_5d > m.beneficiary.leader_change_5d):
+                ll_days, ll_corr, corr = 0, 0.0, 0.0
+                if m.tech.closes and leader.tech.closes:
+                    ll_days, ll_corr = ind.lead_lag(m.tech.closes, leader.tech.closes)
+                    corr = ind._pearson(ind._returns(m.tech.closes),
+                                        ind._returns(leader.tech.closes))
+                m.beneficiary = BeneficiaryData(
+                    leader_ticker=leader.ticker,
+                    leader_change_5d=leader.tech.price_change_5d,
+                    own_change_5d=m.tech.price_change_5d,
+                    correlation=max(0.0, corr),
+                    lead_lag_days=ll_days, lead_lag_corr=ll_corr,
+                )
+
+
 class DataSource(ABC):
     @abstractmethod
     def fetch_universe(self) -> list[Stock]:
@@ -107,7 +183,9 @@ class MockDataSource(DataSource):
     def fetch_universe(self) -> list[Stock]:
         universe = _KR_UNIVERSE if self.market == "KR" else _US_UNIVERSE
         currency = "KRW" if self.market == "KR" else "USD"
-        return [self._make_stock(t, n, themes, currency) for t, n, themes in universe]
+        stocks = [self._make_stock(t, n, themes, currency) for t, n, themes in universe]
+        enrich_theme_beneficiary(stocks)
+        return stocks
 
     def _make_stock(self, ticker, name, themes, currency) -> Stock:
         r = self.rng
@@ -753,6 +831,7 @@ class KoreaDataSource(DataSource):
                 # TODO(추가 데이터): analyst_ext(FnGuide 추정치),
                 #   red_flag(감사의견·감사인교체)
             ))
+        enrich_theme_beneficiary(stocks)   # 테마 급부상·간접 수혜주 계산
         log.info("[KR] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks
 
@@ -1173,5 +1252,6 @@ class USDataSource(DataSource):
                 insider=insider,
                 # TODO(추가 데이터): red_flag(감사의견·감사인교체)
             ))
+        enrich_theme_beneficiary(stocks)   # 테마 급부상·간접 수혜주 계산
         log.info("[US] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks

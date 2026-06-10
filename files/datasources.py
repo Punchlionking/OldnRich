@@ -626,6 +626,45 @@ class KoreaDataSource(DataSource):
             governance_score=None,
         )
 
+    def _dart_insider(self, corp_code: str) -> InsiderData:
+        """
+        DART majorstock(대량보유 상황보고, 5%+ 주요주주) → 최근 90일 보유 증감.
+
+        임원 스톡옵션 부여까지 섞이는 elestock보다, 5% 이상 대량보유자의 지분
+        증감(stkqy_irds)이 '스마트머니 확신'에 가까워 노이즈가 적다.
+        """
+        def num(s):
+            return _f((s or "").replace(",", "").strip())
+        try:
+            r = self._requests().get(
+                f"{self.DART_BASE}/majorstock.json",
+                params={"crtfc_key": self.dart_key, "corp_code": corp_code}, timeout=15)
+            j = r.json()
+        except Exception as e:
+            log.warning("[KR] DART 내부자(대량보유) 조회 실패(%s): %s", corp_code, e)
+            return InsiderData()
+        if j.get("status") != "000" or not j.get("list"):
+            return InsiderData()
+        cutoff = dt.date.today() - dt.timedelta(days=90)
+        net = 0.0
+        buyers = set()
+        seen = False
+        for row in j["list"]:
+            rcept = (row.get("rcept_dt") or "").strip()      # YYYYMMDD
+            try:
+                if rcept and dt.datetime.strptime(rcept, "%Y%m%d").date() < cutoff:
+                    continue
+            except Exception:
+                pass
+            seen = True
+            irds = num(row.get("stkqy_irds"))                 # 보유주식등의 수 증감(±)
+            net += irds
+            if irds > 0:
+                buyers.add(row.get("repror"))                  # 대표 보고자
+        if not seen:
+            return InsiderData(net_insider_buy_90d=0.0, buyer_count_90d=0)
+        return InsiderData(net_insider_buy_90d=net, buyer_count_90d=len(buyers))
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.kis_key and self.kis_secret):
@@ -641,16 +680,18 @@ class KoreaDataSource(DataSource):
                 q = self._quote(ticker)
                 closes, vols = self._daily(ticker)
                 roe, opm, rev, op = self._financials(ticker)
-                # DART 재무제표 → 품질 팩터 입력 + 주주환원 공시
+                # DART 재무제표 → 품질 팩터 입력 + 주주환원 + 내부자 공시
                 quality = QualityData()
                 governance = GovernanceData()
+                insider = InsiderData()
                 corp = corp_map.get(ticker)
                 if corp:
                     fin = self._dart_financials(corp)
                     quality = self._build_quality(fin, q["price"], q.get("shares", 0.0))
                     governance = self._dart_governance(corp)
+                    insider = self._dart_insider(corp)
                 raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op,
-                            quality, governance))
+                            quality, governance, insider))
             except Exception as e:
                 log.warning("[KR] %s 수집 실패: %s", ticker, e)
 
@@ -671,7 +712,7 @@ class KoreaDataSource(DataSource):
 
         stocks = []
         for (ticker, name, themes, q, closes, vols, roe, opm, rev, op,
-             quality, governance) in raw:
+             quality, governance, insider) in raw:
             avg_vol20 = avg(vols[-20:]) if vols else q["volume"]
             macd_last, macd_sig, macd_prev = ind.macd(closes)
             stocks.append(Stock(
@@ -707,8 +748,10 @@ class KoreaDataSource(DataSource):
                 quality=quality,
                 # DART 공시 → 배당성향·자사주 소각 (LIVE)
                 governance=governance,
+                # DART elestock → 내부자 군집매수 (LIVE)
+                insider=insider,
                 # TODO(추가 데이터): analyst_ext(FnGuide 추정치),
-                #   insider(DART 지분변동), red_flag(감사의견·감사인교체)
+                #   red_flag(감사의견·감사인교체)
             ))
         log.info("[KR] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks
@@ -1013,6 +1056,36 @@ class USDataSource(DataSource):
             days_since_earnings=days_since,
         )
 
+    def _us_insider(self, ticker: str) -> InsiderData:
+        """
+        Finnhub /stock/insider-transactions → 최근 90일 내부자 거래.
+        공개시장 매수(transactionCode 'P') 위주로 순매수액·매수자 수 집계.
+        """
+        if not self.finnhub_key:
+            return InsiderData()
+        today = dt.date.today()
+        frm = today - dt.timedelta(days=90)
+        try:
+            j = self._get(f"{self.FH_BASE}/stock/insider-transactions",
+                          {"symbol": ticker, "from": frm.isoformat(),
+                           "to": today.isoformat(), "token": self.finnhub_key})
+        except Exception as e:
+            log.warning("[US] %s 내부자거래 조회 실패: %s", ticker, e)
+            return InsiderData()
+        data = j.get("data")
+        if not isinstance(data, list):
+            return InsiderData()
+        net = 0.0
+        buyers = set()
+        for t in data:
+            change = _f(t.get("change"))
+            price = _f(t.get("transactionPrice"))
+            code = (t.get("transactionCode") or "").upper()
+            net += change * price                      # 순매수액(매도는 음수)
+            if code == "P" and change > 0:             # 공개시장 매수 = 강한 신호
+                buyers.add(t.get("name"))
+        return InsiderData(net_insider_buy_90d=net, buyer_count_90d=len(buyers))
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.alpha_key or self.twelve_key):
@@ -1029,7 +1102,9 @@ class USDataSource(DataSource):
                 quality = self._us_quality(
                     ticker, tech.get("price", 0.0), fund.get("market_cap", 0.0))
                 analyst_ext = self._us_analyst_ext(ticker)   # PEAD: 서프라이즈+추정치 방향
-                raw.append((ticker, name, themes, tech, fund, news, quality, analyst_ext))
+                insider = self._us_insider(ticker)           # 내부자 군집매수
+                raw.append((ticker, name, themes, tech, fund, news,
+                            quality, analyst_ext, insider))
             except Exception as e:
                 log.warning("[US] %s 수집 실패: %s", ticker, e)
 
@@ -1039,7 +1114,7 @@ class USDataSource(DataSource):
 
         # 섹터 평균 PER/PBR
         per_by_sector, pbr_by_sector = defaultdict(list), defaultdict(list)
-        for _, _, _, _, fund, _, _, _ in raw:
+        for _, _, _, _, fund, _, _, _, _ in raw:
             sec = fund.get("sector", "")
             if fund.get("per", 0) > 0:
                 per_by_sector[sec].append(fund["per"])
@@ -1050,7 +1125,8 @@ class USDataSource(DataSource):
             return sum(xs) / len(xs) if xs else 0.0
 
         stocks = []
-        for ticker, name, themes, tech, fund, news, quality, analyst_ext in raw:
+        for (ticker, name, themes, tech, fund, news,
+             quality, analyst_ext, insider) in raw:
             sec = fund.get("sector", "")
             price = tech.get("price", 0.0)
             stocks.append(Stock(
@@ -1093,7 +1169,9 @@ class USDataSource(DataSource):
                 quality=quality,
                 # Finnhub → 어닝 서프라이즈·추정치 방향(PEAD) (LIVE)
                 analyst_ext=analyst_ext,
-                # TODO(추가 데이터): insider(Finnhub Form4), red_flag
+                # Finnhub → 내부자 군집매수 (LIVE)
+                insider=insider,
+                # TODO(추가 데이터): red_flag(감사의견·감사인교체)
             ))
         log.info("[US] %d/%d 종목 수집 완료", len(stocks), len(self.universe))
         return stocks

@@ -31,6 +31,7 @@
 
 from __future__ import annotations
 
+import os
 import random
 import time
 import logging
@@ -56,6 +57,22 @@ def _f(value, default: float = 0.0) -> float:
         return float(value)
     except (TypeError, ValueError):
         return default
+
+
+def _mock_or_raise(market: str, reason: str) -> list[Stock]:
+    """
+    실데이터 수집 실패 시 Mock 폴백 — 단, ALLOW_MOCK_FALLBACK=0 이면 예외 발생.
+
+    프로덕션(자동화)에서 가짜 데이터를 '진짜처럼' 발행하는 것을 막기 위함.
+    GitHub Actions처럼 KIS가 막히는 환경에서는 0으로 설정해 Mock 발행을 차단한다.
+    """
+    allow = os.environ.get("ALLOW_MOCK_FALLBACK", "1").strip() != "0"
+    if not allow:
+        raise RuntimeError(
+            f"[{market}] 실데이터 수집 실패({reason}) — "
+            f"ALLOW_MOCK_FALLBACK=0 이므로 Mock 폴백 차단(가짜 데이터 발행 방지)")
+    log.warning("[%s] %s → Mock 폴백(개발용)", market, reason)
+    return MockDataSource(market).fetch_universe()
 
 
 def enrich_theme_beneficiary(stocks: list[Stock]) -> None:
@@ -181,6 +198,7 @@ class MockDataSource(DataSource):
         self.rng = random.Random(seed + (0 if market == "KR" else 1000))
 
     def fetch_universe(self) -> list[Stock]:
+        self.data_mode = "mock"
         universe = _KR_UNIVERSE if self.market == "KR" else _US_UNIVERSE
         currency = "KRW" if self.market == "KR" else "USD"
         stocks = [self._make_stock(t, n, themes, currency) for t, n, themes in universe]
@@ -776,9 +794,10 @@ class KoreaDataSource(DataSource):
 
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
+        self.data_mode = "real"
         if not (self.kis_key and self.kis_secret):
-            log.info("[KR] KIS 키 없음 → Mock 데이터 사용")
-            return MockDataSource("KR").fetch_universe()
+            self.data_mode = "mock"
+            return _mock_or_raise("KR", "KIS 키 없음")
 
         # DART corpCode 매핑 1회 로드 (키 있을 때만 → 품질 팩터 활성화)
         corp_map = self._load_corp_map() if self.dart_key else {}
@@ -806,8 +825,8 @@ class KoreaDataSource(DataSource):
                 log.warning("[KR] %s 수집 실패: %s", ticker, e)
 
         if not raw:
-            log.error("[KR] 실데이터 전체 실패 → Mock 폴백")
-            return MockDataSource("KR").fetch_universe()
+            self.data_mode = "mock"
+            return _mock_or_raise("KR", "실데이터 전체 실패(KIS 연결 불가)")
 
         # 업종 평균 PER/PBR
         per_by_sector, pbr_by_sector = defaultdict(list), defaultdict(list)
@@ -1208,9 +1227,10 @@ class USDataSource(DataSource):
 
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
+        self.data_mode = "real"
         if not (self.alpha_key or self.twelve_key):
-            log.info("[US] 키 없음 → Mock 데이터 사용")
-            return MockDataSource("US").fetch_universe()
+            self.data_mode = "mock"
+            return _mock_or_raise("US", "API 키 없음")
 
         raw = []
         for ticker, name, themes in self.universe:
@@ -1229,8 +1249,8 @@ class USDataSource(DataSource):
                 log.warning("[US] %s 수집 실패: %s", ticker, e)
 
         if not raw:
-            log.error("[US] 실데이터 전체 실패 → Mock 폴백")
-            return MockDataSource("US").fetch_universe()
+            self.data_mode = "mock"
+            return _mock_or_raise("US", "실데이터 전체 실패")
 
         # 섹터 평균 PER/PBR
         per_by_sector, pbr_by_sector = defaultdict(list), defaultdict(list)

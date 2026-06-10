@@ -49,6 +49,9 @@ jobs:
           # 저장소 루트에 고정 출력 → 앱이 raw URL로 받음
           OUTPUT_PATH: ${{ github.workspace }}/recommendations.json
           PYTHONIOENCODING: "utf-8"
+          # CI(미국 서버)에서 KIS 불가 시 가짜(Mock) KR 발행 금지 →
+          #   해당 시장은 이전 실데이터를 유지(stale 표시). US는 정상 갱신.
+          ALLOW_MOCK_FALLBACK: "0"
         run: |
           echo "::group::엔진 실행"
           python -m files.main

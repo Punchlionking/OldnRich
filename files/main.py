@@ -53,27 +53,64 @@ from .datasources import KoreaDataSource, USDataSource, MockDataSource
 from .engine import recommend
 
 
-def collect_stocks():
-    """키 유무에 따라 실제 소스/Mock 소스에서 종목을 모음."""
+def _make_sources():
     use_real = any([ApiKeys.KIS_APP_KEY, ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA])
     if use_real:
-        kr = KoreaDataSource(ApiKeys.KIS_APP_KEY, ApiKeys.KIS_APP_SECRET, ApiKeys.DART_API_KEY)
-        us = USDataSource(ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA, ApiKeys.FINNHUB)
-    else:
-        kr = MockDataSource("KR")
-        us = MockDataSource("US")
-    return kr.fetch_universe() + us.fetch_universe(), use_real
+        return {
+            "KR": KoreaDataSource(ApiKeys.KIS_APP_KEY, ApiKeys.KIS_APP_SECRET, ApiKeys.DART_API_KEY),
+            "US": USDataSource(ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA, ApiKeys.FINNHUB),
+        }
+    return {"KR": MockDataSource("KR"), "US": MockDataSource("US")}
 
 
-def build_payload(result: dict) -> dict:
-    """앱 소비용 최종 JSON 페이로드."""
+def _load_previous(out_path: str) -> dict | None:
+    try:
+        with open(out_path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def build_payload(out_path: str) -> dict:
+    """
+    시장별로 독립 수집. 한 시장이 실패하면(예: CI에서 KIS 불가) 그 시장은
+    '이전 실데이터'를 유지하고, 성공한 시장만 갱신한다. 가짜(Mock) 발행 방지.
+    """
+    sources = _make_sources()
+    prev = _load_previous(out_path) or {}
+    prev_markets = (prev.get("markets") or {})
+    prev_meta = (prev.get("market_meta") or {})
+
+    now_iso = datetime.now(timezone.utc).isoformat()
+    markets: dict = {}
+    meta: dict = {}
+
+    for market in ("KR", "US"):
+        src = sources[market]
+        try:
+            stocks = src.fetch_universe()
+            recs = recommend(stocks).get(market, [])
+            markets[market] = [rec.to_dict() for rec in recs]
+            mode = getattr(src, "data_mode", "real")
+            meta[market] = {"source": mode, "as_of": now_iso}
+            print(f"[{market}] {mode} 데이터로 {len(markets[market])}종목 생성")
+        except Exception as e:
+            # 실패 → 이전 실데이터 유지(있으면), 없으면 빈 리스트
+            print(f"[{market}] 수집 실패: {e}")
+            print(f"[{market}] → 이전 데이터 유지(가짜 발행 방지)")
+            markets[market] = prev_markets.get(market, [])
+            kept = prev_meta.get(market, {})
+            meta[market] = {
+                "source": kept.get("source", "stale"),
+                "as_of": kept.get("as_of", "unknown"),
+                "stale": True,
+            }
+
     return {
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "version": 1,
-        "markets": {
-            market: [rec.to_dict() for rec in recs]
-            for market, recs in result.items()
-        },
+        "generated_at": now_iso,
+        "version": 2,
+        "markets": markets,
+        "market_meta": meta,   # 시장별 출처/시점/staleness
     }
 
 
@@ -88,19 +125,20 @@ def print_summary(payload: dict):
 
 
 def main():
-    stocks, use_real = collect_stocks()
-    result = recommend(stocks)
-    payload = build_payload(result)
-
     # 출력 경로: 환경변수 OUTPUT_PATH > 기본값(저장소 루트 = 패키지 부모 디렉터리)
     out_path = os.environ.get("OUTPUT_PATH")
     if not out_path:
         out_path = str(Path(__file__).resolve().parent.parent / "recommendations.json")
+
+    payload = build_payload(out_path)   # 이전본 참조 위해 경로 전달
+
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
-    mode = "실제 API" if use_real else "Mock 데이터"
-    print(f"[{mode}] 모드로 추천 생성 완료 → {out_path}")
+    print(f"추천 생성 완료 → {out_path}")
+    for m, meta in payload.get("market_meta", {}).items():
+        tag = f"{meta.get('source')}" + (" ⚠️STALE(이전데이터 유지)" if meta.get("stale") else "")
+        print(f"  {m}: {tag}")
     print_summary(payload)
 
 

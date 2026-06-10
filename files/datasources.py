@@ -563,6 +563,69 @@ class KoreaDataSource(DataSource):
             total_accruals=(ratio((ni - cfo) if (ni is not None and cfo is not None) else None, ta)),
         )
 
+    def _dart_governance(self, corp_code: str) -> GovernanceData:
+        """
+        DART 공시로 주주환원 정량화:
+          · alotMatter(배당)         → 현금배당성향(%)
+          · tesstkAcqsDspsSttus(자사주) → 소각수량(change_qy_incnr)>0 이면 자사주 소각
+        """
+        def num(s):  # "1,234" / "-" / "" 안전 변환
+            return _f((s or "").replace(",", "").strip())
+
+        this_year = dt.date.today().year
+        payout = None
+        got_any = False
+
+        # 1) 배당: 현금배당성향(%)
+        for year in (this_year - 1, this_year - 2):
+            try:
+                r = self._requests().get(
+                    f"{self.DART_BASE}/alotMatter.json",
+                    params={"crtfc_key": self.dart_key, "corp_code": corp_code,
+                            "bsns_year": str(year), "reprt_code": "11011"}, timeout=15)
+                j = r.json()
+                if j.get("status") != "000" or not j.get("list"):
+                    continue
+                for row in j["list"]:
+                    se = (row.get("se") or "").replace(" ", "")
+                    if "현금배당성향" in se:
+                        v = num(row.get("thstrm"))
+                        if v:
+                            payout = v
+                        got_any = True
+                        break
+                if got_any:
+                    break
+            except Exception as e:
+                log.warning("[KR] DART 배당 조회 실패(%s/%s): %s", corp_code, year, e)
+
+        # 2) 자사주 취득/소각
+        buyback_cancel = None
+        for year in (this_year - 1, this_year - 2):
+            try:
+                r = self._requests().get(
+                    f"{self.DART_BASE}/tesstkAcqsDspsSttus.json",
+                    params={"crtfc_key": self.dart_key, "corp_code": corp_code,
+                            "bsns_year": str(year), "reprt_code": "11011"}, timeout=15)
+                j = r.json()
+                if j.get("status") != "000" or not j.get("list"):
+                    continue
+                incnr = sum(num(row.get("change_qy_incnr")) for row in j["list"])
+                buyback_cancel = incnr > 0
+                got_any = True
+                break
+            except Exception as e:
+                log.warning("[KR] DART 자사주 조회 실패(%s/%s): %s", corp_code, year, e)
+
+        if not got_any:
+            return GovernanceData()
+        return GovernanceData(
+            total_payout_ratio=payout if payout is not None else 0.0,
+            buyback_cancel=buyback_cancel,
+            valueup_enrolled=None,   # KRX KIND 공시 → DART 미제공
+            governance_score=None,
+        )
+
     # --- 조립 ---------------------------------------------------------------
     def fetch_universe(self) -> list[Stock]:
         if not (self.kis_key and self.kis_secret):
@@ -578,13 +641,16 @@ class KoreaDataSource(DataSource):
                 q = self._quote(ticker)
                 closes, vols = self._daily(ticker)
                 roe, opm, rev, op = self._financials(ticker)
-                # DART 재무제표 → 품질 팩터 입력
+                # DART 재무제표 → 품질 팩터 입력 + 주주환원 공시
                 quality = QualityData()
+                governance = GovernanceData()
                 corp = corp_map.get(ticker)
                 if corp:
                     fin = self._dart_financials(corp)
                     quality = self._build_quality(fin, q["price"], q.get("shares", 0.0))
-                raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op, quality))
+                    governance = self._dart_governance(corp)
+                raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op,
+                            quality, governance))
             except Exception as e:
                 log.warning("[KR] %s 수집 실패: %s", ticker, e)
 
@@ -604,7 +670,8 @@ class KoreaDataSource(DataSource):
             return sum(xs) / len(xs) if xs else 0.0
 
         stocks = []
-        for ticker, name, themes, q, closes, vols, roe, opm, rev, op, quality in raw:
+        for (ticker, name, themes, q, closes, vols, roe, opm, rev, op,
+             quality, governance) in raw:
             avg_vol20 = avg(vols[-20:]) if vols else q["volume"]
             macd_last, macd_sig, macd_prev = ind.macd(closes)
             stocks.append(Stock(
@@ -638,7 +705,9 @@ class KoreaDataSource(DataSource):
                 blog=BlogData(),
                 # DART 재무제표 → F-Score/FCF/ROIC/Altman/Accruals (LIVE)
                 quality=quality,
-                # TODO(추가 데이터): analyst_ext(FnGuide 추정치), governance(DART 배당·자사주·밸류업),
+                # DART 공시 → 배당성향·자사주 소각 (LIVE)
+                governance=governance,
+                # TODO(추가 데이터): analyst_ext(FnGuide 추정치),
                 #   insider(DART 지분변동), red_flag(감사의견·감사인교체)
             ))
         log.info("[KR] %d/%d 종목 수집 완료", len(stocks), len(self.universe))

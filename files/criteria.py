@@ -345,10 +345,11 @@ def score_governance(s: Stock) -> CriterionResult:
         return _result("governance", 0.0,
                        "DART 배당·자사주·밸류업 공시 미연동", available=False)
     payout = g.total_payout_ratio or 0.0
-    payout_score = _scale(payout, 0.0, T.PAYOUT_GOOD * 2)
-    bonus = (20 if g.buyback_cancel else 0) + (20 if g.valueup_enrolled else 0)
+    # 배당성향/총주주환원율은 0~50%대 → PAYOUT_GOOD(=30%)에서 만점권
+    payout_score = _scale(payout, 0.0, T.PAYOUT_GOOD * 1.6)
+    bonus = (25 if g.buyback_cancel else 0) + (20 if g.valueup_enrolled else 0)
     gov = g.governance_score if g.governance_score is not None else 50.0
-    score = min(100.0, 0.5 * payout_score + 0.2 * gov + bonus)
+    score = min(100.0, 0.55 * payout_score + 0.15 * gov + bonus)
     tags = []
     if g.valueup_enrolled:
         tags.append("밸류업 편입")

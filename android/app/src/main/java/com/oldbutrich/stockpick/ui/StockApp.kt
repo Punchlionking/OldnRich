@@ -9,6 +9,8 @@ import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.*
 import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
@@ -27,6 +29,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.oldbutrich.stockpick.data.HistoryItem
 import com.oldbutrich.stockpick.data.Recommendation
 import com.oldbutrich.stockpick.ui.theme.Primary
 import com.oldbutrich.stockpick.viewmodel.RecommendationViewModel
@@ -38,8 +41,9 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
     val uiState by vm.uiState.collectAsState()
     val navController = rememberNavController()
 
-    // 네비게이션에 넘길 임시 종목 저장소 (In-memory, 실제 앱에서는 ViewModel로 관리)
+    // 네비게이션에 넘길 임시 선택 항목
     var selectedStock by remember { mutableStateOf<Recommendation?>(null) }
+    var selectedHistory by remember { mutableStateOf<HistoryItem?>(null) }
 
     NavHost(
         navController = navController,
@@ -53,6 +57,8 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
             StockListRootScreen(
                 uiState = uiState,
                 onRefresh = { vm.refresh() },
+                onOpenHistory = { navController.navigate("history") },
+                onOpenHelp = { navController.navigate("help") },
                 onStockClick = { stock ->
                     selectedStock = stock
                     navController.navigate("detail")
@@ -61,11 +67,33 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
         }
         composable("detail") {
             selectedStock?.let { stock ->
-                StockDetailScreen(
-                    stock = stock,
+                StockDetailScreen(stock = stock, onBack = { navController.popBackStack() })
+            }
+        }
+        composable("history") {
+            // 진입 시점에 이력 스냅샷
+            val kr = remember { vm.history("KR") }
+            val us = remember { vm.history("US") }
+            HistoryScreen(
+                krHistory = kr, usHistory = us,
+                onItemClick = { item ->
+                    selectedHistory = item
+                    navController.navigate("chart")
+                },
+                onBack = { navController.popBackStack() }
+            )
+        }
+        composable("chart") {
+            selectedHistory?.let { item ->
+                ChartScreen(
+                    item = item,
+                    loader = { vm.loadChart(it) },
                     onBack = { navController.popBackStack() }
                 )
             }
+        }
+        composable("help") {
+            HelpScreen(onBack = { navController.popBackStack() })
         }
     }
 }
@@ -75,6 +103,8 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
 fun StockListRootScreen(
     uiState: com.oldbutrich.stockpick.viewmodel.RecommendationUiState,
     onRefresh: () -> Unit,
+    onOpenHistory: () -> Unit,
+    onOpenHelp: () -> Unit,
     onStockClick: (Recommendation) -> Unit
 ) {
     val tabs = listOf("🇰🇷  국장", "🇺🇸  미장")
@@ -117,21 +147,24 @@ fun StockListRootScreen(
                                 }
                             }
                         }
-                        // 새로고침 버튼
+                        // 새로고침
                         IconButton(onClick = onRefresh, enabled = !uiState.isRefreshing) {
                             if (uiState.isRefreshing) {
                                 CircularProgressIndicator(
-                                    color = Color.White,
-                                    strokeWidth = 2.dp,
+                                    color = Color.White, strokeWidth = 2.dp,
                                     modifier = Modifier.size(22.dp)
                                 )
                             } else {
-                                Icon(
-                                    imageVector = Icons.Default.Refresh,
-                                    contentDescription = "새로고침",
-                                    tint = Color.White
-                                )
+                                Icon(Icons.Default.Refresh, "새로고침", tint = Color.White)
                             }
+                        }
+                        // trace back (추천 이력)
+                        IconButton(onClick = onOpenHistory) {
+                            Icon(Icons.Default.DateRange, "추천 이력", tint = Color.White)
+                        }
+                        // 도움말 (추천 기준) — 젤 우측
+                        IconButton(onClick = onOpenHelp) {
+                            Icon(Icons.Default.Info, "추천 기준 도움말", tint = Color.White)
                         }
                     }
                 }

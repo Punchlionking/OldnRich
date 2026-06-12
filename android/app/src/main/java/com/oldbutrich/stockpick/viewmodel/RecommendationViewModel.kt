@@ -3,7 +3,11 @@ package com.oldbutrich.stockpick.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
+import com.oldbutrich.stockpick.data.ChartSeries
 import com.oldbutrich.stockpick.data.DataSource
+import com.oldbutrich.stockpick.data.HistoryItem
+import com.oldbutrich.stockpick.data.HistoryStore
+import com.oldbutrich.stockpick.data.PriceHistoryRepository
 import com.oldbutrich.stockpick.data.Recommendation
 import com.oldbutrich.stockpick.data.RecommendationRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,9 +30,17 @@ data class RecommendationUiState(
 class RecommendationViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository = RecommendationRepository(application)
+    private val historyStore = HistoryStore(application)
+    private val priceRepo = PriceHistoryRepository()
 
     private val _uiState = MutableStateFlow(RecommendationUiState())
     val uiState: StateFlow<RecommendationUiState> = _uiState
+
+    /** 시장별 추천 이력(최신순). */
+    fun history(market: String): List<HistoryItem> = historyStore.list(market)
+
+    /** 최초 추천일~현재 일봉 차트 로딩. */
+    suspend fun loadChart(item: HistoryItem): ChartSeries = priceRepo.load(item)
 
     init {
         load(isRefresh = false)
@@ -46,6 +58,11 @@ class RecommendationViewModel(application: Application) : AndroidViewModel(appli
             )
             try {
                 val result = repository.load()
+                // 추천 이력 기록(중복은 최초만, 시장별 100개 한도)
+                runCatching {
+                    historyStore.record(result.response.markets.kr)
+                    historyStore.record(result.response.markets.us)
+                }
                 _uiState.value = RecommendationUiState(
                     krStocks = result.response.markets.kr,
                     usStocks = result.response.markets.us,

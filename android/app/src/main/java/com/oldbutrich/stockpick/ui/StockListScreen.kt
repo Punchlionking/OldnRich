@@ -179,7 +179,7 @@ fun StockCard(
                     }
                     Spacer(Modifier.height(4.dp))
                     LinearProgressIndicator(
-                        progress = { (stock.overallScore / 100f).coerceIn(0f, 1f) },
+                        progress = { (stock.overallScore.toFloat() / 100f).coerceIn(0f, 1f) },
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(6.dp)

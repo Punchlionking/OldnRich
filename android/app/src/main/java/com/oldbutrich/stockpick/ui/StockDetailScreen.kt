@@ -177,7 +177,7 @@ fun SummaryCard(stock: Recommendation) {
 
             // 종합 점수 바
             LinearProgressIndicator(
-                progress = { (stock.overallScore / 100f).coerceIn(0f, 1f) },
+                progress = { (stock.overallScore.toFloat() / 100f).coerceIn(0f, 1f) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp)
@@ -288,7 +288,7 @@ fun CriterionCard(criterion: CriterionResult, isPrimary: Boolean) {
             // 점수 바
             Spacer(Modifier.height(10.dp))
             LinearProgressIndicator(
-                progress = { (criterion.score / 100f).coerceIn(0f, 1f) },
+                progress = { (criterion.score.toFloat() / 100f).coerceIn(0f, 1f) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(5.dp)

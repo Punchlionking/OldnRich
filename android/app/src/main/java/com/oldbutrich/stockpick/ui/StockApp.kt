@@ -2,6 +2,7 @@ package com.oldbutrich.stockpick.ui
 
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.pager.HorizontalPager
@@ -31,7 +32,7 @@ import com.oldbutrich.stockpick.ui.theme.Primary
 import com.oldbutrich.stockpick.viewmodel.RecommendationViewModel
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun StockApp(vm: RecommendationViewModel = viewModel()) {
     val uiState by vm.uiState.collectAsState()
@@ -69,7 +70,7 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun StockListRootScreen(
     uiState: com.oldbutrich.stockpick.viewmodel.RecommendationUiState,

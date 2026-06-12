@@ -191,6 +191,33 @@ _US_UNIVERSE = [
     ("UNH", "UnitedHealth", ["Healthcare"]),
 ]
 
+# 롱테일(신흥 강자) 유니버스 — 중소형·고성장·변동성 높은 종목
+_KR_LONGTAIL = [
+    ("196170", "알테오젠", ["바이오", "ADC"]),
+    ("086520", "에코프로", ["2차전지"]),
+    ("277810", "레인보우로보틱스", ["로봇"]),
+    ("028300", "HLB", ["바이오"]),
+    ("263750", "펄어비스", ["게임"]),
+    ("348370", "엔켐", ["2차전지", "소재"]),
+    ("454910", "두산로보틱스", ["로봇"]),
+    ("058470", "리노공업", ["반도체", "부품"]),
+]
+_US_LONGTAIL = [
+    ("IONQ", "IonQ", ["Quantum"]),
+    ("RKLB", "Rocket Lab", ["Space"]),
+    ("SOFI", "SoFi", ["Fintech"]),
+    ("HIMS", "Hims & Hers", ["Healthtech"]),
+    ("OKLO", "Oklo", ["Nuclear"]),
+    ("TEM", "Tempus AI", ["AI", "Healthcare"]),
+    ("RXRX", "Recursion", ["AI", "Biotech"]),
+    ("APP", "AppLovin", ["Adtech", "AI"]),
+]
+
+# 전체(코어+롱테일) 유니버스 + 롱테일 티커 집합(분리용)
+_KR_ALL = _KR_UNIVERSE + _KR_LONGTAIL
+_US_ALL = _US_UNIVERSE + _US_LONGTAIL
+LONGTAIL_TICKERS = {t for t, _, _ in _KR_LONGTAIL} | {t for t, _, _ in _US_LONGTAIL}
+
 
 class MockDataSource(DataSource):
     def __init__(self, market: str, seed: int = 42):
@@ -199,7 +226,7 @@ class MockDataSource(DataSource):
 
     def fetch_universe(self) -> list[Stock]:
         self.data_mode = "mock"
-        universe = _KR_UNIVERSE if self.market == "KR" else _US_UNIVERSE
+        universe = _KR_ALL if self.market == "KR" else _US_ALL
         currency = "KRW" if self.market == "KR" else "USD"
         stocks = [self._make_stock(t, n, themes, currency) for t, n, themes in universe]
         enrich_theme_beneficiary(stocks)
@@ -248,7 +275,7 @@ class MockDataSource(DataSource):
             sales=rev[0],
         )
 
-        leader_pool = [u[0] for u in (_KR_UNIVERSE if self.market == "KR" else _US_UNIVERSE)
+        leader_pool = [u[0] for u in (_KR_ALL if self.market == "KR" else _US_ALL)
                        if u[0] != ticker]
         has_leader = r.random() > 0.4
         return Stock(
@@ -372,7 +399,7 @@ class KoreaDataSource(DataSource):
         self.kis_key = kis_key
         self.kis_secret = kis_secret
         self.dart_key = dart_key
-        self.universe = universe or _KR_UNIVERSE
+        self.universe = universe or _KR_ALL
         self.rate_limit_sec = rate_limit_sec   # KIS는 초당 호출 제한 → 간격 둠
 
         # virtual=None 이면 키 길이로 자동 판단
@@ -921,7 +948,7 @@ class USDataSource(DataSource):
         self.alpha_key = alpha_key
         self.twelve_key = twelve_key
         self.finnhub_key = finnhub_key
-        self.universe = universe or _US_UNIVERSE
+        self.universe = universe or _US_ALL
         self.rate_limit_sec = rate_limit_sec
         self._last_call = 0.0
 

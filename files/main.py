@@ -48,8 +48,8 @@ def _load_env():
 
 _load_env()   # config.py 보다 먼저 호출해야 ApiKeys가 키를 인식함
 
-from .config import ApiKeys, TOP_N
-from .datasources import KoreaDataSource, USDataSource, MockDataSource
+from .config import ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS
+from .datasources import KoreaDataSource, USDataSource, MockDataSource, LONGTAIL_TICKERS
 from .engine import recommend
 
 
@@ -99,11 +99,20 @@ def build_payload(out_path: str) -> dict:
         src = sources[market]
         try:
             stocks = src.fetch_universe()
-            recs = recommend(stocks).get(market, [])
+            # 코어/롱테일 유니버스 분리
+            core_stocks = [s for s in stocks if s.ticker not in LONGTAIL_TICKERS]
+            long_stocks = [s for s in stocks if s.ticker in LONGTAIL_TICKERS]
+            # 코어: TOP 5 (우량/종합)
+            core = recommend(core_stocks, top_n=TOP_N).get(market, [])
+            # 롱테일: 3종목 (공격적 가중치, 배제필터 완화, 고위험 태깅)
+            long = recommend(long_stocks, top_n=LONGTAIL_N, max_per_primary=None,
+                             weights=LONGTAIL_WEIGHTS, apply_exclusion=False,
+                             pick_type="longtail").get(market, [])
+            recs = core + long
             markets[market] = [rec.to_dict() for rec in recs]
             mode = getattr(src, "data_mode", "real")
             meta[market] = {"source": mode, "as_of": now_iso}
-            print(f"[{market}] {mode} 데이터로 {len(markets[market])}종목 생성")
+            print(f"[{market}] {mode} 데이터로 코어 {len(core)} + 롱테일 {len(long)}종목 생성")
         except Exception as e:
             # 실패 → 이전 실데이터 유지(있으면), 없으면 빈 리스트
             print(f"[{market}] 수집 실패: {e}")

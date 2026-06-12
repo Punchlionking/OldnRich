@@ -23,6 +23,9 @@ val RiskNormal    = Color(0xFF16A34A)
 // 점수 바
 val ScoreColor    = Color(0xFF6366F1)
 
+// 롱테일(신흥 강자) 강조색 — 보라/마젠타 계열로 코어와 구분
+val LongtailAccent = Color(0xFF9333EA)
+
 val LightColors = lightColorScheme(
     primary          = Primary,
     onPrimary        = Color.White,

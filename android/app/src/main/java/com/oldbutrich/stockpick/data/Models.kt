@@ -24,6 +24,7 @@ data class Recommendation(
     @SerializedName("primary_criterion") val primaryCriterion: String,
     @SerializedName("primary_label") val primaryLabel: String,
     @SerializedName("risk_level") val riskLevel: String,
+    @SerializedName("pick_type") val pickType: String = "core",   // core | longtail
     val reasons: List<CriterionResult>
 )
 

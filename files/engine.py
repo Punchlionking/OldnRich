@@ -98,22 +98,30 @@ def _excluded(stock: Stock) -> str | None:
 # ---------------------------------------------------------------------------
 # 종합점수 + 추천 객체 생성
 # ---------------------------------------------------------------------------
-def _composite(norm: dict[str, float]) -> float:
+def _weight_of(key: str, overrides: dict | None) -> float:
+    """가중치: 부분 오버라이드(overrides)에 있으면 그 값, 없으면 CRITERIA 기본값."""
+    if overrides and key in overrides:
+        return overrides[key]
+    return CRITERIA[key]["weight"]
+
+
+def _composite(norm: dict[str, float], weights: dict | None) -> float:
     """정규화점수의 가중 합 → 0~100."""
     if not norm:
         return 0.0
-    total_w = sum(CRITERIA[k]["weight"] for k in norm)
+    total_w = sum(_weight_of(k, weights) for k in norm)
     if total_w == 0:
         return 0.0
-    weighted = sum(v * CRITERIA[k]["weight"] for k, v in norm.items())
+    weighted = sum(v * _weight_of(k, weights) for k, v in norm.items())
     return weighted / total_w
 
 
 def _build_recommendation(stock: Stock, results: list[CriterionResult],
-                          norm: dict[str, float], final_score: float) -> Recommendation:
+                          norm: dict[str, float], final_score: float,
+                          weights: dict | None, pick_type: str) -> Recommendation:
     # 대표 기준 = (정규화점수 × 가중치)가 가장 큰 available 기준
     if norm:
-        primary_key = max(norm, key=lambda k: norm[k] * CRITERIA[k]["weight"])
+        primary_key = max(norm, key=lambda k: norm[k] * _weight_of(k, weights))
     else:
         primary_key = results[0].key
     primary = next(r for r in results if r.key == primary_key)
@@ -125,7 +133,8 @@ def _build_recommendation(stock: Stock, results: list[CriterionResult],
     )
     reasons = [primary] + others
 
-    risk_level = "높음" if primary_key in HIGH_RISK_CRITERIA else "보통"
+    # 롱테일은 본질적으로 고위험
+    risk_level = "높음" if (pick_type == "longtail" or primary_key in HIGH_RISK_CRITERIA) else "보통"
     price = stock.tech.current_price
     price = round(price) if stock.currency == "KRW" else round(price, 2)
 
@@ -135,7 +144,7 @@ def _build_recommendation(stock: Stock, results: list[CriterionResult],
         overall_score=round(final_score, 1),
         target_horizon=primary.horizon,
         primary_criterion=primary_key, primary_label=primary.label,
-        risk_level=risk_level, reasons=reasons,
+        risk_level=risk_level, pick_type=pick_type, reasons=reasons,
     )
 
 
@@ -167,9 +176,15 @@ def _select_with_diversity(recs: list[Recommendation], top_n: int,
 # 시장 단위 파이프라인
 # ---------------------------------------------------------------------------
 def _recommend_market(stocks: list[Stock], top_n: int,
-                      max_per_primary: int | None) -> list[Recommendation]:
-    # 1) 배제 필터
-    survivors = [s for s in stocks if _excluded(s) is None]
+                      max_per_primary: int | None,
+                      weights: dict | None = None,
+                      apply_exclusion: bool = True,
+                      pick_type: str = "core") -> list[Recommendation]:
+    # 1) 배제 필터 (롱테일은 완화: Altman Z 배제 생략, 적신호는 유지)
+    if apply_exclusion:
+        survivors = [s for s in stocks if _excluded(s) is None]
+    else:
+        survivors = list(stocks)
     if not survivors:
         survivors = stocks  # 전부 배제되면(데이터 부족) 원본 유지
 
@@ -180,7 +195,6 @@ def _recommend_market(stocks: list[Stock], top_n: int,
     norms = _normalize_cross_section(per_stock)
 
     # 4) 결합 + 5) 리스크 조정
-    # 변동성 백분위 (낮을수록 좋음). 데이터 있는 종목끼리만.
     vols = [s.tech.volatility for s in survivors]
     have_vol = [v for v in vols if v is not None]
     vol_pct_map: dict[int, float] = {}
@@ -190,16 +204,17 @@ def _recommend_market(stocks: list[Stock], top_n: int,
         for i, p in zip(idxs, pr):
             vol_pct_map[i] = p
 
-    lam = Combination.RISK_LAMBDA
+    # 롱테일은 변동성 가점을 끄거나 줄임(고변동성 신흥주가 목표)
+    lam = 0.0 if pick_type == "longtail" else Combination.RISK_LAMBDA
     recs = []
     for i, (s, results, norm) in enumerate(zip(survivors, per_stock, norms)):
-        comp = _composite(norm)
+        comp = _composite(norm, weights)
         if lam > 0 and i in vol_pct_map:
-            low_vol_score = 100.0 - vol_pct_map[i]   # 저변동성일수록 높음
+            low_vol_score = 100.0 - vol_pct_map[i]
             final = (1 - lam) * comp + lam * low_vol_score
         else:
             final = comp
-        recs.append(_build_recommendation(s, results, norm, final))
+        recs.append(_build_recommendation(s, results, norm, final, weights, pick_type))
 
     # 6) 선정
     return _select_with_diversity(recs, top_n, max_per_primary)
@@ -207,12 +222,20 @@ def _recommend_market(stocks: list[Stock], top_n: int,
 
 def recommend(stocks: list[Stock],
               top_n: int = TOP_N,
-              max_per_primary: int | None = MAX_PER_PRIMARY) -> dict[str, list[Recommendation]]:
-    """전체 유니버스를 평가해 시장(KR/US)별 추천 리스트를 반환."""
+              max_per_primary: int | None = MAX_PER_PRIMARY,
+              weights: dict | None = None,
+              apply_exclusion: bool = True,
+              pick_type: str = "core") -> dict[str, list[Recommendation]]:
+    """유니버스를 평가해 시장(KR/US)별 추천 리스트를 반환.
+
+    weights: 부분 가중치 오버라이드(롱테일 등). apply_exclusion=False면 배제필터 생략.
+    pick_type: 결과에 태깅("core"|"longtail").
+    """
     by_market: dict[str, list[Stock]] = {}
     for s in stocks:
         by_market.setdefault(s.market, []).append(s)
     return {
-        market: _recommend_market(mstocks, top_n, max_per_primary)
+        market: _recommend_market(mstocks, top_n, max_per_primary,
+                                  weights, apply_exclusion, pick_type)
         for market, mstocks in by_market.items()
     }

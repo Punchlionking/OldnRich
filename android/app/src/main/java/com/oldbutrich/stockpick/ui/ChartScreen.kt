@@ -1,6 +1,8 @@
 package com.oldbutrich.stockpick.ui
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.gestures.detectDragGestures
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -15,12 +17,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.oldbutrich.stockpick.data.ChartSeries
 import com.oldbutrich.stockpick.data.HistoryItem
 import com.oldbutrich.stockpick.ui.theme.Primary
+import kotlin.math.roundToInt
 
 private val UpColor = Color(0xFFDC2626)    // 한국식: 상승 빨강
 private val DownColor = Color(0xFF2563EB)  // 하락 파랑
@@ -127,50 +131,77 @@ private fun ChartContent(item: HistoryItem, s: ChartSeries) {
             modifier = Modifier.fillMaxWidth().weight(1f)
         ) {
             Column(Modifier.padding(16.dp).fillMaxSize()) {
-                Text("일봉 종가 추이", fontSize = 13.sp, fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface)
-                Spacer(Modifier.height(8.dp))
+                // 선택된 지점(터치) 또는 기본(최고/최저) 표시
+                var selectedIdx by remember(s) { mutableStateOf<Int?>(null) }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text("일봉 종가 추이", fontSize = 13.sp, fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onSurface)
+                    Spacer(Modifier.weight(1f))
+                    val sel = selectedIdx?.let { s.points.getOrNull(it) }
+                    if (sel != null) {
+                        Text("📍 ${sel.date}  ", fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
+                        Text(formatPrice(sel.close, item.currency), fontSize = 13.sp,
+                            fontWeight = FontWeight.Bold, color = accent)
+                    } else {
+                        Text("터치해 날짜·가격 확인", fontSize = 11.sp,
+                            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f))
+                    }
+                }
+                Spacer(Modifier.height(4.dp))
                 Text("최고 ${formatPrice(maxV, item.currency)} · 최저 ${formatPrice(minV, item.currency)}",
                     fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
                 Spacer(Modifier.height(12.dp))
 
                 val gridColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.08f)
                 val markColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.45f)
+                val crossColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
                 // 추천일에 해당하는 인덱스(이상 첫 지점)
                 val recDate = runCatching { java.time.LocalDate.parse(item.firstDate) }.getOrNull()
                 val recIdx = if (recDate != null)
                     s.points.indexOfFirst { !it.date.isBefore(recDate) }.let { if (it < 0) s.points.size - 1 else it }
                 else 0
-                Canvas(Modifier.fillMaxSize()) {
+                val n = closes.size
+                Canvas(
+                    Modifier.fillMaxSize()
+                        .pointerInput(n) {
+                            detectDragGestures(
+                                onDragStart = { off ->
+                                    selectedIdx = ((off.x / size.width) * (n - 1)).roundToInt().coerceIn(0, n - 1)
+                                },
+                                onDrag = { ch, _ ->
+                                    selectedIdx = ((ch.position.x / size.width) * (n - 1)).roundToInt().coerceIn(0, n - 1)
+                                }
+                            )
+                        }
+                        .pointerInput(n) {
+                            detectTapGestures { off ->
+                                selectedIdx = ((off.x / size.width) * (n - 1)).roundToInt().coerceIn(0, n - 1)
+                            }
+                        }
+                ) {
                     val w = size.width
                     val h = size.height
-                    val n = closes.size
                     fun x(i: Int) = w * i / (n - 1)
                     fun y(v: Double) = (h * (1.0 - (v - minV) / range)).toFloat()
 
-                    // 가로 그리드 4줄
                     for (g in 0..4) {
                         val gy = h * g / 4f
                         drawLine(gridColor, Offset(0f, gy), Offset(w, gy), strokeWidth = 1f)
                     }
 
-                    // 추천 시점 세로선(점선) — 이 선 이후가 '추천 후 성과'
+                    // 추천 시점 세로선
                     val recX = x(recIdx)
-                    drawLine(
-                        markColor, Offset(recX, 0f), Offset(recX, h),
-                        strokeWidth = 2f,
-                        pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f))
-                    )
+                    drawLine(markColor, Offset(recX, 0f), Offset(recX, h), strokeWidth = 2f,
+                        pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 8f)))
 
-                    // 추천가 기준선(가로 점선)
+                    // 추천가 가로선
                     val baseY = y(first)
-                    drawLine(
-                        accent.copy(alpha = 0.4f), Offset(0f, baseY), Offset(w, baseY),
+                    drawLine(accent.copy(alpha = 0.4f), Offset(0f, baseY), Offset(w, baseY),
                         strokeWidth = 2f,
-                        pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 8f))
-                    )
+                        pathEffect = PathEffect.dashPathEffect(floatArrayOf(12f, 8f)))
 
-                    // 면적 채우기
+                    // 면적
                     val area = Path().apply {
                         moveTo(0f, h)
                         for (i in closes.indices) lineTo(x(i), y(closes[i]))
@@ -186,15 +217,22 @@ private fun ChartContent(item: HistoryItem, s: ChartSeries) {
                     }
                     drawPath(line, color = accent, style = Stroke(width = 3.5f))
 
-                    // 시작/끝 점
                     drawCircle(accent, radius = 6f, center = Offset(x(0), y(closes.first())))
                     drawCircle(accent, radius = 7f, center = Offset(x(n - 1), y(closes.last())))
+
+                    // 터치 크로스헤어
+                    selectedIdx?.let { si ->
+                        val cx = x(si); val cy = y(closes[si])
+                        drawLine(crossColor, Offset(cx, 0f), Offset(cx, h), strokeWidth = 1.5f)
+                        drawCircle(Color.White, radius = 9f, center = Offset(cx, cy))
+                        drawCircle(accent, radius = 6f, center = Offset(cx, cy))
+                    }
                 }
             }
         }
 
         Spacer(Modifier.height(10.dp))
-        Text("· 세로 점선 = 추천 시점, 가로 점선 = 추천가 / KR: 네이버, US: Stooq 일봉",
+        Text("· 세로 점선 = 추천 시점, 가로 점선 = 추천가 · 차트를 드래그하면 날짜·가격 표시",
             fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f))
     }
 }

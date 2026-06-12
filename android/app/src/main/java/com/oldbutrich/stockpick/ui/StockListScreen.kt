@@ -32,42 +32,79 @@ fun StockListScreen(
     stocks: List<Recommendation>,
     onStockClick: (Recommendation) -> Unit
 ) {
+    val core = stocks.filter { it.pickType != "longtail" }
+    val longtail = stocks.filter { it.pickType == "longtail" }
     LazyColumn(
         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        itemsIndexed(stocks) { index, stock ->
-            var visible by remember { mutableStateOf(false) }
-            LaunchedEffect(Unit) {
-                delay(index * 80L)
-                visible = true
+        itemsIndexed(core) { index, stock ->
+            AnimatedCard(index) {
+                StockCard(rank = index + 1, stock = stock, accent = Primary,
+                    onClick = { onStockClick(stock) })
             }
-            AnimatedVisibility(
-                visible = visible,
-                enter = fadeIn() + slideInVertically(initialOffsetY = { it / 2 })
-            ) {
-                StockCard(
-                    rank = index + 1,
-                    stock = stock,
-                    onClick = { onStockClick(stock) }
-                )
+        }
+        if (longtail.isNotEmpty()) {
+            item {
+                Column(Modifier.padding(top = 8.dp, bottom = 2.dp)) {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Text("🌱 신흥 강자 발굴", fontSize = 15.sp,
+                            fontWeight = FontWeight.ExtraBold, color = LongtailAccent)
+                        Spacer(Modifier.width(6.dp))
+                        Box(
+                            modifier = Modifier.clip(RoundedCornerShape(20.dp))
+                                .background(RiskHigh.copy(alpha = 0.12f))
+                                .padding(horizontal = 7.dp, vertical = 2.dp)
+                        ) {
+                            Text("고위험", fontSize = 10.sp, fontWeight = FontWeight.Bold,
+                                color = RiskHigh)
+                        }
+                    }
+                    Text("우량주 대신 중소형·신흥 종목을 공격적으로 탐색 (변동성 큼)",
+                        fontSize = 11.sp,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                }
+            }
+            itemsIndexed(longtail) { index, stock ->
+                AnimatedCard(core.size + index) {
+                    StockCard(rank = index + 1, stock = stock, accent = LongtailAccent,
+                        onClick = { onStockClick(stock) })
+                }
             }
         }
     }
 }
 
 @Composable
+private fun AnimatedCard(index: Int, content: @Composable () -> Unit) {
+    var visible by remember { mutableStateOf(false) }
+    LaunchedEffect(Unit) {
+        delay(index * 70L)
+        visible = true
+    }
+    AnimatedVisibility(
+        visible = visible,
+        enter = fadeIn() + slideInVertically(initialOffsetY = { it / 2 })
+    ) { content() }
+}
+
+@Composable
 fun StockCard(
     rank: Int,
     stock: Recommendation,
+    accent: Color = Primary,
     onClick: () -> Unit
 ) {
+    val isLongtail = stock.pickType == "longtail"
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        colors = CardDefaults.cardColors(
+            containerColor = if (isLongtail) accent.copy(alpha = 0.05f)
+                             else MaterialTheme.colorScheme.surface
+        ),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -83,7 +120,7 @@ fun StockCard(
                     modifier = Modifier
                         .size(28.dp)
                         .clip(RoundedCornerShape(50))
-                        .background(Primary)
+                        .background(accent)
                 ) {
                     Text(
                         text = "$rank",
@@ -155,7 +192,7 @@ fun StockCard(
                         text = stock.primaryLabel,
                         style = MaterialTheme.typography.bodySmall,
                         fontWeight = FontWeight.Medium,
-                        color = Primary
+                        color = accent
                     )
                 }
 

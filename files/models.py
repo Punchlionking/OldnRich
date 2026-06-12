@@ -220,6 +220,7 @@ class Recommendation:
     primary_criterion: str      # 대표 추천 기준 key
     primary_label: str          # 대표 추천 기준 라벨
     risk_level: str             # 종합 위험도
+    pick_type: str = "core"     # "core"(우량 추천) | "longtail"(신흥 강자, 고위험)
     reasons: list[CriterionResult] = field(default_factory=list)
 
     def to_dict(self) -> dict:

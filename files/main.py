@@ -85,7 +85,17 @@ def build_payload(out_path: str) -> dict:
     markets: dict = {}
     meta: dict = {}
 
+    # ENABLE_MARKETS=KR (로컬·한국) / US (CI·미국) 처럼 시장 분담 가능. 기본 전체.
+    enabled = {m.strip().upper()
+               for m in os.environ.get("ENABLE_MARKETS", "KR,US").split(",") if m.strip()}
+
     for market in ("KR", "US"):
+        # 비활성 시장: 이전 데이터를 그대로 보존(다른 러너가 담당) — stale 아님
+        if market not in enabled:
+            markets[market] = prev_markets.get(market, [])
+            meta[market] = prev_meta.get(market, {"source": "preserved", "as_of": "unknown"})
+            print(f"[{market}] 비활성(ENABLE_MARKETS) → 이전 데이터 보존")
+            continue
         src = sources[market]
         try:
             stocks = src.fetch_universe()

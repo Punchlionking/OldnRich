@@ -31,5 +31,6 @@ files.zip
 
 # ===== 임시 =====
 check_keys.py
+scripts/update_kr.log
 
 # 참고: recommendations.json 은 GitHub Actions가 갱신/커밋하므로 추적함(무시 안 함)

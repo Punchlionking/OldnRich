@@ -930,7 +930,9 @@ class KoreaDataSource(DataSource):
                 # 아래는 KIS 외 소스 필요 → 중립 기본값(엔진이 자동으로 제외 처리)
                 sentiment=SentimentData(0, 1.0, 0.0, 0.0),
                 analyst=analyst,   # 네이버 컨센서스 목표가 (LIVE)
-                theme=ThemeData(themes=themes, theme_volume_surge=1.0, sector_strength_pct=50.0),
+                # 테마: 유니버스에 없으면 KIS 업종으로 그룹핑
+                theme=ThemeData(themes=(themes or ([q["sector"]] if q.get("sector") else [])),
+                                theme_volume_surge=1.0, sector_strength_pct=50.0),
                 beneficiary=BeneficiaryData(),
                 blog=BlogData(),
                 # DART 재무제표 → F-Score/FCF/ROIC/Altman/Accruals (LIVE)
@@ -967,8 +969,8 @@ class USDataSource(DataSource):
     FH_BASE = "https://finnhub.io/api/v1"
 
     def __init__(self, alpha_key, twelve_key, finnhub_key=None,
-                 universe=None, rate_limit_sec: float = 8.5, cache=None):
-                 # Twelve Data 무료 플랜: 8 req/min → 최소 7.5초 간격 필요
+                 universe=None, rate_limit_sec: float = 0.5, cache=None):
+                 # 가격은 Yahoo(무키) → 0.5초 간격이면 600종목 ~5분. Finnhub는 캐시로 절감.
         self.alpha_key = alpha_key
         self.twelve_key = twelve_key
         self.finnhub_key = finnhub_key
@@ -1008,18 +1010,28 @@ class USDataSource(DataSource):
 
     def _tech(self, ticker: str) -> dict:
         """
-        Twelve Data time_series '1콜'만 받아 RSI·MACD·볼린저·모멘텀·변동성을
-        indicators.py로 로컬 계산(과거 5콜 → 1콜, 무료 한도 5배 절약).
+        Yahoo Finance 일봉 1콜로 RSI·MACD·볼린저·모멘텀·변동성을 로컬 계산.
+        (Twelve Data 분당 8콜·Stooq 봇차단 회피 → 무키, 600종목 규모 가능)
         """
-        ts = self._td("time_series", ticker, {"interval": "1day", "outputsize": 290})
-        tvals = ts.get("values", []) or []
-        # values: 최신 → 과거. (과거 → 최신)으로 뒤집어 closes/volumes 구성
+        self._throttle()
+        url = (f"https://query1.finance.yahoo.com/v8/finance/chart/{ticker}"
+               f"?range=1y&interval=1d")
+        try:
+            r = self._requests().get(url, headers={"User-Agent": "Mozilla/5.0"}, timeout=12)
+            r.raise_for_status()
+            j = r.json()
+        except Exception as e:
+            log.warning("[US] %s Yahoo 시세 실패: %s", ticker, e)
+            return {}
+        res = (j.get("chart", {}).get("result") or [{}])[0]
+        quote = ((res.get("indicators", {}).get("quote") or [{}])[0])
+        closes_raw = quote.get("close") or []
+        vols_raw = quote.get("volume") or []
         closes, volumes = [], []
-        for v in reversed(tvals):
-            c = _f(v.get("close"))
-            if c > 0:
-                closes.append(c)
-                volumes.append(_f(v.get("volume")))
+        for c, v in zip(closes_raw, vols_raw):
+            if c is not None and c > 0:
+                closes.append(float(c))
+                volumes.append(float(v) if v is not None else 0.0)
         if not closes:
             return {}
 
@@ -1291,7 +1303,8 @@ class USDataSource(DataSource):
                 if self.alpha_key:
                     fund = self._cf("us_av", ticker, CacheTTL.FUNDAMENTALS_DAYS,
                                     lambda: self._fundamentals(ticker)) or {}
-                news = self._news_count(ticker)
+                news = self._cf("us_news", ticker, 2,   # 뉴스량 2일 캐시(순환)
+                                lambda: self._news_count(ticker)) or 0
                 # Finnhub 재무제표(분기성) → 품질 팩터, 캐시
                 q_d = self._cf("us_fin", ticker, CacheTTL.FUNDAMENTALS_DAYS,
                                lambda: asdict(self._us_quality(

@@ -48,10 +48,22 @@ def _load_env():
 
 _load_env()   # config.py 보다 먼저 호출해야 ApiKeys가 키를 인식함
 
-from .config import ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS, CacheTTL
-from .datasources import KoreaDataSource, USDataSource, MockDataSource, LONGTAIL_TICKERS
+from .config import (ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS, CacheTTL,
+                     UNIVERSE_KR_N, UNIVERSE_US_N)
+from .datasources import (KoreaDataSource, USDataSource, MockDataSource,
+                          LONGTAIL_TICKERS, _KR_LONGTAIL, _US_LONGTAIL)
 from .engine import recommend
 from .cache import CacheStore
+from .universe import load_kr_universe, load_us_universe
+
+
+def _dedup_universe(rows):
+    seen, out = set(), []
+    for t, nm, th in rows:
+        if t not in seen:
+            seen.add(t)
+            out.append((t, nm, th))
+    return out
 
 
 def _make_sources():
@@ -72,11 +84,16 @@ def _make_sources():
                    ("us_analyst", CacheTTL.BUDGET_US_ANALYST),
                    ("us_ins", CacheTTL.BUDGET_US_INSIDER)):
         cache.set_budget(cat, n)
+
+    # 코어 유니버스(동적) + 롱테일(큐레이션) 결합 후 중복 제거
+    kr_uni = _dedup_universe(load_kr_universe(UNIVERSE_KR_N, cache) + _KR_LONGTAIL)
+    us_uni = _dedup_universe(load_us_universe(UNIVERSE_US_N, cache) + _US_LONGTAIL)
+    print(f"[유니버스] KR {len(kr_uni)} (코어+롱테일) / US {len(us_uni)}")
     return {
         "KR": KoreaDataSource(ApiKeys.KIS_APP_KEY, ApiKeys.KIS_APP_SECRET,
-                              ApiKeys.DART_API_KEY, cache=cache),
+                              ApiKeys.DART_API_KEY, universe=kr_uni, cache=cache),
         "US": USDataSource(ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA,
-                           ApiKeys.FINNHUB, cache=cache),
+                           ApiKeys.FINNHUB, universe=us_uni, cache=cache),
     }, cache
 
 

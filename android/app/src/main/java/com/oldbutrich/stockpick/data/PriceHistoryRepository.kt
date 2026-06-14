@@ -57,18 +57,27 @@ class PriceHistoryRepository {
         }.toList()
     }
 
-    // --- US: Stooq ----------------------------------------------------------
+    // --- US: Yahoo Finance (Stooq 봇차단 대체) ------------------------------
     private fun fetchStooq(ticker: String, start: LocalDate, end: LocalDate): List<PricePoint> {
-        val f = DateTimeFormatter.ofPattern("yyyyMMdd")
-        val sym = ticker.lowercase() + ".us"
-        val url = "https://stooq.com/q/d/l/?s=$sym&d1=${start.format(f)}&d2=${end.format(f)}&i=d"
-        val body = httpGet(url, naver = false)
-        // Date,Open,High,Low,Close,Volume
-        return body.lineSequence().drop(1).mapNotNull { line ->
-            val c = line.split(',')
-            if (c.size < 5) return@mapNotNull null
-            runCatching { PricePoint(LocalDate.parse(c[0]), c[4].toDouble()) }.getOrNull()
-        }.toList()
+        val zone = java.time.ZoneOffset.UTC
+        val p1 = start.atStartOfDay(zone).toEpochSecond()
+        val p2 = end.plusDays(1).atStartOfDay(zone).toEpochSecond()
+        val url = "https://query1.finance.yahoo.com/v8/finance/chart/$ticker" +
+                "?period1=$p1&period2=$p2&interval=1d"
+        val body = httpGet(url, naver = true)   // UA 필요
+        // JSON: ...timestamp":[...]... "close":[...]
+        val tsBlock = Regex(""""timestamp":\[(.*?)]""").find(body)?.groupValues?.get(1) ?: return emptyList()
+        val closeBlock = Regex(""""close":\[(.*?)]""").find(body)?.groupValues?.get(1) ?: return emptyList()
+        val ts = tsBlock.split(',').mapNotNull { it.trim().toLongOrNull() }
+        val cl = closeBlock.split(',').map { it.trim().toDoubleOrNull() }
+        val out = ArrayList<PricePoint>()
+        for (i in ts.indices) {
+            val c = cl.getOrNull(i) ?: continue
+            if (c <= 0) continue
+            val d = java.time.Instant.ofEpochSecond(ts[i]).atZone(zone).toLocalDate()
+            out.add(PricePoint(d, c))
+        }
+        return out
     }
 
     private fun httpGet(urlStr: String, naver: Boolean): String {

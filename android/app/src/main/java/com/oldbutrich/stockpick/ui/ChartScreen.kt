@@ -232,7 +232,7 @@ private fun ChartContent(item: HistoryItem, s: ChartSeries) {
         }
 
         Spacer(Modifier.height(10.dp))
-        Text("· 세로 점선 = 추천 시점, 가로 점선 = 추천가 · 차트를 드래그하면 날짜·가격 표시",
+        Text("· 세로 점선 = 추천 시점, 가로 점선 = 추천가 · 드래그하면 날짜·가격 표시 (KR 네이버·US Yahoo)",
             fontSize = 10.sp, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f))
     }
 }

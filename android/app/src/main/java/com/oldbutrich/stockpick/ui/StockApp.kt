@@ -67,7 +67,11 @@ fun StockApp(vm: RecommendationViewModel = viewModel()) {
         }
         composable("detail") {
             selectedStock?.let { stock ->
-                StockDetailScreen(stock = stock, onBack = { navController.popBackStack() })
+                StockDetailScreen(
+                    stock = stock,
+                    loadCompany = { name, market -> vm.loadCompanyInfo(name, market) },
+                    onBack = { navController.popBackStack() }
+                )
             }
         }
         composable("history") {

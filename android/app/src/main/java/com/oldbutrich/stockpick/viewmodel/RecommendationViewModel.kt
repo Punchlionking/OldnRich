@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.oldbutrich.stockpick.data.ChartSeries
+import com.oldbutrich.stockpick.data.CompanyInfoRepository
 import com.oldbutrich.stockpick.data.DataSource
 import com.oldbutrich.stockpick.data.HistoryItem
 import com.oldbutrich.stockpick.data.HistoryStore
@@ -32,6 +33,7 @@ class RecommendationViewModel(application: Application) : AndroidViewModel(appli
     private val repository = RecommendationRepository(application)
     private val historyStore = HistoryStore(application)
     private val priceRepo = PriceHistoryRepository()
+    private val companyRepo = CompanyInfoRepository()
 
     private val _uiState = MutableStateFlow(RecommendationUiState())
     val uiState: StateFlow<RecommendationUiState> = _uiState
@@ -41,6 +43,10 @@ class RecommendationViewModel(application: Application) : AndroidViewModel(appli
 
     /** 최초 추천일~현재 일봉 차트 로딩. */
     suspend fun loadChart(item: HistoryItem): ChartSeries = priceRepo.load(item)
+
+    /** 기업 개요(Wikipedia) 로딩. */
+    suspend fun loadCompanyInfo(name: String, market: String): String? =
+        companyRepo.load(name, market)
 
     init {
         load(isRefresh = false)

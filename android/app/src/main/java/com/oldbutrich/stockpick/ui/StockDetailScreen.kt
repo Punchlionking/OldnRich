@@ -32,8 +32,13 @@ import com.oldbutrich.stockpick.ui.theme.*
 @Composable
 fun StockDetailScreen(
     stock: Recommendation,
+    loadCompany: suspend (String, String) -> String?,
     onBack: () -> Unit
 ) {
+    // 기업 개요 온디맨드 로딩 (Wikipedia). null=로딩중, ""=없음, 그외=내용
+    val overview by produceState<String?>(initialValue = null, stock.ticker) {
+        value = loadCompany(stock.name, stock.market) ?: ""
+    }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -73,6 +78,11 @@ fun StockDetailScreen(
             // ── 요약 헤더 카드
             item {
                 SummaryCard(stock = stock)
+            }
+
+            // ── 기업 개요 (Wikipedia) — 로딩중이거나 내용 있을 때만
+            if (overview == null || overview!!.isNotBlank()) {
+                item { CompanyOverviewCard(overview) }
             }
 
             // ── 섹션 제목
@@ -379,6 +389,38 @@ fun MarketBadge(market: String) {
             .padding(horizontal = 10.dp, vertical = 4.dp)
     ) {
         Text(text = label, fontSize = 11.sp, fontWeight = FontWeight.Bold, color = Color.White)
+    }
+}
+
+@Composable
+fun CompanyOverviewCard(overview: String?) {
+    Card(
+        shape = RoundedCornerShape(14.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface),
+        elevation = CardDefaults.cardElevation(defaultElevation = 1.dp),
+        modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text("🏢 기업 개요", style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+            Spacer(Modifier.height(8.dp))
+            if (overview == null) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    CircularProgressIndicator(
+                        strokeWidth = 2.dp, color = Primary,
+                        modifier = Modifier.size(16.dp))
+                    Spacer(Modifier.width(8.dp))
+                    Text("개요 불러오는 중...", fontSize = 12.sp,
+                        color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f))
+                }
+            } else {
+                Text(overview, fontSize = 13.sp, lineHeight = 20.sp,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.8f))
+                Spacer(Modifier.height(6.dp))
+                Text("출처: Wikipedia", fontSize = 10.sp,
+                    color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f))
+            }
+        }
     }
 }
 

@@ -48,19 +48,36 @@ def _load_env():
 
 _load_env()   # config.py 보다 먼저 호출해야 ApiKeys가 키를 인식함
 
-from .config import ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS
+from .config import ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS, CacheTTL
 from .datasources import KoreaDataSource, USDataSource, MockDataSource, LONGTAIL_TICKERS
 from .engine import recommend
+from .cache import CacheStore
 
 
 def _make_sources():
+    """(sources, cache) 반환. cache는 계층적 캐시(없으면 None)."""
     use_real = any([ApiKeys.KIS_APP_KEY, ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA])
-    if use_real:
-        return {
-            "KR": KoreaDataSource(ApiKeys.KIS_APP_KEY, ApiKeys.KIS_APP_SECRET, ApiKeys.DART_API_KEY),
-            "US": USDataSource(ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA, ApiKeys.FINNHUB),
-        }
-    return {"KR": MockDataSource("KR"), "US": MockDataSource("US")}
+    if not use_real:
+        return {"KR": MockDataSource("KR"), "US": MockDataSource("US")}, None
+
+    cache = CacheStore()
+    # 카테고리별 '1회 실행당 새 호출 예산' (오래된 것부터 순환 갱신)
+    for cat, n in (("kr_fin", CacheTTL.BUDGET_KR_FUND),
+                   ("kr_dartfin", CacheTTL.BUDGET_KR_FUND),
+                   ("kr_gov", CacheTTL.BUDGET_KR_GOV),
+                   ("kr_ins", CacheTTL.BUDGET_KR_INSIDER),
+                   ("kr_analyst", CacheTTL.BUDGET_KR_ANALYST),
+                   ("us_av", CacheTTL.BUDGET_US_FUND_AV),
+                   ("us_fin", CacheTTL.BUDGET_US_FIN_FH),
+                   ("us_analyst", CacheTTL.BUDGET_US_ANALYST),
+                   ("us_ins", CacheTTL.BUDGET_US_INSIDER)):
+        cache.set_budget(cat, n)
+    return {
+        "KR": KoreaDataSource(ApiKeys.KIS_APP_KEY, ApiKeys.KIS_APP_SECRET,
+                              ApiKeys.DART_API_KEY, cache=cache),
+        "US": USDataSource(ApiKeys.ALPHA_VANTAGE, ApiKeys.TWELVE_DATA,
+                           ApiKeys.FINNHUB, cache=cache),
+    }, cache
 
 
 def _load_previous(out_path: str) -> dict | None:
@@ -76,7 +93,7 @@ def build_payload(out_path: str) -> dict:
     시장별로 독립 수집. 한 시장이 실패하면(예: CI에서 KIS 불가) 그 시장은
     '이전 실데이터'를 유지하고, 성공한 시장만 갱신한다. 가짜(Mock) 발행 방지.
     """
-    sources = _make_sources()
+    sources, cache = _make_sources()
     prev = _load_previous(out_path) or {}
     prev_markets = (prev.get("markets") or {})
     prev_meta = (prev.get("market_meta") or {})
@@ -124,6 +141,11 @@ def build_payload(out_path: str) -> dict:
                 "as_of": kept.get("as_of", "unknown"),
                 "stale": True,
             }
+
+    # 캐시 저장(이번에 새로 받은 느린 데이터 영속화 → 다음 실행에서 재사용)
+    if cache is not None:
+        cache.save()
+        print(f"[캐시] 이번 실행 새 호출 {cache.fetched}건 (나머지는 캐시 재사용)")
 
     return {
         "generated_at": now_iso,

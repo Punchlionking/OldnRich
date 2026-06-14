@@ -171,6 +171,33 @@ class Thresholds:
 
 
 # ---------------------------------------------------------------------------
+# 계층적 캐시 — 느린 데이터는 캐시하고 주기를 늘려 API 한도 절약
+#   TTL: 이 일수 안이면 캐시 재사용. BUDGET: 1회 실행당 새로 호출 허용 개수
+#   (오래된 것부터 예산만큼만 갱신 → 나머지는 다음 실행에서 순환 갱신)
+# ---------------------------------------------------------------------------
+class CacheTTL:
+    # 재무제표(F-Score/FCF/ROIC/Altman) — 분기마다만 바뀜
+    FUNDAMENTALS_DAYS = 50
+    # 목표가·추정치·추천(PEAD) — 주 단위
+    ANALYST_DAYS = 5
+    # 지배구조(배당·자사주) — 분기~연
+    GOVERNANCE_DAYS = 45
+    # 내부자 거래 — 월 단위
+    INSIDER_DAYS = 21
+
+    # 1회 실행당 새로 호출할 최대 종목 수(카테고리별)
+    #   US는 Alpha Vantage(25/일)가 병목 → 보수적. KR은 여유.
+    BUDGET_US_FUND_AV = 10     # Alpha Vantage OVERVIEW+INCOME (종목당 2콜)
+    BUDGET_US_FIN_FH = 60      # Finnhub 재무제표
+    BUDGET_US_ANALYST = 60
+    BUDGET_US_INSIDER = 60
+    BUDGET_KR_FUND = 60        # DART 재무제표
+    BUDGET_KR_GOV = 60
+    BUDGET_KR_INSIDER = 60
+    BUDGET_KR_ANALYST = 80     # 네이버 컨센서스
+
+
+# ---------------------------------------------------------------------------
 # API 키 (환경변수). 미설정 시 None → 엔진은 자동으로 Mock 데이터로 동작.
 # ---------------------------------------------------------------------------
 class ApiKeys:

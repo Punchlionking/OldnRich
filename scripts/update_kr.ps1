@@ -25,8 +25,8 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 
-# 2) commit KR change, then sync with remote (US updated by CI) and push
-git add recommendations.json
+# 2) commit KR change + cache, then sync with remote (US updated by CI) and push
+git add recommendations.json cache
 git diff --cached --quiet
 if ($LASTEXITCODE -ne 0) {            # staged changes exist
     $stamp = [DateTime]::UtcNow.ToString('yyyy-MM-dd HH:mm')

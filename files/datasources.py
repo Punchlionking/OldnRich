@@ -39,11 +39,14 @@ import datetime as dt
 from abc import ABC, abstractmethod
 from collections import defaultdict
 
+from dataclasses import asdict
+
 from .models import (
     Stock, FinancialData, TechData, SentimentData,
     AnalystData, ThemeData, BeneficiaryData, BlogData,
     QualityData, AnalystExtData, GovernanceData, InsiderData, RedFlagData,
 )
+from .config import CacheTTL
 from . import indicators as ind
 
 log = logging.getLogger("stock_recommender.datasources")
@@ -394,13 +397,14 @@ class KoreaDataSource(DataSource):
 
     def __init__(self, kis_key, kis_secret, dart_key=None,
                  universe=None, rate_limit_sec: float = 1.1,
-                 virtual: bool | None = None):
+                 virtual: bool | None = None, cache=None):
                  # FHKST03010100(일봉) 등 일부 TR은 초당 1건 제한 → 1.1초 간격
         self.kis_key = kis_key
         self.kis_secret = kis_secret
         self.dart_key = dart_key
         self.universe = universe or _KR_ALL
         self.rate_limit_sec = rate_limit_sec   # KIS는 초당 호출 제한 → 간격 둠
+        self.cache = cache                     # 계층적 캐시(없으면 매번 호출)
 
         # virtual=None 이면 키 길이로 자동 판단
         # 실전 앱키는 보통 36자(UUID), 모의는 형식이 다양함.
@@ -415,6 +419,12 @@ class KoreaDataSource(DataSource):
         self._token = None
         self._token_exp = 0.0
         self._last_call = 0.0
+
+    def _cf(self, category: str, key: str, ttl_days: float, fetch_fn):
+        """캐시 경유 호출(캐시 없으면 직접 호출)."""
+        if self.cache is None:
+            return fetch_fn()
+        return self.cache.get_or_fetch(category, key, ttl_days, fetch_fn)
 
     # --- 저수준 HTTP 헬퍼 ---------------------------------------------------
     @staticmethod
@@ -832,20 +842,34 @@ class KoreaDataSource(DataSource):
         raw = []
         for ticker, name, themes in self.universe:
             try:
+                # 가격/일봉/거래량은 매일 신선하게 (캐시 안 함)
                 q = self._quote(ticker)
                 closes, vols = self._daily(ticker)
-                roe, opm, rev, op = self._financials(ticker)
-                # DART 재무제표 → 품질 팩터 입력 + 주주환원 + 내부자 공시
+                # 재무(분기성)는 캐시: 신선하면 재사용, 오래된 것만 예산 내 갱신
+                finr = self._cf("kr_fin", ticker, CacheTTL.FUNDAMENTALS_DAYS,
+                                lambda: dict(zip(("roe", "opm", "rev", "op"),
+                                                 self._financials(ticker))))
+                finr = finr or {}
+                roe = finr.get("roe", 0.0); opm = finr.get("opm", 0.0)
+                rev = finr.get("rev", []); op = finr.get("op", [])
+
                 quality = QualityData()
                 governance = GovernanceData()
                 insider = InsiderData()
                 corp = corp_map.get(ticker)
                 if corp:
-                    fin = self._dart_financials(corp)
+                    fin = self._cf("kr_dartfin", ticker, CacheTTL.FUNDAMENTALS_DAYS,
+                                   lambda: self._dart_financials(corp))
+                    # market_cap은 매일의 현재가×주식수로 재계산(캐시는 재무제표만)
                     quality = self._build_quality(fin, q["price"], q.get("shares", 0.0))
-                    governance = self._dart_governance(corp)
-                    insider = self._dart_insider(corp)
-                naver = self._naver_consensus(ticker)   # 컨센서스 목표가(상승여력)
+                    gov_d = self._cf("kr_gov", ticker, CacheTTL.GOVERNANCE_DAYS,
+                                     lambda: asdict(self._dart_governance(corp)))
+                    governance = GovernanceData(**gov_d) if gov_d else GovernanceData()
+                    ins_d = self._cf("kr_ins", ticker, CacheTTL.INSIDER_DAYS,
+                                     lambda: asdict(self._dart_insider(corp)))
+                    insider = InsiderData(**ins_d) if ins_d else InsiderData()
+                naver = self._cf("kr_analyst", ticker, CacheTTL.ANALYST_DAYS,
+                                 lambda: self._naver_consensus(ticker))
                 raw.append((ticker, name, themes, q, closes, vols, roe, opm, rev, op,
                             quality, governance, insider, naver))
             except Exception as e:
@@ -943,14 +967,20 @@ class USDataSource(DataSource):
     FH_BASE = "https://finnhub.io/api/v1"
 
     def __init__(self, alpha_key, twelve_key, finnhub_key=None,
-                 universe=None, rate_limit_sec: float = 8.5):
+                 universe=None, rate_limit_sec: float = 8.5, cache=None):
                  # Twelve Data 무료 플랜: 8 req/min → 최소 7.5초 간격 필요
         self.alpha_key = alpha_key
         self.twelve_key = twelve_key
         self.finnhub_key = finnhub_key
         self.universe = universe or _US_ALL
         self.rate_limit_sec = rate_limit_sec
+        self.cache = cache
         self._last_call = 0.0
+
+    def _cf(self, category: str, key: str, ttl_days: float, fetch_fn):
+        if self.cache is None:
+            return fetch_fn()
+        return self.cache.get_or_fetch(category, key, ttl_days, fetch_fn)
 
     @staticmethod
     def _requests():
@@ -977,42 +1007,34 @@ class USDataSource(DataSource):
         return self._get(f"{self.TD_BASE}/{path}", params)
 
     def _tech(self, ticker: str) -> dict:
-        quote = self._td("quote", ticker)
-        rsi_v = self._td("rsi", ticker, {"interval": "1day", "time_period": 14, "outputsize": 1})
-        macd_v = self._td("macd", ticker, {"interval": "1day", "outputsize": 2})
-        bb_v = self._td("bbands", ticker, {"interval": "1day", "time_period": 20, "outputsize": 1})
-        # 모멘텀(12-1)·변동성 계산 위해 ~290거래일 조회 (콜 수 증가 없음, outputsize만 ↑)
+        """
+        Twelve Data time_series '1콜'만 받아 RSI·MACD·볼린저·모멘텀·변동성을
+        indicators.py로 로컬 계산(과거 5콜 → 1콜, 무료 한도 5배 절약).
+        """
         ts = self._td("time_series", ticker, {"interval": "1day", "outputsize": 290})
+        tvals = ts.get("values", []) or []
+        # values: 최신 → 과거. (과거 → 최신)으로 뒤집어 closes/volumes 구성
+        closes, volumes = [], []
+        for v in reversed(tvals):
+            c = _f(v.get("close"))
+            if c > 0:
+                closes.append(c)
+                volumes.append(_f(v.get("volume")))
+        if not closes:
+            return {}
 
-        price = _f(quote.get("close"))
-        # RSI
-        rsi_vals = rsi_v.get("values", [{}])
-        rsi = _f(rsi_vals[0].get("rsi"), 50.0) if rsi_vals else 50.0
-        # MACD (values[0]=최신, [1]=전일)
-        mvals = macd_v.get("values", [])
-        macd_last = _f(mvals[0].get("macd")) if mvals else 0.0
-        macd_sig = _f(mvals[0].get("macd_signal")) if mvals else 0.0
-        macd_prev = (_f(mvals[1].get("macd")) - _f(mvals[1].get("macd_signal"))) if len(mvals) > 1 else 0.0
-        # 볼린저 위치
-        bvals = bb_v.get("values", [{}])
-        upper = _f(bvals[0].get("upper_band")) if bvals else 0.0
-        lower = _f(bvals[0].get("lower_band")) if bvals else 0.0
-        bb_pos = (price - lower) / (upper - lower) if upper > lower else 0.5
-        bb_pos = max(0.0, min(1.0, bb_pos))
-        # 5일 등락률 + 종가 시계열(과거→최신)
-        tvals = ts.get("values", [])
-        closes_newest_first = [_f(v.get("close")) for v in tvals]
-        change_5d = 0.0
-        if len(closes_newest_first) > 5 and closes_newest_first[5]:
-            change_5d = (closes_newest_first[0] / closes_newest_first[5] - 1.0) * 100.0
-        closes = [c for c in reversed(closes_newest_first) if c > 0]
-
+        price = closes[-1]
+        volume = volumes[-1] if volumes else 0.0
+        avg_volume = (sum(volumes[-20:]) / min(len(volumes), 20)) if volumes else volume
+        macd_last, macd_sig, macd_prev = ind.macd(closes)
         return {
             "price": price,
-            "volume": _f(quote.get("volume")),
-            "avg_volume": _f(quote.get("average_volume"), _f(quote.get("volume"))),
-            "rsi": rsi, "macd": macd_last, "macd_signal": macd_sig, "macd_prev": macd_prev,
-            "bb_pos": bb_pos, "change_5d": change_5d,
+            "volume": volume,
+            "avg_volume": avg_volume or 1.0,
+            "rsi": ind.rsi(closes),
+            "macd": macd_last, "macd_signal": macd_sig, "macd_prev": macd_prev,
+            "bb_pos": ind.bollinger_position(closes),
+            "change_5d": ind.pct_change(closes, 5),
             "closes": closes,
             "mom_12_1": ind.momentum_12_1(closes),
             "volatility": ind.annualized_volatility(closes),
@@ -1262,14 +1284,26 @@ class USDataSource(DataSource):
         raw = []
         for ticker, name, themes in self.universe:
             try:
+                # 시세/지표는 매일 신선(Twelve Data 1콜로 로컬 계산)
                 tech = self._tech(ticker) if self.twelve_key else {}
-                fund = self._fundamentals(ticker) if self.alpha_key else {}
+                # 펀더멘털(AV, 분기성)은 캐시 — Alpha Vantage 25/일 병목 회피
+                fund = {}
+                if self.alpha_key:
+                    fund = self._cf("us_av", ticker, CacheTTL.FUNDAMENTALS_DAYS,
+                                    lambda: self._fundamentals(ticker)) or {}
                 news = self._news_count(ticker)
-                # Finnhub 재무제표 → 품질 팩터 (시총은 AV OVERVIEW, 없으면 price×0)
-                quality = self._us_quality(
-                    ticker, tech.get("price", 0.0), fund.get("market_cap", 0.0))
-                analyst_ext = self._us_analyst_ext(ticker)   # PEAD: 서프라이즈+추정치 방향
-                insider = self._us_insider(ticker)           # 내부자 군집매수
+                # Finnhub 재무제표(분기성) → 품질 팩터, 캐시
+                q_d = self._cf("us_fin", ticker, CacheTTL.FUNDAMENTALS_DAYS,
+                               lambda: asdict(self._us_quality(
+                                   ticker, tech.get("price", 0.0),
+                                   fund.get("market_cap", 0.0))))
+                quality = QualityData(**q_d) if q_d else QualityData()
+                ae_d = self._cf("us_analyst", ticker, CacheTTL.ANALYST_DAYS,
+                                lambda: asdict(self._us_analyst_ext(ticker)))
+                analyst_ext = AnalystExtData(**ae_d) if ae_d else AnalystExtData()
+                in_d = self._cf("us_ins", ticker, CacheTTL.INSIDER_DAYS,
+                                lambda: asdict(self._us_insider(ticker)))
+                insider = InsiderData(**in_d) if in_d else InsiderData()
                 raw.append((ticker, name, themes, tech, fund, news,
                             quality, analyst_ext, insider))
             except Exception as e:

@@ -80,6 +80,8 @@ def _make_sources():
                    ("kr_ins", CacheTTL.BUDGET_KR_INSIDER),
                    ("kr_analyst", CacheTTL.BUDGET_KR_ANALYST),
                    ("us_av", CacheTTL.BUDGET_US_FUND_AV),
+                   ("us_metric", CacheTTL.BUDGET_US_METRIC),   # Finnhub ROE/PER (60/분)
+                   ("us_news", CacheTTL.BUDGET_US_FIN_FH),
                    ("us_fin", CacheTTL.BUDGET_US_FIN_FH),
                    ("us_analyst", CacheTTL.BUDGET_US_ANALYST),
                    ("us_ins", CacheTTL.BUDGET_US_INSIDER)):

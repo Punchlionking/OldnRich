@@ -191,7 +191,8 @@ class CacheTTL:
 
     # 1회 실행당 새로 호출할 최대 종목 수(카테고리별)
     #   US는 Alpha Vantage(25/일)가 병목 → 보수적. KR은 여유.
-    BUDGET_US_FUND_AV = 10     # Alpha Vantage OVERVIEW+INCOME (종목당 2콜)
+    BUDGET_US_FUND_AV = 10     # Alpha Vantage OVERVIEW+INCOME (종목당 2콜, 25/일)
+    BUDGET_US_METRIC = 130     # Finnhub metric ROE/PER/PBR/마진 (1콜, 빠르게 채움)
     BUDGET_US_FIN_FH = 60      # Finnhub 재무제표
     BUDGET_US_ANALYST = 60
     BUDGET_US_INSIDER = 60

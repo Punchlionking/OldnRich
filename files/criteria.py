@@ -47,8 +47,13 @@ def _result(key: str, score: float, reason: str,
 # ---------------------------------------------------------------------------
 def score_undervalued(s: Stock) -> CriterionResult:
     f = s.financial
-    per_disc = (f.sector_per - f.per) / f.sector_per if f.sector_per else 0.0
-    pbr_disc = (f.sector_pbr - f.pbr) / f.sector_pbr if f.sector_pbr else 0.0
+    # PER/PBR이 없거나(0=데이터 미수집) 적자(음수 PER)면 '저평가' 판단 불가 → 제외.
+    #   (적자 기업의 음수 PER을 '초저평가'로 오판하던 버그 방지)
+    if f.per <= 0 or f.pbr <= 0 or f.sector_per <= 0 or f.sector_pbr <= 0:
+        return _result("undervalued", 0.0, "PER/PBR 데이터 없음 또는 적자", available=False)
+
+    per_disc = (f.sector_per - f.per) / f.sector_per
+    pbr_disc = (f.sector_pbr - f.pbr) / f.sector_pbr
     valuation = (per_disc + pbr_disc) / 2.0          # -1..+1 (양수=저평가)
 
     valuation_score = _scale(valuation, -0.1, 0.5)   # 10% 고평가~50% 저평가
@@ -60,10 +65,17 @@ def score_undervalued(s: Stock) -> CriterionResult:
              + 0.25 * margin_score - 0.30 * debt_penalty)
     score = max(0.0, score)
 
+    # 수익성 코멘트는 실제 값에 따라
+    if f.roe > 0 and f.operating_margin > 0:
+        prof = f"ROE {f.roe:.0f}%·영업이익률 {f.operating_margin:.0f}%로 수익성 양호"
+    elif f.roe == 0 and f.operating_margin == 0:
+        prof = "수익성 지표 미수집"
+    else:
+        prof = f"ROE {f.roe:.0f}%·영업이익률 {f.operating_margin:.0f}%(수익성 부진)"
+    disc = max(0.0, valuation) * 100
     reason = (
         f"업종 평균 PER {f.sector_per:.1f}·PBR {f.sector_pbr:.1f} 대비 "
-        f"PER {f.per:.1f}·PBR {f.pbr:.1f}로 {valuation*100:.0f}% 저평가, "
-        f"ROE {f.roe:.0f}%·영업이익률 {f.operating_margin:.0f}%로 수익성 양호"
+        f"PER {f.per:.1f}·PBR {f.pbr:.1f}로 {disc:.0f}% 저평가, {prof}"
     )
     return _result("undervalued", score, reason)
 

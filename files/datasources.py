@@ -1052,6 +1052,30 @@ class USDataSource(DataSource):
             "volatility": ind.annualized_volatility(closes),
         }
 
+    # --- Finnhub metric: ROE/마진/PER/PBR (AV 25/일 병목 우회, 60/분) -------
+    def _us_metrics(self, ticker: str) -> dict:
+        if not self.finnhub_key:
+            return {}
+        try:
+            j = self._get(f"{self.FH_BASE}/stock/metric",
+                          {"symbol": ticker, "metric": "all", "token": self.finnhub_key})
+        except Exception as e:
+            log.warning("[US] %s metric 실패: %s", ticker, e)
+            return {}
+        m = j.get("metric") or {}
+        def g(*keys):
+            for k in keys:
+                v = m.get(k)
+                if isinstance(v, (int, float)):
+                    return float(v)
+            return 0.0
+        return {
+            "per": g("peTTM", "peBasicExclExtraTTM", "peExclExtraTTM"),
+            "pbr": g("pbAnnual", "pbQuarterly", "pb"),
+            "roe": g("roeTTM", "roeRfy"),                       # 이미 %
+            "op_margin": g("operatingMarginTTM", "operatingMarginAnnual"),
+        }
+
     # --- Alpha Vantage: 펀더멘털 & 목표가 ----------------------------------
     def _fundamentals(self, ticker: str) -> dict:
         ov = self._get(self.AV_BASE, {"function": "OVERVIEW", "symbol": ticker, "apikey": self.alpha_key})
@@ -1296,13 +1320,24 @@ class USDataSource(DataSource):
         raw = []
         for ticker, name, themes in self.universe:
             try:
-                # 시세/지표는 매일 신선(Twelve Data 1콜로 로컬 계산)
-                tech = self._tech(ticker) if self.twelve_key else {}
-                # 펀더멘털(AV, 분기성)은 캐시 — Alpha Vantage 25/일 병목 회피
+                # 시세/지표는 매일 신선(Yahoo 1콜로 로컬 계산, 무키)
+                tech = self._tech(ticker)
+                # ROE/PER/PBR/마진은 Finnhub metric(60/분)으로 빠르게 캐시
+                metrics = self._cf("us_metric", ticker, 7,
+                                   lambda: self._us_metrics(ticker)) or {}
+                # 목표가·섹터·실적은 AV(25/일)에서, 캐시로 천천히
                 fund = {}
                 if self.alpha_key:
                     fund = self._cf("us_av", ticker, CacheTTL.FUNDAMENTALS_DAYS,
                                     lambda: self._fundamentals(ticker)) or {}
+                fund = dict(fund)
+                # Finnhub metric으로 per/pbr/roe/op_margin 우선 채움(빠름)
+                for k in ("per", "pbr", "roe", "op_margin"):
+                    if metrics.get(k, 0):
+                        fund[k] = metrics[k]
+                # 섹터: AV 없으면 유니버스(GICS) 섹터로
+                if not fund.get("sector") and themes:
+                    fund["sector"] = themes[0]
                 news = self._cf("us_news", ticker, 2,   # 뉴스량 2일 캐시(순환)
                                 lambda: self._news_count(ticker)) or 0
                 # Finnhub 재무제표(분기성) → 품질 팩터, 캐시

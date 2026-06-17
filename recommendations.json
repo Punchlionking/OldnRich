@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-16T22:56:43.884546+00:00",
+  "generated_at": "2026-06-17T11:56:44.593652+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -617,7 +617,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 26.6,
-        "overall_score": 78.0,
+        "overall_score": 78.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -645,9 +645,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 55.7,
+            "score": 51.1,
             "horizon": "중기",
-            "reason": "연관 대장주 RBLX 최근 5일 +15% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.10(시차 추종관계 약함)",
+            "reason": "연관 대장주 ROKU 최근 5일 +14% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -659,7 +659,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 108.44,
-        "overall_score": 76.3,
+        "overall_score": 77.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -687,9 +687,69 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 80.1,
+            "score": 87.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 32.9·PBR 2.9 대비 PER 13.4·PBR 3.2로 23% 저평가, ROE 25%·영업이익률 52%로 수익성 양호",
+            "reason": "업종 평균 PER 34.1·PBR 3.5 대비 PER 13.4·PBR 3.2로 34% 저평가, ROE 25%·영업이익률 52%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "TRV",
+        "name": "Travelers Companies (The)",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 307.51,
+        "overall_score": 74.5,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 30.6,
+            "horizon": "단기",
+            "reason": "'Financials' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 20.6·PBR 5.0 대비 PER 8.7·PBR 2.0로 59% 저평가, ROE 24%·영업이익률 20%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 47.0,
+            "horizon": "단기",
+            "reason": "RSI 60, 볼린저밴드 위치 78%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 50.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 HOOD 최근 5일 +15% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 46.7,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +13% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -701,7 +761,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 234.69,
-        "overall_score": 72.6,
+        "overall_score": 72.4,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -711,9 +771,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 31.0,
+            "score": 30.6,
             "horizon": "단기",
-            "reason": "'Financials' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 22%",
+            "reason": "'Financials' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -722,7 +782,7 @@
             "label": "저평가 우량주",
             "score": 86.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 21.5·PBR 5.2 대비 PER 13.1·PBR 1.4로 56% 저평가, ROE 12%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 20.6·PBR 5.0 대비 PER 13.1·PBR 1.4로 55% 저평가, ROE 12%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -738,9 +798,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 58.4,
+            "score": 53.9,
             "horizon": "중기",
-            "reason": "연관 대장주 HOOD 최근 5일 +15% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
+            "reason": "연관 대장주 HOOD 최근 5일 +15% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -756,99 +816,12 @@
         ]
       },
       {
-        "ticker": "EG",
-        "name": "Everest Group",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 337.74,
-        "overall_score": 71.5,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 31.0,
-            "horizon": "단기",
-            "reason": "'Financials' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 22%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 58.2,
-            "horizon": "단기",
-            "reason": "RSI 50, 볼린저밴드 위치 51%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 81.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 21.5·PBR 5.2 대비 PER 6.6·PBR 0.9로 76% 저평가, ROE 13%·영업이익률 15%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 45.4,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.7% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 52.5,
-            "horizon": "중기",
-            "reason": "연관 대장주 HOOD 최근 5일 +15% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 61.8,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "TM",
         "name": "Toyota",
         "market": "US",
         "currency": "USD",
         "current_price": 178.19,
-        "overall_score": 71.5,
+        "overall_score": 72.1,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -867,9 +840,18 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 63.2,
+            "score": 65.1,
             "horizon": "중기",
-            "reason": "연관 대장주 W 최근 5일 +17% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.29(시차 추종관계 약함)",
+            "reason": "연관 대장주 W 최근 5일 +24% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.01(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 67.8,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 32.1·PBR 22.3 대비 PER 8.9·PBR 1.2로 83% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -880,8 +862,8 @@
         "name": "SoFi",
         "market": "US",
         "currency": "USD",
-        "current_price": 17.71,
-        "overall_score": 63.9,
+        "current_price": 17.13,
+        "overall_score": 74.5,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -891,33 +873,60 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 52.1,
+            "score": 38.4,
             "horizon": "단기",
-            "reason": "'Fintech' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 8%",
+            "reason": "'Fintech' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 8%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 53.8,
+            "horizon": "단기",
+            "reason": "RSI 54, MACD 골든크로스 발생, 볼린저밴드 위치 67%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 42.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +11% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "OKLO",
-        "name": "Oklo",
+        "ticker": "TEM",
+        "name": "Tempus AI",
         "market": "US",
         "currency": "USD",
-        "current_price": 57.45,
-        "overall_score": 59.0,
+        "current_price": 50.56,
+        "overall_score": 52.3,
         "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "높음",
         "pick_type": "longtail",
         "reasons": [
           {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 33.0,
+            "horizon": "단기",
+            "reason": "'Healthcare' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 18%",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 47.6,
+            "score": 43.0,
             "horizon": "단기",
-            "reason": "RSI 44, 볼린저밴드 위치 25%(하단 지지)",
+            "reason": "RSI 53, 볼린저밴드 위치 70%(하단 지지)",
             "risk": "보통",
             "available": true
           }
@@ -928,8 +937,8 @@
         "name": "Rocket Lab",
         "market": "US",
         "currency": "USD",
-        "current_price": 104.63,
-        "overall_score": 55.6,
+        "current_price": 109.25,
+        "overall_score": 50.2,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -941,16 +950,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +372% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 43.5,
-            "horizon": "단기",
-            "reason": "RSI 45, 볼린저밴드 위치 19%(하단 지지)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +402% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -965,7 +965,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-06-16T22:56:43.884546+00:00"
+      "as_of": "2026-06-17T11:56:44.593652+00:00"
     }
   }
 }

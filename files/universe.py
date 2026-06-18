@@ -111,6 +111,9 @@ def load_kr_universe(n: int = 200, cache=None) -> list[tuple[str, str, list[str]
                 # 우선주 제외(이름이 '우','우B','1우' 등으로 끝남)
                 if re.search(r'우[A-Z]?$', name) or name.endswith("우B"):
                     continue
+                # ETF 제외(운용사 브랜드 접두어로 판별)
+                if re.match(r'(TIGER|KODEX|KINDEX|KBSTAR|HANARO|ARIRANG|PLUS|ACE|SOL|KOSEF|KTOP|FOCUS|RISE|WOORI|TIMEFOLIO|TRUSTON|SMART|MERITZ)\s', name):
+                    continue
                 seen.add(code)
                 out.append((code, name, []))    # themes는 수집 시 KIS 업종으로
                 if len(out) >= n:

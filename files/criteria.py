@@ -208,8 +208,9 @@ def score_beneficiary(s: Stock) -> CriterionResult:
         rel = f"대장주를 약 {b.lead_lag_days}일 시차로 추종(시차상관 {b.lead_lag_corr:.2f})"
     else:
         rel = f"동시점 상관 {b.correlation:.2f}(시차 추종관계 약함)"
+    leader_disp = b.leader_name or b.leader_ticker
     reason = (
-        f"연관 대장주 {b.leader_ticker} 최근 5일 {b.leader_change_5d:+.0f}% 급등, "
+        f"연관 대장주 {leader_disp} 최근 5일 {b.leader_change_5d:+.0f}% 급등, "
         f"본 종목은 {b.own_change_5d:+.0f}%에 그쳐 갭 존재 — {rel}"
     )
     return _result("beneficiary", score, reason)

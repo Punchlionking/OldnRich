@@ -51,7 +51,7 @@ _load_env()   # config.py 보다 먼저 호출해야 ApiKeys가 키를 인식함
 from .config import (ApiKeys, TOP_N, LONGTAIL_N, LONGTAIL_WEIGHTS, CacheTTL,
                      UNIVERSE_KR_N, UNIVERSE_US_N)
 from .datasources import (KoreaDataSource, USDataSource, MockDataSource,
-                          LONGTAIL_TICKERS, _KR_LONGTAIL, _US_LONGTAIL)
+                          _KR_LONGTAIL, _US_LONGTAIL)
 from .engine import recommend
 from .cache import CacheStore
 from .universe import load_kr_universe, load_us_universe
@@ -135,12 +135,11 @@ def build_payload(out_path: str) -> dict:
         src = sources[market]
         try:
             stocks = src.fetch_universe()
-            # 코어/롱테일 유니버스 분리
-            core_stocks = [s for s in stocks if s.ticker not in LONGTAIL_TICKERS]
-            long_stocks = [s for s in stocks if s.ticker in LONGTAIL_TICKERS]
-            # 코어: TOP 5 (우량/종합)
-            core = recommend(core_stocks, top_n=TOP_N).get(market, [])
-            # 롱테일: 3종목 (공격적 가중치, 배제필터 완화, 고위험 태깅)
+            # 코어: TOP 5 (우량/종합) — 전체 유니버스 대상
+            core = recommend(stocks, top_n=TOP_N).get(market, [])
+            # 롱테일: 전체 유니버스에서 코어 선정 종목만 제외하고 공격적 가중치로 재탐색
+            core_tickers = {r.ticker for r in core}
+            long_stocks = [s for s in stocks if s.ticker not in core_tickers]
             long = recommend(long_stocks, top_n=LONGTAIL_N, max_per_primary=None,
                              weights=LONGTAIL_WEIGHTS, apply_exclusion=False,
                              pick_type="longtail").get(market, [])

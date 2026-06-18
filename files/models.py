@@ -79,6 +79,7 @@ class ThemeData:
 class BeneficiaryData:
     """간접 수혜 관계 (기준 #6에 사용)."""
     leader_ticker: Optional[str] = None
+    leader_name: Optional[str] = None  # 대장주 종목명 (표시용)
     leader_change_5d: float = 0.0     # 대장주 5일 등락률 (%)
     own_change_5d: float = 0.0        # 본 종목 5일 등락률 (%)
     correlation: float = 0.0          # 대장주와의 상관계수 (0~1)

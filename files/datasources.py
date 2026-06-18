@@ -147,6 +147,7 @@ def enrich_theme_beneficiary(stocks: list[Stock]) -> None:
                                         ind._returns(leader.tech.closes))
                 m.beneficiary = BeneficiaryData(
                     leader_ticker=leader.ticker,
+                    leader_name=leader.name,
                     leader_change_5d=leader.tech.price_change_5d,
                     own_change_5d=m.tech.price_change_5d,
                     correlation=max(0.0, corr),

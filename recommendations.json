@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-19T22:12:24.309825+00:00",
+  "generated_at": "2026-06-20T13:04:17.375268+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -9,7 +9,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 144900,
-        "overall_score": 70.1,
+        "overall_score": 70.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -96,7 +96,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 158300,
-        "overall_score": 69.3,
+        "overall_score": 69.1,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -183,7 +183,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 17740,
-        "overall_score": 68.2,
+        "overall_score": 68.0,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -256,30 +256,6 @@
         ]
       },
       {
-        "ticker": "456600",
-        "name": "TIME 글로벌AI인공지능액티브",
-        "market": "KR",
-        "currency": "KRW",
-        "current_price": 74390,
-        "overall_score": 67.9,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +52% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "267270",
         "name": "HD건설기계",
         "market": "KR",
@@ -329,15 +305,6 @@
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "undervalued",
             "label": "저평가 우량주",
             "score": 65.6,
@@ -347,11 +314,20 @@
             "available": true
           },
           {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 223,999 vs 현재가 136,700, 상승여력 +64% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 233,667 vs 현재가 136,700, 상승여력 +71% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -385,12 +361,36 @@
         ]
       },
       {
+        "ticker": "456600",
+        "name": "TIME 글로벌AI인공지능액티브",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 74390,
+        "overall_score": 67.7,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +52% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "103590",
         "name": "일진전기",
         "market": "KR",
         "currency": "KRW",
         "current_price": 84400,
-        "overall_score": 68.8,
+        "overall_score": 68.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -477,7 +477,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 235500,
-        "overall_score": 66.0,
+        "overall_score": 65.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -525,7 +525,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 332,141 vs 현재가 235,500, 상승여력 +41% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 326,500 vs 현재가 235,500, 상승여력 +39% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -555,7 +555,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 354000,
-        "overall_score": 65.1,
+        "overall_score": 64.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1375,7 +1375,7 @@
   "market_meta": {
     "KR": {
       "source": "real",
-      "as_of": "2026-06-19T13:52:41.998504+00:00"
+      "as_of": "2026-06-20T13:04:17.375268+00:00"
     },
     "US": {
       "source": "real",

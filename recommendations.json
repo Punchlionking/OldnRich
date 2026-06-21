@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-20T22:19:59.089687+00:00",
+  "generated_at": "2026-06-21T13:00:05.910909+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -9,7 +9,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 144900,
-        "overall_score": 70.0,
+        "overall_score": 70.1,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -96,7 +96,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 158300,
-        "overall_score": 69.1,
+        "overall_score": 69.2,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -183,7 +183,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 17740,
-        "overall_score": 68.0,
+        "overall_score": 68.2,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -256,6 +256,30 @@
         ]
       },
       {
+        "ticker": "456600",
+        "name": "TIME 글로벌AI인공지능액티브",
+        "market": "KR",
+        "currency": "KRW",
+        "current_price": 74390,
+        "overall_score": 67.9,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +52% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "267270",
         "name": "HD건설기계",
         "market": "KR",
@@ -305,20 +329,20 @@
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 65.6,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 1291.0·PBR 18.6 대비 PER 24.4·PBR 1.3로 96% 저평가, ROE 8%·영업이익률 8%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
             "score": 66.7,
             "horizon": "장기",
             "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 65.6,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 1291.0·PBR 18.6 대비 PER 24.4·PBR 1.3로 96% 저평가, ROE 8%·영업이익률 8%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -355,30 +379,6 @@
             "score": 63.0,
             "horizon": "중기",
             "reason": "연관 대장주 한화엔진 최근 5일 +13% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.50(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "456600",
-        "name": "TIME 글로벌AI인공지능액티브",
-        "market": "KR",
-        "currency": "KRW",
-        "current_price": 74390,
-        "overall_score": 67.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +52% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -555,7 +555,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 354000,
-        "overall_score": 64.9,
+        "overall_score": 65.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1357,7 +1357,7 @@
   "market_meta": {
     "KR": {
       "source": "real",
-      "as_of": "2026-06-20T13:04:17.375268+00:00"
+      "as_of": "2026-06-21T13:00:05.910909+00:00"
     },
     "US": {
       "source": "real",

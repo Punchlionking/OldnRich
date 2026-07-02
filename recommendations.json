@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T13:03:12.393638+00:00",
+  "generated_at": "2026-07-02T22:16:18.113412+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -720,24 +720,318 @@
     ],
     "US": [
       {
-        "ticker": "BMY",
-        "name": "Bristol Myers Squibb",
+        "ticker": "ROST",
+        "name": "Ross Stores",
         "market": "US",
         "currency": "USD",
-        "current_price": 56.44,
-        "overall_score": 70.6,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
+        "current_price": 213.43,
+        "overall_score": 71.2,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 25.0,
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +70% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 68.0,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +14.5% 상회 (발표 2일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 19.9% vs WACC 9.0% → 스프레드 +10.9%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 52.5,
             "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 38%",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 16%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 78.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 66.7,
+            "horizon": "중기",
+            "reason": "연관 대장주 Rivian 최근 5일 +25% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.08(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 77.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 31.5·PBR 23.6 대비 PER 29.3·PBR 9.9로 32% 저평가, ROE 38%·영업이익률 12%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "TM",
+        "name": "Toyota",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 174.59,
+        "overall_score": 70.9,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 55.5,
+            "horizon": "단기",
+            "reason": "RSI 47, 볼린저밴드 위치 58%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 61.8,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +2.8%p 변화, 직전 실적 컨센서스 +12.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.5,
+            "horizon": "중기",
+            "reason": "연관 대장주 Rivian 최근 5일 +25% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 67.8,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 31.5·PBR 23.6 대비 PER 7.5·PBR 1.2로 85% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "WBD",
+        "name": "Warner Bros. Discovery",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 26.48,
+        "overall_score": 70.7,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +142% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 55.5,
+            "horizon": "단기",
+            "reason": "RSI 45, 볼린저밴드 위치 32%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 67.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 62.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 Roblox 최근 5일 +19% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.08(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "GILD",
+        "name": "Gilead Sciences",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 131.27,
+        "overall_score": 69.7,
+        "target_horizon": "중기",
+        "primary_criterion": "beneficiary",
+        "primary_label": "간접 수혜주(리드-래그)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +33% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 34.5·PBR 16.1 대비 PER 17.0·PBR 6.7로 55% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 45.0,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +2.6%p 변화, 직전 실적 컨센서스 +4.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 85.1,
+            "horizon": "장기",
+            "reason": "ROIC 16.8% vs WACC 9.0% → 스프레드 +7.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 60.1,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 158 vs 현재가 131, 상승여력 +20% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 44.3,
+            "horizon": "단기",
+            "reason": "RSI 58, 볼린저밴드 위치 100%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 48.3,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +14% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 62.8,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "BMY",
+        "name": "Bristol Myers Squibb",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 58.13,
+        "overall_score": 69.3,
+        "target_horizon": "중기",
+        "primary_criterion": "beneficiary",
+        "primary_label": "간접 수혜주(리드-래그)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 72.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +33% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.33(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -769,29 +1063,62 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.5,
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 52.1,
             "horizon": "중기",
-            "reason": "연관 대장주 Bio-Techne 최근 5일 +21% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.29(시차 추종관계 약함)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +16% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "NIO",
+        "name": "NIO",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 4.79,
+        "overall_score": 76.0,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +71% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 45.4,
+            "score": 73.0,
             "horizon": "단기",
-            "reason": "RSI 50, 볼린저밴드 위치 57%(하단 지지)",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 15%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 50.7,
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.9,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +15% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "연관 대장주 Rivian 최근 5일 +25% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 40.1,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +105.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           }
@@ -802,29 +1129,38 @@
         "name": "Fox Corporation (Class A)",
         "market": "US",
         "currency": "USD",
-        "current_price": 54.13,
-        "overall_score": 70.1,
+        "current_price": 56.48,
+        "overall_score": 75.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
+        "risk_level": "높음",
+        "pick_type": "longtail",
         "reasons": [
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 32.9,
+            "score": 29.0,
             "horizon": "단기",
-            "reason": "'Communication Services' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 32%",
+            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.9배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 71 vs 현재가 54, 상승여력 +32% (애널리스트 5명 커버)",
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 44.2,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 0.9배, 최근 5일 +16%, 뉴스량 3.2배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 60.3,
+            "horizon": "단기",
+            "reason": "RSI 49, MACD 골든크로스 발생, 볼린저밴드 위치 48%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -847,227 +1183,20 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 49.6,
-            "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 39%(하단 지지)",
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 79.2,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 71 vs 현재가 56, 상승여력 +26% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 62.4,
+            "score": 53.6,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 56.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +21% 급등, 본 종목은 +9%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "DIS",
-        "name": "Walt Disney Company (The)",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 95.71,
-        "overall_score": 69.5,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 72.7,
-            "horizon": "단기",
-            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 65.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.1%p 변화, 직전 실적 컨센서스 +4.4% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 75.6,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 114.8·PBR 16.7 대비 PER 15.0·PBR 1.9로 88% 저평가, ROE 10%·영업이익률 13%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.5,
-            "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +21% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.13(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 64.4,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TM",
-        "name": "Toyota",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 169.66,
-        "overall_score": 68.0,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 68.6,
-            "horizon": "단기",
-            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 28%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 61.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +2.8%p 변화, 직전 실적 컨센서스 +12.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 Lucid 최근 5일 +29% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 67.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 31.1·PBR 23.6 대비 PER 7.5·PBR 1.2로 85% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "JNJ",
-        "name": "Johnson & Johnson",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 253.98,
-        "overall_score": 67.5,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 95.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 28.7·PBR 51.7 대비 PER 28.9·PBR 6.1로 44% 저평가, ROE 26%·영업이익률 26%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 55.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.2%p 변화, 직전 실적 컨센서스 +0.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 64.2,
-            "horizon": "중기",
-            "reason": "연관 대장주 Bio-Techne 최근 5일 +21% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.08(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 44.3,
-            "horizon": "장기",
-            "reason": "발생액 비율 +0.01 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +17% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -1078,8 +1207,8 @@
         "name": "Baidu",
         "market": "US",
         "currency": "USD",
-        "current_price": 117.94,
-        "overall_score": 73.8,
+        "current_price": 113.3,
+        "overall_score": 72.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1091,16 +1220,16 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +53% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +58% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 57.7,
+            "score": 62.5,
             "horizon": "단기",
-            "reason": "RSI 50, MACD 골든크로스 발생, 볼린저밴드 위치 57%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 45%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1116,174 +1245,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 58.2,
+            "score": 54.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +21% 급등, 본 종목은 +9%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "LRCX",
-        "name": "Lam Research",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 391.26,
-        "overall_score": 72.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +221% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 31.5% vs WACC 9.0% → 스프레드 +22.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 49.6,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +2.9%p 변화, 직전 실적 컨센서스 +4.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 50.6,
-            "horizon": "단기",
-            "reason": "RSI 56, 볼린저밴드 위치 67%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 67.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 Palo Alto Networks 최근 5일 +23% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.10(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 69.1,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 64.5,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 74.2·PBR 13.4 대비 PER 74.9·PBR 12.5로 3% 저평가, ROE 66%·영업이익률 34%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "BIIB",
-        "name": "Biogen",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 209.74,
-        "overall_score": 72.3,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 77.4,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.5%p 변화, 직전 실적 컨센서스 +26.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 Bio-Techne 최근 5일 +21% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.26(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 46.4,
-            "horizon": "단기",
-            "reason": "RSI 60, 볼린저밴드 위치 80%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 76.9,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 34.5·PBR 16.1 대비 PER 23.3·PBR 1.4로 62% 저평가, ROE 8%·영업이익률 17%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 65.5,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "연관 대장주 Roblox 최근 5일 +19% 급등, 본 종목은 +9%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -1298,7 +1262,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-02T10:14:02.834015+00:00"
+      "as_of": "2026-07-02T22:16:18.113412+00:00"
     }
   }
 }

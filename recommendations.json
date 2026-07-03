@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-02T22:16:18.113412+00:00",
+  "generated_at": "2026-07-03T10:09:37.572308+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -725,7 +725,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 213.43,
-        "overall_score": 71.2,
+        "overall_score": 71.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -789,9 +789,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 77.1,
+            "score": 78.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 31.5·PBR 23.6 대비 PER 29.3·PBR 9.9로 32% 저평가, ROE 38%·영업이익률 12%로 수익성 양호",
+            "reason": "업종 평균 PER 32.9·PBR 24.2 대비 PER 29.3·PBR 9.9로 35% 저평가, ROE 38%·영업이익률 12%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -851,7 +851,7 @@
             "label": "저평가 우량주",
             "score": 67.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 31.5·PBR 23.6 대비 PER 7.5·PBR 1.2로 85% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
+            "reason": "업종 평균 PER 32.9·PBR 24.2 대비 PER 7.5·PBR 1.2로 86% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -863,7 +863,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 26.48,
-        "overall_score": 70.7,
+        "overall_score": 70.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -923,7 +923,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 131.27,
-        "overall_score": 69.7,
+        "overall_score": 69.6,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -944,7 +944,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 34.5·PBR 16.1 대비 PER 17.0·PBR 6.7로 55% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 34.5·PBR 16.3 대비 PER 17.0·PBR 6.7로 55% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1019,7 +1019,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 58.13,
-        "overall_score": 69.3,
+        "overall_score": 69.4,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -1049,7 +1049,7 @@
             "label": "저평가 우량주",
             "score": 96.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 34.5·PBR 16.1 대비 PER 19.7·PBR 5.9로 53% 저평가, ROE 42%·영업이익률 17%로 수익성 양호",
+            "reason": "업종 평균 PER 34.5·PBR 16.3 대비 PER 19.7·PBR 5.9로 53% 저평가, ROE 42%·영업이익률 17%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1079,7 +1079,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 4.79,
-        "overall_score": 76.0,
+        "overall_score": 76.1,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1130,7 +1130,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 56.48,
-        "overall_score": 75.9,
+        "overall_score": 75.6,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1140,9 +1140,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 29.0,
+            "score": 29.3,
             "horizon": "단기",
-            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.9배 급증, 섹터 강도 상위 28%",
+            "reason": "'Communication Services' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -1208,7 +1208,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 113.3,
-        "overall_score": 72.6,
+        "overall_score": 72.1,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1262,7 +1262,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-02T22:16:18.113412+00:00"
+      "as_of": "2026-07-03T10:09:37.572308+00:00"
     }
   }
 }

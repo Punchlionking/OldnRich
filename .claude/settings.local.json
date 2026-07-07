@@ -7,7 +7,13 @@
       "Bash(gh auth *)",
       "Bash(git init *)",
       "Bash(git add *)",
-      "Bash(git rm *)"
+      "Bash(git rm *)",
+      "Bash(git rebase *)",
+      "Bash(git fetch *)",
+      "Bash(git reset *)",
+      "Bash(git pull *)",
+      "Bash(python -c ' *)",
+      "Bash(\"C:/Users/LEE/anaconda3/python.exe\" -m py_compile files/main.py)"
     ]
   }
 }

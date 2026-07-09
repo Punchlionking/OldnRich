@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T22:15:01.281320+00:00",
+  "generated_at": "2026-07-09T10:34:49.243454+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -725,7 +725,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 175.97,
-        "overall_score": 71.6,
+        "overall_score": 71.7,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -735,9 +735,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 39.0,
+            "score": 43.8,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
             "available": true
           },
@@ -872,7 +872,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 49.69,
-        "overall_score": 69.5,
+        "overall_score": 69.3,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -911,7 +911,7 @@
             "label": "저평가 우량주",
             "score": 81.3,
             "horizon": "장기",
-            "reason": "업종 평균 PER 21.9·PBR 5.0 대비 PER 11.5·PBR 1.0로 64% 저평가, ROE 9%·영업이익률 29%로 수익성 양호",
+            "reason": "업종 평균 PER 23.1·PBR 5.2 대비 PER 11.5·PBR 1.0로 66% 저평가, ROE 9%·영업이익률 29%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -962,7 +962,7 @@
             "label": "저평가 우량주",
             "score": 96.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 33.8·PBR 48.7 대비 PER 19.9·PBR 5.9로 64% 저평가, ROE 42%·영업이익률 17%로 수익성 양호",
+            "reason": "업종 평균 PER 33.4·PBR 47.5 대비 PER 19.9·PBR 5.9로 64% 저평가, ROE 42%·영업이익률 17%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1058,7 +1058,7 @@
             "label": "저평가 우량주",
             "score": 88.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 100.5·PBR 18.3 대비 PER 12.3·PBR 2.0로 88% 저평가, ROE 15%·영업이익률 19%로 수익성 양호",
+            "reason": "업종 평균 PER 101.5·PBR 18.3 대비 PER 12.3·PBR 2.0로 88% 저평가, ROE 15%·영업이익률 19%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1074,12 +1074,12 @@
         ]
       },
       {
-        "ticker": "PSX",
-        "name": "Phillips 66",
+        "ticker": "APA",
+        "name": "APA Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 187.81,
-        "overall_score": 73.1,
+        "current_price": 35.06,
+        "overall_score": 77.1,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1089,18 +1089,114 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 39.0,
+            "score": 43.8,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.18 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 96.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 7.9·PBR 1.4로 46% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +79% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 67.9,
+            "score": 43.2,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.8%p 변화, 직전 실적 컨센서스 +221.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +20.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 70.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 43 vs 현재가 35, 상승여력 +23% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 41.6,
+            "horizon": "단기",
+            "reason": "RSI 52, 볼린저밴드 위치 63%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "PSX",
+        "name": "Phillips 66",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 187.81,
+        "overall_score": 73.4,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 43.8,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 73.6,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +6.2%p 변화, 직전 실적 컨센서스 +221.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1127,7 +1223,7 @@
             "label": "저평가 우량주",
             "score": 67.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 29.1·PBR 6.4 대비 PER 16.4·PBR 1.8로 58% 저평가, ROE 15%·영업이익률 2%로 수익성 양호",
+            "reason": "업종 평균 PER 29.3·PBR 6.4 대비 PER 17.4·PBR 1.8로 56% 저평가, ROE 15%·영업이익률 2%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1219,102 +1315,6 @@
             "available": true
           }
         ]
-      },
-      {
-        "ticker": "APA",
-        "name": "APA Corporation",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 35.06,
-        "overall_score": 72.5,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 39.0,
-            "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 2%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.18 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 96.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 27.3·PBR 1.8 대비 PER 7.9·PBR 1.4로 46% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +79% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 43.2,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +20.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 70.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 43 vs 현재가 35, 상승여력 +23% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.6,
-            "horizon": "단기",
-            "reason": "RSI 52, 볼린저밴드 위치 63%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
       }
     ]
   },
@@ -1325,7 +1325,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-08T22:15:01.281320+00:00"
+      "as_of": "2026-07-09T10:34:49.243454+00:00"
     }
   }
 }

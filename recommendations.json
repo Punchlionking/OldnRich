@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-09T13:19:50.139139+00:00",
+  "generated_at": "2026-07-09T22:41:32.397244+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -666,12 +666,12 @@
     ],
     "US": [
       {
-        "ticker": "CVX",
-        "name": "Chevron Corporation",
+        "ticker": "COP",
+        "name": "ConocoPhillips",
         "market": "US",
         "currency": "USD",
-        "current_price": 175.97,
-        "overall_score": 71.7,
+        "current_price": 108.02,
+        "overall_score": 75.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -681,18 +681,261 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 43.8,
+            "score": 39.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 73.6,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +5.3%p 변화, 직전 실적 컨센서스 +13.2% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 143 vs 현재가 108, 상승여력 +32% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 98.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.10 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 59.5,
+            "score": 57.8,
             "horizon": "단기",
-            "reason": "RSI 49, MACD 골든크로스 발생, 볼린저밴드 위치 51%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 44%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 69.3,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 60.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 17.6·PBR 1.8로 18% 저평가, ROE 11%·영업이익률 19%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "EQT",
+        "name": "EQT Corporation",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 50.15,
+        "overall_score": 73.8,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 83.6,
+            "horizon": "단기",
+            "reason": "RSI 35(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 70 vs 현재가 50, 상승여력 +39% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 49.7,
+            "horizon": "중기",
+            "reason": "연관 대장주 Occidental Petroleum 최근 5일 +9% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.28(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 86.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 83.4,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 9.8·PBR 1.4로 43% 저평가, ROE 14%·영업이익률 50%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "APA",
+        "name": "APA Corporation",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 33.29,
+        "overall_score": 73.7,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +85% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.18 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 96.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 7.9·PBR 1.4로 46% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 56.6,
+            "horizon": "단기",
+            "reason": "RSI 44, 볼린저밴드 위치 38%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 89.7,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 43 vs 현재가 33, 상승여력 +30% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 43.2,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +20.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "CVX",
+        "name": "Chevron Corporation",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 174.05,
+        "overall_score": 73.5,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 39.0,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 58.5,
+            "horizon": "단기",
+            "reason": "RSI 46, 볼린저밴드 위치 46%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -717,27 +960,18 @@
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 68.3,
+            "score": 72.4,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 216 vs 현재가 176, 상승여력 +23% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 216 vs 현재가 174, 상승여력 +24% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 64.8,
+            "score": 65.5,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +22% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 40.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 Phillips 66 최근 5일 +11% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.65(시차 추종관계 약함)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +23% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -753,12 +987,12 @@
         ]
       },
       {
-        "ticker": "WBD",
-        "name": "Warner Bros. Discovery",
+        "ticker": "HAL",
+        "name": "Halliburton",
         "market": "US",
         "currency": "USD",
-        "current_price": 26.15,
-        "overall_score": 71.1,
+        "current_price": 34.12,
+        "overall_score": 68.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -770,328 +1004,43 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +128% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +83% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 67.1,
+            "score": 62.0,
             "horizon": "단기",
-            "reason": "RSI 41, 볼린저밴드 위치 15%(하단 지지)",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 35%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 42.7,
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 89.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Sea Ltd 최근 5일 +10% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
+            "reason": "증권사 평균 목표가 44 vs 현재가 34, 상승여력 +30% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 67.9,
+            "score": 82.8,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TFC",
-        "name": "Truist Financial",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 49.69,
-        "overall_score": 69.3,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 35.0,
-            "horizon": "단기",
-            "reason": "'Financials' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 12%",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 100.0,
+            "score": 92.4,
             "horizon": "장기",
-            "reason": "FCF 수익률 9.3% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 52.4,
-            "horizon": "중기",
-            "reason": "연관 대장주 Robinhood Markets 최근 5일 +13% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.16(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 81.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 23.1·PBR 5.2 대비 PER 11.5·PBR 1.0로 66% 저평가, ROE 9%·영업이익률 29%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 45.6,
-            "horizon": "단기",
-            "reason": "RSI 49, 볼린저밴드 위치 43%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "BMY",
-        "name": "Bristol Myers Squibb",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 57.54,
-        "overall_score": 68.8,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 60.3,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +20% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 96.4,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 33.4·PBR 47.5 대비 PER 19.9·PBR 5.9로 64% 저평가, ROE 42%·영업이익률 17%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 89.4,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.08 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 44.0,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +1.1%p 변화, 직전 실적 컨센서스 +10.4% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 40.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Dexcom 최근 5일 +10% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.18(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.2,
-            "horizon": "단기",
-            "reason": "RSI 53, 볼린저밴드 위치 73%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "FOXA",
-        "name": "Fox Corporation (Class A)",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 53.39,
-        "overall_score": 67.5,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 63.2,
-            "horizon": "단기",
-            "reason": "RSI 42, 볼린저밴드 위치 43%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 65.5,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.8%p 변화, 직전 실적 컨센서스 +33.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 71 vs 현재가 53, 상승여력 +34% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 88.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 101.5·PBR 18.3 대비 PER 12.3·PBR 2.0로 88% 저평가, ROE 15%·영업이익률 19%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 62.3,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "APA",
-        "name": "APA Corporation",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 35.06,
-        "overall_score": 77.1,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 43.8,
-            "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.18 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 96.9,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 7.9·PBR 1.4로 46% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +79% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 43.2,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +20.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 70.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 43 vs 현재가 35, 상승여력 +23% (애널리스트 5명 커버)",
+            "reason": "FCF 수익률 7.4% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
@@ -1105,23 +1054,23 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.6,
-            "horizon": "단기",
-            "reason": "RSI 52, 볼린저밴드 위치 63%(하단 지지)",
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 42.6,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 19.0·PBR 2.3로 2% 저평가, ROE 15%·영업이익률 11%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "PSX",
-        "name": "Phillips 66",
+        "ticker": "OXY",
+        "name": "Occidental Petroleum",
         "market": "US",
         "currency": "USD",
-        "current_price": 187.81,
-        "overall_score": 73.4,
+        "current_price": 52.3,
+        "overall_score": 78.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1131,132 +1080,210 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 43.8,
+            "score": 39.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 73.6,
+            "score": 45.6,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +6.2%p 변화, 직전 실적 컨센서스 +221.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +1.4%p 변화, 직전 실적 컨센서스 +77.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 74.6,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 65 vs 현재가 52, 상승여력 +25% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
+            "score": 70.7,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +40% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 67.2,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 29.3·PBR 6.4 대비 PER 17.4·PBR 1.8로 56% 저평가, ROE 15%·영업이익률 2%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 53.8,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.01 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TPR",
-        "name": "Tapestry",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 140.14,
-        "overall_score": 73.1,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +47% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 76.5,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +7.1%p 변화, 직전 실적 컨센서스 +26.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.16 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 60.5,
+            "score": 49.0,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 0%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 51.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Workday 최근 5일 +13% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
+            "reason": "RSI 48, 볼린저밴드 위치 53%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 51.5,
+            "score": 79.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 97.7·PBR 13.7 대비 PER 44.7·PBR 21.3로 0% 저평가, ROE 106%·영업이익률 11%로 수익성 양호",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 11.2·PBR 1.1로 48% 저평가, ROE 13%·영업이익률 15%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "CBOE",
+        "name": "Cboe Global Markets",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 267.85,
+        "overall_score": 75.9,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 35.0,
+            "horizon": "단기",
+            "reason": "'Financials' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 12%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 59.5,
+            "horizon": "단기",
+            "reason": "RSI 49, 볼린저밴드 위치 59%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 85.1,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 84.6,
+            "horizon": "장기",
+            "reason": "ROIC 16.7% vs WACC 9.0% → 스프레드 +7.7%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 66.2,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 327 vs 현재가 268, 상승여력 +22% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 59.2,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +20% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 61.2,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 23.0·PBR 4.8 대비 PER 22.1·PBR 5.1로 0% 저평가, ROE 25%·영업이익률 34%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "DVN",
+        "name": "Devon Energy",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 42.02,
+        "overall_score": 75.9,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 39.0,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.13 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 61 vs 현재가 42, 상승여력 +45% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 54.9,
+            "horizon": "단기",
+            "reason": "RSI 44, 볼린저밴드 위치 39%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 85.6,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +33% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 27.5·PBR 1.8 대비 PER 21.6·PBR 1.5로 19% 저평가, ROE 15%·영업이익률 21%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1271,7 +1298,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-09T10:34:49.243454+00:00"
+      "as_of": "2026-07-09T22:41:32.397244+00:00"
     }
   }
 }

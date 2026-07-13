@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-12T13:00:07.214649+00:00",
+  "generated_at": "2026-07-13T10:34:07.563725+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -698,7 +698,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 33.44,
-        "overall_score": 74.5,
+        "overall_score": 74.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -941,7 +941,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 176.4,
-        "overall_score": 71.1,
+        "overall_score": 70.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -969,7 +969,7 @@
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 54.7,
+            "score": 51.8,
             "horizon": "중기",
             "reason": "애널리스트 강세 비중 +2.5%p 변화, 직전 실적 컨센서스 +46.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
@@ -1014,11 +1014,11 @@
         ]
       },
       {
-        "ticker": "CBOE",
-        "name": "Cboe Global Markets",
+        "ticker": "NIO",
+        "name": "NIO",
         "market": "US",
         "currency": "USD",
-        "current_price": 268.07,
+        "current_price": 4.78,
         "overall_score": 69.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
@@ -1029,63 +1029,36 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 59.4,
+            "score": 69.9,
             "horizon": "단기",
-            "reason": "RSI 49, 볼린저밴드 위치 63%(하단 지지)",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 16%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 85.1,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 84.6,
-            "horizon": "장기",
-            "reason": "ROIC 16.7% vs WACC 9.0% → 스프레드 +7.7%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 65.9,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 66.3,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 327 vs 현재가 268, 상승여력 +22% (애널리스트 5명 커버)",
+            "reason": "애널리스트 강세 비중 +4.1%p 변화, 직전 실적 컨센서스 +105.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 65.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Alibaba 최근 5일 +17% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.36(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 67.3,
+            "score": 90.8,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +24% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 61.9,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 23.3·PBR 4.8 대비 PER 22.1·PBR 5.1로 0% 저평가, ROE 25%·영업이익률 34%로 수익성 양호",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +35% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           }
@@ -1097,7 +1070,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 342.08,
-        "overall_score": 79.3,
+        "overall_score": 79.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1166,7 +1139,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 979.3,
-        "overall_score": 77.9,
+        "overall_score": 77.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1192,20 +1165,20 @@
             "available": true
           },
           {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.11 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
             "score": 64.5,
             "horizon": "중기",
             "reason": "연관 대장주 Hewlett Packard Enterprise 최근 5일 +18% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.28(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.11 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
@@ -1253,7 +1226,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 460.72,
-        "overall_score": 77.3,
+        "overall_score": 77.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1283,7 +1256,7 @@
             "label": "추정치 상향·서프라이즈",
             "score": 60.7,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.1% 상회 (발표 7일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.1% 상회 (발표 13일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1334,7 +1307,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-11T22:02:04.240374+00:00"
+      "as_of": "2026-07-13T10:34:07.563725+00:00"
     }
   }
 }

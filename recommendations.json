@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-17T09:18:44.872635+00:00",
+  "generated_at": "2026-07-17T14:11:57.695491+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -93,7 +93,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 549,924 vs 현재가 393,000, 상승여력 +40% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 530,526 vs 현재가 393,000, 상승여력 +35% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -189,7 +189,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 622,303 vs 현재가 354,000, 상승여력 +76% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 583,667 vs 현재가 354,000, 상승여력 +65% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -210,7 +210,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 18330,
-        "overall_score": 65.6,
+        "overall_score": 65.7,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -348,7 +348,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 53600,
-        "overall_score": 61.1,
+        "overall_score": 61.2,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -528,7 +528,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 2,997,827 vs 현재가 1,842,000, 상승여력 +63% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 3,547,917 vs 현재가 1,842,000, 상승여력 +93% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1330,7 +1330,7 @@
   "market_meta": {
     "KR": {
       "source": "real",
-      "as_of": "2026-07-16T13:53:30.152810+00:00"
+      "as_of": "2026-07-17T14:11:57.695491+00:00"
     },
     "US": {
       "source": "real",

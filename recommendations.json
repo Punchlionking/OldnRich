@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-18T22:02:02.427259+00:00",
+  "generated_at": "2026-07-19T13:03:30.626547+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -123,7 +123,7 @@
         "market": "KR",
         "currency": "KRW",
         "current_price": 354000,
-        "overall_score": 68.7,
+        "overall_score": 68.8,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -176,20 +176,20 @@
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 59.1,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 18.3·PBR 1.5 대비 PER 11.6·PBR 1.9로 5% 저평가, ROE 20%·영업이익률 17%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
             "reason": "증권사 평균 목표가 583,667 vs 현재가 354,000, 상승여력 +65% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 59.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 18.3·PBR 1.5 대비 PER 11.6·PBR 1.9로 5% 저평가, ROE 20%·영업이익률 17%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -423,7 +423,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 117,153 vs 현재가 53,600, 상승여력 +119% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 113,000 vs 현재가 53,600, 상승여력 +111% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -711,7 +711,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 136,167 vs 현재가 72,300, 상승여력 +88% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 136,000 vs 현재가 72,300, 상승여력 +88% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1339,7 +1339,7 @@
   "market_meta": {
     "KR": {
       "source": "real",
-      "as_of": "2026-07-18T13:01:57.915131+00:00"
+      "as_of": "2026-07-19T13:03:30.626547+00:00"
     },
     "US": {
       "source": "real",

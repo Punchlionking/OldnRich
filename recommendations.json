@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-21T22:10:03.601293+00:00",
+  "generated_at": "2026-07-22T09:34:45.083975+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -521,7 +521,7 @@
             "label": "저평가 우량주",
             "score": 67.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 43.1·PBR 18.3 대비 PER 8.0·PBR 1.2로 87% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
+            "reason": "업종 평균 PER 42.1·PBR 17.3 대비 PER 8.0·PBR 1.2로 87% 저평가, ROE 10%·영업이익률 7%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -533,7 +533,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 155.05,
-        "overall_score": 72.6,
+        "overall_score": 72.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -586,15 +586,6 @@
             "available": true
           },
           {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 43.7,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 178 vs 현재가 155, 상승여력 +15% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "accruals",
             "label": "발생액 품질",
             "score": 69.3,
@@ -604,11 +595,20 @@
             "available": true
           },
           {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 43.7,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 178 vs 현재가 155, 상승여력 +15% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 68.6,
+            "score": 66.1,
             "horizon": "장기",
-            "reason": "업종 평균 PER 43.1·PBR 18.3 대비 PER 29.5·PBR 16.4로 21% 저평가, ROE 60%·영업이익률 12%로 수익성 양호",
+            "reason": "업종 평균 PER 42.1·PBR 17.3 대비 PER 29.5·PBR 16.4로 18% 저평가, ROE 60%·영업이익률 12%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -648,10 +648,19 @@
           {
             "key": "rumor",
             "label": "호재 모멘텀",
-            "score": 44.2,
+            "score": 50.4,
             "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.6배, 최근 5일 -6%, 뉴스량 8.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "reason": "거래량 20일 평균 대비 2.8배, 최근 5일 -6%, 뉴스량 11.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
             "risk": "높음",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 42.1,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
             "available": true
           },
           {
@@ -711,12 +720,63 @@
         ]
       },
       {
+        "ticker": "NIO",
+        "name": "NIO",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 4.79,
+        "overall_score": 67.2,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 65.9,
+            "horizon": "단기",
+            "reason": "RSI 40, 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 62.9,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +4.1%p 변화, 직전 실적 컨센서스 +105.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Lucid 최근 5일 +58% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 7 vs 현재가 5, 상승여력 +54% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "EQT",
         "name": "EQT Corporation",
         "market": "US",
         "currency": "USD",
         "current_price": 49.8,
-        "overall_score": 67.2,
+        "overall_score": 67.1,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -729,6 +789,15 @@
             "score": 78.6,
             "horizon": "단기",
             "reason": "RSI 41, MACD 골든크로스 발생, 볼린저밴드 위치 30%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 42.1,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
             "available": true
           },
@@ -771,57 +840,6 @@
         ]
       },
       {
-        "ticker": "NIO",
-        "name": "NIO",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 4.79,
-        "overall_score": 67.2,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 65.9,
-            "horizon": "단기",
-            "reason": "RSI 40, 볼린저밴드 위치 22%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.2,
-            "horizon": "중기",
-            "reason": "연관 대장주 Lucid 최근 5일 +58% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 62.9,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +4.1%p 변화, 직전 실적 컨센서스 +105.6% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 7 vs 현재가 5, 상승여력 +54% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "CCL",
         "name": "Carnival Corporation",
         "market": "US",
@@ -839,7 +857,7 @@
             "label": "테마 급부상",
             "score": 33.0,
             "horizon": "단기",
-            "reason": "'Consumer Discretionary' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 18%",
+            "reason": "'Consumer Discretionary' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 18%",
             "risk": "보통",
             "available": true
           },
@@ -880,20 +898,20 @@
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 94.7,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 43.1·PBR 18.3 대비 PER 11.9·PBR 2.7로 79% 저평가, ROE 24%·영업이익률 16%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "quant",
             "label": "퀀트·차트 신호",
             "score": 60.8,
             "horizon": "단기",
             "reason": "RSI 42, 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 94.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 42.1·PBR 17.3 대비 PER 11.9·PBR 2.7로 78% 저평가, ROE 24%·영업이익률 16%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -914,7 +932,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 79.52,
-        "overall_score": 70.4,
+        "overall_score": 71.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -971,7 +989,7 @@
             "label": "저평가 우량주",
             "score": 51.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 43.1·PBR 18.3 대비 PER 27.3·PBR 1.2로 65% 저평가, ROE 4%·영업이익률 1%로 수익성 양호",
+            "reason": "업종 평균 PER 42.1·PBR 17.3 대비 PER 27.3·PBR 1.2로 64% 저평가, ROE 4%·영업이익률 1%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -983,7 +1001,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 235.81,
-        "overall_score": 70.2,
+        "overall_score": 70.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1038,9 +1056,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 79.3,
+            "score": 77.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 43.1·PBR 18.3 대비 PER 32.3·PBR 9.9로 35% 저평가, ROE 38%·영업이익률 12%로 수익성 양호",
+            "reason": "업종 평균 PER 42.1·PBR 17.3 대비 PER 32.3·PBR 9.9로 33% 저평가, ROE 38%·영업이익률 12%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1064,7 +1082,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-21T22:10:03.601293+00:00"
+      "as_of": "2026-07-22T09:34:45.083975+00:00"
     }
   }
 }

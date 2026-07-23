@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T22:14:03.386003+00:00",
+  "generated_at": "2026-07-23T09:31:34.221313+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -662,7 +662,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 70.41,
-        "overall_score": 68.4,
+        "overall_score": 68.3,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -746,7 +746,7 @@
             "label": "저평가 우량주",
             "score": 52.1,
             "horizon": "장기",
-            "reason": "업종 평균 PER 35.8·PBR 10.1 대비 PER 19.4·PBR 13.2로 7% 저평가, ROE 15%·영업이익률 15%로 수익성 양호",
+            "reason": "업종 평균 PER 35.7·PBR 10.1 대비 PER 19.4·PBR 13.2로 7% 저평가, ROE 15%·영업이익률 15%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -758,7 +758,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 54.01,
-        "overall_score": 66.1,
+        "overall_score": 66.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -777,9 +777,9 @@
           {
             "key": "rumor",
             "label": "호재 모멘텀",
-            "score": 48.9,
+            "score": 49.1,
             "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.1배, 최근 5일 +10%, 뉴스량 2.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "reason": "거래량 20일 평균 대비 2.2배, 최근 5일 +10%, 뉴스량 2.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
             "risk": "높음",
             "available": true
           },
@@ -806,7 +806,7 @@
             "label": "저평가 우량주",
             "score": 88.7,
             "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 3.2 대비 PER 9.4·PBR 1.4로 62% 저평가, ROE 14%·영업이익률 50%로 수익성 양호",
+            "reason": "업종 평균 PER 30.3·PBR 3.2 대비 PER 10.1·PBR 1.4로 61% 저평가, ROE 14%·영업이익률 50%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -827,7 +827,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 220.54,
-        "overall_score": 65.8,
+        "overall_score": 65.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -891,9 +891,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 63.7,
+            "score": 63.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 32.3·PBR 33.4 대비 PER 34.1·PBR 9.2로 33% 저평가, ROE 37%·영업이익률 1%로 수익성 양호",
+            "reason": "업종 평균 PER 32.1·PBR 33.4 대비 PER 34.1·PBR 9.2로 33% 저평가, ROE 37%·영업이익률 1%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -967,20 +967,20 @@
             "available": true
           },
           {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 67.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 30.3·PBR 3.2 대비 PER 17.9·PBR 2.3로 35% 저평가, ROE 15%·영업이익률 11%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
             "score": 50.0,
             "horizon": "장기",
             "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 65.6,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 3.2 대비 PER 18.8·PBR 2.3로 33% 저평가, ROE 15%·영업이익률 11%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -992,7 +992,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 118.79,
-        "overall_score": 65.3,
+        "overall_score": 65.4,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1056,9 +1056,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 75.3,
+            "score": 75.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 3.2 대비 PER 19.9·PBR 1.8로 38% 저평가, ROE 11%·영업이익률 19%로 수익성 양호",
+            "reason": "업종 평균 PER 30.3·PBR 3.2 대비 PER 19.9·PBR 1.8로 39% 저평가, ROE 11%·영업이익률 19%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1145,7 +1145,7 @@
             "label": "저평가 우량주",
             "score": 84.7,
             "horizon": "장기",
-            "reason": "업종 평균 PER 35.8·PBR 10.1 대비 PER 11.0·PBR 2.4로 73% 저평가, ROE 22%·영업이익률 8%로 수익성 양호",
+            "reason": "업종 평균 PER 35.7·PBR 10.1 대비 PER 11.0·PBR 2.4로 73% 저평가, ROE 22%·영업이익률 8%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1166,7 +1166,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 36.18,
-        "overall_score": 73.1,
+        "overall_score": 73.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1187,7 +1187,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 3.2 대비 PER 8.2·PBR 1.4로 64% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
+            "reason": "업종 평균 PER 30.3·PBR 3.2 대비 PER 8.2·PBR 1.4로 64% 저평가, ROE 25%·영업이익률 37%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1244,7 +1244,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 95.75,
-        "overall_score": 73.1,
+        "overall_score": 73.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1290,9 +1290,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 90.2,
+            "score": 90.3,
             "horizon": "장기",
-            "reason": "업종 평균 PER 27.0·PBR 3.8 대비 PER 11.5·PBR 3.2로 37% 저평가, ROE 25%·영업이익률 52%로 수익성 양호",
+            "reason": "업종 평균 PER 27.2·PBR 3.8 대비 PER 11.5·PBR 3.2로 37% 저평가, ROE 25%·영업이익률 52%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1316,7 +1316,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-22T22:14:03.386003+00:00"
+      "as_of": "2026-07-23T09:31:34.221313+00:00"
     }
   }
 }

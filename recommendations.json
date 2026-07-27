@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T22:05:02.622847+00:00",
+  "generated_at": "2026-07-27T10:49:28.626310+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -752,7 +752,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 33.36,
-        "overall_score": 70.8,
+        "overall_score": 70.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -908,7 +908,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 67.86,
-        "overall_score": 69.2,
+        "overall_score": 69.1,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -986,7 +986,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 120.26,
-        "overall_score": 67.0,
+        "overall_score": 66.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1073,7 +1073,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 202.2,
-        "overall_score": 66.8,
+        "overall_score": 66.7,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1184,7 +1184,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 1733.6,
-        "overall_score": 76.5,
+        "overall_score": 76.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1280,7 +1280,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 403.41,
-        "overall_score": 74.9,
+        "overall_score": 74.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1352,7 +1352,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-25T22:05:02.622847+00:00"
+      "as_of": "2026-07-27T10:49:28.626310+00:00"
     }
   }
 }

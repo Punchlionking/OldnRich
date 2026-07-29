@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-28T22:14:06.292588+00:00",
+  "generated_at": "2026-07-29T09:46:17.034245+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -648,129 +648,24 @@
     ],
     "US": [
       {
-        "ticker": "WST",
-        "name": "West Pharmaceutical Services",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 337.0,
-        "overall_score": 72.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 97.4,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +39% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 66.4,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +9.1%p 변화, 직전 실적 컨센서스 +25.8% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 -6%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 42.4,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 8%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 51.8,
-            "horizon": "단기",
-            "reason": "RSI 44, 볼린저밴드 위치 7%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 80.6,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 58.5,
-            "horizon": "장기",
-            "reason": "ROIC 12.8% vs WACC 9.0% → 스프레드 +3.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 40.1,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 382 vs 현재가 337, 상승여력 +13% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 71.7,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 31.9·PBR 33.4 대비 PER 45.6·PBR 6.2로 19% 저평가, ROE 19%·영업이익률 20%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "TXT",
         "name": "Textron",
         "market": "US",
         "currency": "USD",
         "current_price": 89.96,
-        "overall_score": 71.6,
+        "overall_score": 72.8,
         "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 60.1,
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.6,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 29%(하단 지지)",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -784,20 +679,20 @@
             "available": true
           },
           {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 60.1,
+            "horizon": "단기",
+            "reason": "RSI 46, 볼린저밴드 위치 29%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "insider",
             "label": "내부자 군집매수",
             "score": 55.0,
             "horizon": "중기",
             "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 40.7,
-            "horizon": "단기",
-            "reason": "'Industrials' 테마 거래량이 평소 대비 1.3배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -843,6 +738,111 @@
             "score": 60.8,
             "horizon": "장기",
             "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "WST",
+        "name": "West Pharmaceutical Services",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 337.0,
+        "overall_score": 71.0,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 97.4,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +39% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 66.4,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +9.1%p 변화, 직전 실적 컨센서스 +25.8% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 -6%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 51.8,
+            "horizon": "단기",
+            "reason": "RSI 44, 볼린저밴드 위치 7%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.1,
+            "horizon": "단기",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 1.3배 급증, 섹터 강도 상위 8%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 80.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 58.5,
+            "horizon": "장기",
+            "reason": "ROIC 12.8% vs WACC 9.0% → 스프레드 +3.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 40.1,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 382 vs 현재가 337, 상승여력 +13% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 71.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 31.9·PBR 33.4 대비 PER 45.6·PBR 6.2로 19% 저평가, ROE 19%·영업이익률 20%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -916,6 +916,15 @@
             "available": true
           },
           {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 46.0,
+            "horizon": "단기",
+            "reason": "'Materials' 테마 거래량이 평소 대비 1.2배 급증, 섹터 강도 상위 2%",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "accruals",
             "label": "발생액 품질",
             "score": 78.4,
@@ -932,19 +941,19 @@
         "market": "US",
         "currency": "USD",
         "current_price": 63.6,
-        "overall_score": 69.9,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
+        "overall_score": 68.2,
+        "target_horizon": "중기",
+        "primary_criterion": "beneficiary",
+        "primary_label": "간접 수혜주(리드-래그)",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 42.4,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 8%",
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 66.4,
+            "horizon": "중기",
+            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -967,15 +976,6 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 66.4,
-            "horizon": "중기",
-            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "insider",
             "label": "내부자 군집매수",
             "score": 55.0,
@@ -994,6 +994,15 @@
             "available": true
           },
           {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.1,
+            "horizon": "단기",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 1.3배 급증, 섹터 강도 상위 8%",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
             "score": 65.5,
@@ -1005,12 +1014,12 @@
         ]
       },
       {
-        "ticker": "PFE",
-        "name": "Pfizer",
+        "ticker": "HUBB",
+        "name": "Hubbell Incorporated",
         "market": "US",
         "currency": "USD",
-        "current_price": 25.25,
-        "overall_score": 66.4,
+        "current_price": 483.66,
+        "overall_score": 66.8,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1020,61 +1029,79 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 42.4,
+            "score": 47.6,
             "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 8%",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 56.2,
+            "horizon": "단기",
+            "reason": "RSI 47, 볼린저밴드 위치 42%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 69.7,
+            "score": 64.8,
             "horizon": "중기",
-            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.35(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 44.6,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 29 vs 현재가 25, 상승여력 +15% (애널리스트 5명 커버)",
+            "reason": "연관 대장주 Allegion 최근 5일 +17% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 75.4,
+            "score": 85.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 31.9·PBR 33.4 대비 PER 19.0·PBR 1.6로 68% 저평가, ROE 8%·영업이익률 15%로 수익성 양호",
+            "reason": "업종 평균 PER 35.8·PBR 10.1 대비 PER 27.8·PBR 6.1로 31% 저평가, ROE 24%·영업이익률 21%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 68.1,
+            "horizon": "장기",
+            "reason": "ROIC 14.2% vs WACC 9.0% → 스프레드 +5.2%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 62.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 44.9,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 556 vs 현재가 484, 상승여력 +15% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 59.5,
+            "score": 58.7,
             "horizon": "장기",
             "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
@@ -1088,7 +1115,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 269.56,
-        "overall_score": 74.3,
+        "overall_score": 76.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1114,6 +1141,15 @@
             "available": true
           },
           {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.6,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
@@ -1128,15 +1164,6 @@
             "score": 96.8,
             "horizon": "장기",
             "reason": "ROIC 18.5% vs WACC 9.0% → 스프레드 +9.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 40.7,
-            "horizon": "단기",
-            "reason": "'Industrials' 테마 거래량이 평소 대비 1.3배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -1179,108 +1206,12 @@
         ]
       },
       {
-        "ticker": "INCY",
-        "name": "Incyte",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 129.93,
-        "overall_score": 73.3,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +47% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 75.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 3.2배, 최근 5일 +11%, 뉴스량 3.2배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 31.9·PBR 33.4 대비 PER 16.3·PBR 3.8로 69% 저평가, ROE 29%·영업이익률 30%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 67.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.8%p 변화, 직전 실적 컨센서스 +29.4% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 42.4,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 8%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 22.0% vs WACC 9.0% → 스프레드 +13.0%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 58.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 IQVIA 최근 5일 +20% 급등, 본 종목은 +11%에 그쳐 갭 존재 — 동시점 상관 0.37(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 59.1,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "FIX",
         "name": "Comfort Systems USA",
         "market": "US",
         "currency": "USD",
         "current_price": 1626.32,
-        "overall_score": 73.1,
+        "overall_score": 74.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1297,11 +1228,11 @@
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +18.7% 상회 (발표 25일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.6,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -1315,20 +1246,20 @@
             "available": true
           },
           {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +18.7% 상회 (발표 25일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "quant",
             "label": "퀀트·차트 신호",
             "score": 55.8,
             "horizon": "단기",
             "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 8%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 40.7,
-            "horizon": "단기",
-            "reason": "'Industrials' 테마 거래량이 평소 대비 1.3배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -1378,6 +1309,93 @@
             "available": true
           }
         ]
+      },
+      {
+        "ticker": "LUV",
+        "name": "Southwest Airlines",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 46.31,
+        "overall_score": 74.3,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +67% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 47.6,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +82.5% 상회 (발표 23일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 62.5,
+            "horizon": "중기",
+            "reason": "연관 대장주 Allegion 최근 5일 +17% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 48.5,
+            "horizon": "단기",
+            "reason": "RSI 46, 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 74.1,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 62.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 35.8·PBR 10.1 대비 PER 27.7·PBR 2.7로 48% 저평가, ROE 11%·영업이익률 3%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
       }
     ]
   },
@@ -1388,7 +1406,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-07-28T22:14:06.292588+00:00"
+      "as_of": "2026-07-29T09:46:17.034245+00:00"
     }
   }
 }

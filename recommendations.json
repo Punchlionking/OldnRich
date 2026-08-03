@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-01T22:06:49.625148+00:00",
+  "generated_at": "2026-08-03T10:50:21.806457+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -947,7 +947,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 26.3,
-        "overall_score": 70.0,
+        "overall_score": 69.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1076,7 +1076,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 188.99,
-        "overall_score": 68.1,
+        "overall_score": 68.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1145,7 +1145,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 372.83,
-        "overall_score": 67.2,
+        "overall_score": 67.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1241,7 +1241,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 15.22,
-        "overall_score": 73.8,
+        "overall_score": 73.7,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1374,9 +1374,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 62.7,
+            "score": 62.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.4 대비 PER 52.8·PBR 14.5로 0% 저평가, ROE 45%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 58.1·PBR 13.4 대비 PER 52.8·PBR 14.5로 0% 저평가, ROE 45%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1388,7 +1388,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 395.9,
-        "overall_score": 72.5,
+        "overall_score": 72.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1402,6 +1402,15 @@
             "horizon": "중기",
             "reason": "최근 1개월 제외 과거 12개월 수익률 +49% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 42.0,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 2.5배, 최근 5일 +1%, 뉴스량 2.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음",
             "available": true
           },
           {
@@ -1463,7 +1472,7 @@
             "label": "저평가 우량주",
             "score": 55.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 102.9·PBR 16.7 대비 PER 33.9·PBR 106.7로 0% 저평가, ROE 222%·영업이익률 77%로 수익성 양호",
+            "reason": "업종 평균 PER 101.9·PBR 16.7 대비 PER 33.9·PBR 106.7로 0% 저평가, ROE 222%·영업이익률 77%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1478,7 +1487,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-01T22:06:49.625148+00:00"
+      "as_of": "2026-08-03T10:50:21.806457+00:00"
     }
   }
 }

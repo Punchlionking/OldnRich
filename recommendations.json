@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T10:50:21.806457+00:00",
+  "generated_at": "2026-08-04T09:46:13.655023+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 157.34,
-        "overall_score": 73.2,
+        "overall_score": 73.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -879,9 +879,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 67.9,
+            "score": 67.8,
             "horizon": "중기",
-            "reason": "연관 대장주 Garmin 최근 5일 +21% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "reason": "연관 대장주 Garmin 최근 5일 +21% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.23(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -915,9 +915,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 60.2,
+            "score": 54.3,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +20% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +17% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -959,7 +959,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +108% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +109% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1016,7 +1016,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 38.16,
-        "overall_score": 68.4,
+        "overall_score": 67.9,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1053,7 +1053,7 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 61.9,
+            "score": 62.0,
             "horizon": "중기",
             "reason": "연관 대장주 Workday 최근 5일 +18% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
             "risk": "보통",
@@ -1076,7 +1076,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 188.99,
-        "overall_score": 68.2,
+        "overall_score": 67.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1157,7 +1157,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +42% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1173,9 +1173,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 68.5,
+            "score": 68.4,
             "horizon": "중기",
-            "reason": "연관 대장주 Garmin 최근 5일 +21% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.27(시차 추종관계 약함)",
+            "reason": "연관 대장주 Garmin 최근 5일 +21% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.26(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1241,7 +1241,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 15.22,
-        "overall_score": 73.7,
+        "overall_score": 73.8,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1296,9 +1296,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 97.5,
+            "score": 96.9,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +39% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +38% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1319,7 +1319,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 1629.0,
-        "overall_score": 73.4,
+        "overall_score": 73.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1331,7 +1331,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +167% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +164% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1383,42 +1383,42 @@
         ]
       },
       {
-        "ticker": "APP",
-        "name": "AppLovin",
+        "ticker": "IBM",
+        "name": "IBM",
         "market": "US",
         "currency": "USD",
-        "current_price": 395.9,
-        "overall_score": 72.9,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
+        "current_price": 223.65,
+        "overall_score": 72.6,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "높음",
         "pick_type": "longtail",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +49% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 30.1,
+            "horizon": "단기",
+            "reason": "'Information Technology' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 42.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.5배, 최근 5일 +1%, 뉴스량 2.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 73.5,
+            "horizon": "중기",
+            "reason": "연관 대장주 Cognizant 최근 5일 +22% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.45(시차 추종관계 약함)",
+            "risk": "보통",
             "available": true
           },
           {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 55.4% vs WACC 9.0% → 스프레드 +46.4%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 73.3,
+            "horizon": "단기",
+            "reason": "RSI 41, MACD 골든크로스 발생, 볼린저밴드 위치 39%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1427,52 +1427,52 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 648 vs 현재가 396, 상승여력 +64% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 66.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Cognizant 최근 5일 +22% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.12(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 93.9,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.09 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 51.7,
-            "horizon": "단기",
-            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 24%(하단 지지)",
+            "reason": "증권사 평균 목표가 294 vs 현재가 224, 상승여력 +31% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 55.0,
+            "score": 93.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 101.9·PBR 16.7 대비 PER 33.9·PBR 106.7로 0% 저평가, ROE 222%·영업이익률 77%로 수익성 양호",
+            "reason": "업종 평균 PER 58.1·PBR 13.4 대비 PER 19.5·PBR 8.5로 52% 저평가, ROE 34%·영업이익률 15%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 53.5,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +4.8%p 변화, 직전 실적 컨센서스 -2.3% 상회 (발표 29일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 47.2,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +14% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 58.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1487,7 +1487,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-03T10:50:21.806457+00:00"
+      "as_of": "2026-08-04T09:46:13.655023+00:00"
     }
   }
 }

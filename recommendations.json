@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T22:17:59.587499+00:00",
+  "generated_at": "2026-08-06T09:47:16.128906+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 414.0,
-        "overall_score": 76.9,
+        "overall_score": 77.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -881,7 +881,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.3 대비 PER 25.2·PBR 7.3로 51% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 25.2·PBR 7.3로 51% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1007,7 +1007,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 207.02,
-        "overall_score": 67.7,
+        "overall_score": 67.5,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1051,20 +1051,20 @@
             "available": true
           },
           {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 79.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 35.7·PBR 10.0 대비 PER 29.9·PBR 5.5로 31% 저평가, ROE 18%·영업이익률 20%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
             "score": 65.0,
             "horizon": "중기",
             "reason": "연관 대장주 Vertiv 최근 5일 +25% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 78.5,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 34.4·PBR 10.0 대비 PER 29.9·PBR 5.5로 29% 저평가, ROE 18%·영업이익률 20%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1085,7 +1085,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 157.53,
-        "overall_score": 67.2,
+        "overall_score": 66.1,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1106,7 +1106,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.3 대비 PER 17.3·PBR 8.4로 54% 저평가, ROE 37%·영업이익률 23%로 수익성 양호",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 17.3·PBR 8.4로 54% 저평가, ROE 37%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1176,12 +1176,12 @@
         ]
       },
       {
-        "ticker": "FSLR",
-        "name": "First Solar",
+        "ticker": "TDY",
+        "name": "Teledyne Technologies",
         "market": "US",
         "currency": "USD",
-        "current_price": 236.8,
-        "overall_score": 63.8,
+        "current_price": 683.73,
+        "overall_score": 63.7,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1193,88 +1193,61 @@
             "label": "테마 급부상",
             "score": 27.0,
             "horizon": "단기",
-            "reason": "'Information Technology' 테마 거래량이 평소 대비 0.9배 급증, 섹터 강도 상위 32%",
+            "reason": "'Information Technology' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 32%",
             "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 45.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 1.4배, 최근 5일 +19%, 뉴스량 7.4배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 73.1,
+            "score": 72.7,
             "horizon": "중기",
-            "reason": "연관 대장주 Coherent Corp. 최근 5일 +48% 급등, 본 종목은 +19%에 그쳐 갭 존재 — 동시점 상관 0.38(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 94.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.3 대비 PER 13.2·PBR 2.9로 78% 저평가, ROE 18%·영업이익률 32%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 48.6,
-            "horizon": "단기",
-            "reason": "RSI 58, 볼린저밴드 위치 92%(하단 지지)",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +48% 급등, 본 종목은 +8%에 그쳐 갭 존재 — 동시점 상관 0.37(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 46.8,
+            "score": 48.5,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +2.8%p 변화, 직전 실적 컨센서스 +35.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +7.3% 상회 (발표 31일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 81.8,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 31.2·PBR 2.3로 65% 저평가, ROE 9%·영업이익률 20%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 66.2,
+            "score": 53.8,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +23% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 49.3,
-            "horizon": "장기",
-            "reason": "ROIC 11.4% vs WACC 9.0% → 스프레드 +2.4%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +17% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 69.9,
+            "score": 59.7,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1286,7 +1259,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 307.42,
-        "overall_score": 81.9,
+        "overall_score": 81.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1316,7 +1289,7 @@
             "label": "호재 모멘텀",
             "score": 45.0,
             "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 0.7배, 최근 5일 +22%, 뉴스량 11.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "reason": "거래량 20일 평균 대비 0.8배, 최근 5일 +22%, 뉴스량 11.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
             "risk": "높음",
             "available": true
           },
@@ -1379,7 +1352,7 @@
             "label": "저평가 우량주",
             "score": 55.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.3 대비 PER 52.5·PBR 41.2로 0% 저평가, ROE 67%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 52.5·PBR 41.2로 0% 저평가, ROE 67%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1391,7 +1364,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 121.88,
-        "overall_score": 79.6,
+        "overall_score": 79.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1408,15 +1381,6 @@
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 90.2,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.0%p 변화, 직전 실적 컨센서스 +7.8% 상회 (발표 35일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
             "score": 76.4,
@@ -1426,11 +1390,20 @@
             "available": true
           },
           {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 90.2,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +5.0%p 변화, 직전 실적 컨센서스 +7.8% 상회 (발표 35일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "rumor",
             "label": "호재 모멘텀",
             "score": 45.0,
             "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 0.6배, 최근 5일 +18%, 뉴스량 6.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "reason": "거래량 20일 평균 대비 0.7배, 최근 5일 +18%, 뉴스량 6.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
             "risk": "높음",
             "available": true
           },
@@ -1473,21 +1446,21 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 56.5,
+            "score": 56.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 57.9·PBR 13.3 대비 PER 48.9·PBR 4.7로 40% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 48.9·PBR 4.7로 41% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "CIEN",
-        "name": "Ciena",
+        "ticker": "STX",
+        "name": "Seagate Technology",
         "market": "US",
         "currency": "USD",
-        "current_price": 408.83,
-        "overall_score": 78.2,
+        "current_price": 837.66,
+        "overall_score": 78.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1499,70 +1472,70 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +344% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +462% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 80.0,
+            "score": 76.3,
             "horizon": "중기",
-            "reason": "연관 대장주 Coherent Corp. 최근 5일 +48% 급등, 본 종목은 +24%에 그쳐 갭 존재 — 동시점 상관 0.72(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 45.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 0.8배, 최근 5일 +24%, 뉴스량 4.4배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.12 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 565 vs 현재가 409, 상승여력 +38% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 58.4,
-            "horizon": "단기",
-            "reason": "RSI 50, 볼린저밴드 위치 57%(하단 지지)",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +48% 급등, 본 종목은 +10%에 그쳐 갭 존재 — 동시점 상관 0.54(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
+            "score": 86.9,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.1% 상회 (발표 34일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +3.3%p 변화, 직전 실적 컨센서스 +11.1% 상회 (발표 37일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 27.8% vs WACC 9.0% → 스프레드 +18.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 60.4,
+            "horizon": "단기",
+            "reason": "RSI 48, 볼린저밴드 위치 48%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
-            "score": 50.0,
+            "score": 83.3,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 46.1,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 966 vs 현재가 838, 상승여력 +15% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 55.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 58.7·PBR 13.2 대비 PER 60.3·PBR 84.9로 0% 저평가, ROE 212%·영업이익률 32%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1577,7 +1550,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-05T22:17:59.587499+00:00"
+      "as_of": "2026-08-06T09:47:16.128906+00:00"
     }
   }
 }

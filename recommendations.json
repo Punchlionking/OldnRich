@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T21:51:31.515683+00:00",
+  "generated_at": "2026-08-08T21:41:43.769284+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -998,7 +998,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 167.86,
-        "overall_score": 66.5,
+        "overall_score": 66.4,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1089,90 +1089,12 @@
         ]
       },
       {
-        "ticker": "TJX",
-        "name": "TJX Companies",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 161.36,
-        "overall_score": 64.0,
-        "target_horizon": "중기",
-        "primary_criterion": "beneficiary",
-        "primary_label": "간접 수혜주(리드-래그)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.5,
-            "horizon": "중기",
-            "reason": "연관 대장주 Wayfair 최근 5일 +26% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +15.9% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 49.7,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +15% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.2,
-            "horizon": "단기",
-            "reason": "RSI 60, 볼린저밴드 위치 85%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 69.3,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 67.4,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 44.9·PBR 17.3 대비 PER 30.0·PBR 16.4로 19% 저평가, ROE 60%·영업이익률 12%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "LHX",
         "name": "L3Harris",
         "market": "US",
         "currency": "USD",
         "current_price": 286.67,
-        "overall_score": 63.5,
+        "overall_score": 63.4,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -1248,6 +1170,75 @@
             "score": 66.6,
             "horizon": "장기",
             "reason": "업종 평균 PER 35.8·PBR 10.0 대비 PER 28.5·PBR 2.9로 46% 저평가, ROE 9%·영업이익률 10%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "DOW",
+        "name": "Dow Inc.",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 29.34,
+        "overall_score": 62.8,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 61.7,
+            "horizon": "단기",
+            "reason": "RSI 45, 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 42 vs 현재가 29, 상승여력 +44% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.6% 상회 (발표 35일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 88.6,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +34% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 63.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Newmont 최근 5일 +21% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 59.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 4.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           }
@@ -1541,7 +1532,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-07T21:51:31.515683+00:00"
+      "as_of": "2026-08-08T21:41:43.769284+00:00"
     }
   }
 }

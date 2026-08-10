@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T21:41:43.769284+00:00",
+  "generated_at": "2026-08-10T08:47:50.384933+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 420.04,
-        "overall_score": 76.0,
+        "overall_score": 75.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -881,7 +881,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 25.2·PBR 7.3로 51% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 27.1·PBR 7.3로 50% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -929,7 +929,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 1740.99,
-        "overall_score": 71.4,
+        "overall_score": 71.2,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -984,9 +984,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 62.9,
+            "score": 62.7,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 52.8·PBR 14.5로 1% 저평가, ROE 45%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 54.8·PBR 14.5로 0% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -998,7 +998,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 167.86,
-        "overall_score": 66.4,
+        "overall_score": 66.3,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1019,7 +1019,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 18.7·PBR 8.4로 53% 저평가, ROE 37%·영업이익률 23%로 수익성 양호",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 18.7·PBR 8.4로 53% 저평가, ROE 37%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1094,7 +1094,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 286.67,
-        "overall_score": 63.4,
+        "overall_score": 63.2,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
         "primary_label": "간접 수혜주(리드-래그)",
@@ -1167,9 +1167,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 66.6,
+            "score": 66.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 35.8·PBR 10.0 대비 PER 28.5·PBR 2.9로 46% 저평가, ROE 9%·영업이익률 10%로 수익성 양호",
+            "reason": "업종 평균 PER 35.5·PBR 10.0 대비 PER 28.5·PBR 2.9로 45% 저평가, ROE 9%·영업이익률 10%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1211,7 +1211,7 @@
             "label": "추정치 상향·서프라이즈",
             "score": 60.7,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.6% 상회 (발표 35일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.6% 상회 (발표 41일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1250,7 +1250,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 877.57,
-        "overall_score": 82.6,
+        "overall_score": 82.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1280,7 +1280,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 19.5·PBR 2.5로 74% 저평가, ROE 71%·영업이익률 66%로 수익성 양호",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 19.5·PBR 2.5로 74% 저평가, ROE 71%·영업이익률 66%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1335,102 +1335,6 @@
             "score": 45.5,
             "horizon": "장기",
             "reason": "ROIC 10.8% vs WACC 9.0% → 스프레드 +1.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "WDC",
-        "name": "Western Digital",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 434.3,
-        "overall_score": 82.2,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +671% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 76.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Coherent Corp. 최근 5일 +44% 급등, 본 종목은 -20%에 그쳐 갭 존재 — 동시점 상관 0.55(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 27.2·PBR 4.0로 62% 저평가, ROE 91%·영업이익률 29%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 78.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +4.0%p 변화, 직전 실적 컨센서스 +7.0% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 631 vs 현재가 434, 상승여력 +45% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 60.3,
-            "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 2%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 21.5% vs WACC 9.0% → 스프레드 +12.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 42.9,
-            "horizon": "장기",
-            "reason": "발생액 비율 +0.01 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1515,9 +1419,105 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 57.1,
+            "score": 57.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.0·PBR 13.2 대비 PER 48.9·PBR 4.7로 41% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 48.9·PBR 4.7로 41% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "WDC",
+        "name": "Western Digital",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 434.3,
+        "overall_score": 78.5,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +671% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 76.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +44% 급등, 본 종목은 -20%에 그쳐 갭 존재 — 동시점 상관 0.55(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 78.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +4.0%p 변화, 직전 실적 컨센서스 +7.0% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 631 vs 현재가 434, 상승여력 +45% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 60.3,
+            "horizon": "단기",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 2%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 21.5% vs WACC 9.0% → 스프레드 +12.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 65.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 59.1·PBR 13.6 대비 PER 15.9·PBR 22.5로 4% 저평가, ROE 118%·영업이익률 30%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 42.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 +0.01 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1532,7 +1532,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-08T21:41:43.769284+00:00"
+      "as_of": "2026-08-10T08:47:50.384933+00:00"
     }
   }
 }

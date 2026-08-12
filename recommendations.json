@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-11T21:59:14.280215+00:00",
+  "generated_at": "2026-08-12T08:36:40.232235+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -941,7 +941,7 @@
             "label": "테마 급부상",
             "score": 27.0,
             "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 32%",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 32%",
             "risk": "보통",
             "available": true
           },
@@ -1037,7 +1037,7 @@
             "label": "테마 급부상",
             "score": 31.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 22%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 22%",
             "risk": "보통",
             "available": true
           },
@@ -1334,7 +1334,7 @@
             "label": "추정치 상향·서프라이즈",
             "score": 67.2,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.8%p 변화, 직전 실적 컨센서스 +14.7% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.8%p 변화, 직전 실적 컨센서스 +14.7% 상회 (발표 43일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1385,7 +1385,7 @@
             "label": "테마 급부상",
             "score": 31.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 22%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 22%",
             "risk": "보통",
             "available": true
           },
@@ -1460,7 +1460,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 868.52,
-        "overall_score": 74.5,
+        "overall_score": 74.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1559,7 +1559,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-11T21:59:14.280215+00:00"
+      "as_of": "2026-08-12T08:36:40.232235+00:00"
     }
   }
 }

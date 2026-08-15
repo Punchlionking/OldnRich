@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T21:35:39.685522+00:00",
+  "generated_at": "2026-08-15T21:31:00.911205+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -881,7 +881,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.3·PBR 13.5 대비 PER 27.1·PBR 7.3로 51% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "reason": "업종 평균 PER 59.6·PBR 13.5 대비 PER 27.1·PBR 7.3로 50% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -929,7 +929,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 126.78,
-        "overall_score": 69.7,
+        "overall_score": 69.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -941,7 +941,7 @@
             "label": "테마 급부상",
             "score": 39.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
             "available": true
           },
@@ -975,9 +975,9 @@
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
+            "score": 60.2,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.3% 상회 (발표 41일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +11.3% 상회 (발표 46일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1011,21 +1011,21 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 72.9,
+            "score": 72.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.9·PBR 3.2 대비 PER 16.3·PBR 1.8로 28% 저평가, ROE 14%·영업이익률 23%로 수익성 양호",
+            "reason": "업종 평균 PER 18.8·PBR 3.2 대비 PER 16.3·PBR 1.8로 28% 저평가, ROE 14%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "EXE",
-        "name": "Expand Energy",
+        "ticker": "CVX",
+        "name": "Chevron Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 94.78,
-        "overall_score": 69.3,
+        "current_price": 200.0,
+        "overall_score": 68.9,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1037,43 +1037,16 @@
             "label": "테마 급부상",
             "score": 39.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 2%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 70.0,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 90.7,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 2명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 130 vs 현재가 95, 상승여력 +37% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 98.7,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.10 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "애널리스트 강세 비중 +7.2%p 변화, 직전 실적 컨센서스 +7.9% 상회 (발표 44일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1082,7 +1055,7 @@
             "label": "FCF 수익률",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "FCF 수익률 8.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 9.8% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
@@ -1091,25 +1064,43 @@
             "label": "간접 수혜주(리드-래그)",
             "score": 65.7,
             "horizon": "중기",
-            "reason": "연관 대장주 Marathon Petroleum 최근 5일 +19% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "reason": "연관 대장주 Marathon Petroleum 최근 5일 +19% 급등, 본 종목은 +7%에 그쳐 갭 존재 — 동시점 상관 0.58(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 83.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 54.9,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +17% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 89.6,
+            "score": 56.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.9·PBR 3.2 대비 PER 7.9·PBR 1.4로 57% 저평가, ROE 15%·영업이익률 27%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 45.0,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 -6.7%p 변화, 직전 실적 컨센서스 +14.9% 상회 (발표 42일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "업종 평균 PER 18.8·PBR 3.2 대비 PER 18.9·PBR 1.6로 24% 저평가, ROE 11%·영업이익률 13%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1151,7 +1142,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.3·PBR 13.5 대비 PER 19.5·PBR 2.5로 75% 저평가, ROE 71%·영업이익률 66%로 수익성 양호",
+            "reason": "업종 평균 PER 59.6·PBR 13.5 대비 PER 21.5·PBR 2.5로 73% 저평가, ROE 71%·영업이익률 66%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1212,12 +1203,12 @@
         ]
       },
       {
-        "ticker": "ATO",
-        "name": "Atmos Energy",
+        "ticker": "L",
+        "name": "Loews Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 169.92,
-        "overall_score": 65.9,
+        "current_price": 113.03,
+        "overall_score": 66.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1227,9 +1218,27 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 54.1,
+            "score": 54.7,
             "horizon": "단기",
-            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 22%(하단 지지)",
+            "reason": "RSI 42, 볼린저밴드 위치 17%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 11.3% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
@@ -1243,47 +1252,38 @@
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 64.6,
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 46.8,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.5%p 변화, 직전 실적 컨센서스 +4.7% 상회 (발표 43일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "연관 대장주 KKR & Co. 최근 5일 +11% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 90.5,
-            "horizon": "장기",
-            "reason": "FCF 수익률 7.2% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 65.1,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 59.8,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +20% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 63.2,
+            "score": 74.6,
             "horizon": "장기",
-            "reason": "업종 평균 PER 23.3·PBR 3.1 대비 PER 20.5·PBR 2.0로 24% 저평가, ROE 10%·영업이익률 37%로 수익성 양호",
+            "reason": "업종 평균 PER 21.8·PBR 4.6 대비 PER 13.8·PBR 1.2로 56% 저평가, ROE 9%·영업이익률 14%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 59.3,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1341,9 +1341,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 63.3,
+            "score": 62.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.3·PBR 13.5 대비 PER 54.8·PBR 14.5로 1% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 59.6·PBR 13.5 대비 PER 54.8·PBR 14.5로 0% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1372,20 +1372,20 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 75.1,
-            "horizon": "중기",
-            "reason": "연관 대장주 Sandisk 최근 5일 +35% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.48(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
             "score": 90.2,
             "horizon": "중기",
             "reason": "애널리스트 강세 비중 +5.0%p 변화, 직전 실적 컨센서스 +7.8% 상회 (발표 42일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 75.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 Sandisk 최근 5일 +35% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.48(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1428,9 +1428,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 59.9,
+            "score": 59.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.3·PBR 13.5 대비 PER 46.0·PBR 4.7로 45% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
+            "reason": "업종 평균 PER 59.6·PBR 13.5 대비 PER 46.0·PBR 4.7로 44% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1515,9 +1515,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 65.4,
+            "score": 65.3,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.3·PBR 13.5 대비 PER 15.9·PBR 22.5로 4% 저평가, ROE 118%·영업이익률 30%로 수익성 양호",
+            "reason": "업종 평균 PER 59.6·PBR 13.5 대비 PER 15.9·PBR 22.5로 4% 저평가, ROE 118%·영업이익률 30%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1541,7 +1541,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-14T21:35:39.685522+00:00"
+      "as_of": "2026-08-15T21:31:00.911205+00:00"
     }
   }
 }

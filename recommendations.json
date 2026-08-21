@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T21:38:07.269730+00:00",
+  "generated_at": "2026-08-21T07:52:31.188195+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 267.37,
-        "overall_score": 75.8,
+        "overall_score": 75.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -920,7 +920,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 65.47,
-        "overall_score": 70.8,
+        "overall_score": 71.4,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -930,9 +930,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 34.6,
+            "score": 37.8,
             "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 22%",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 1.2배 급증, 섹터 강도 상위 22%",
             "risk": "보통",
             "available": true
           },
@@ -941,7 +941,16 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 36.9·PBR 32.9 대비 PER 14.2·PBR 5.9로 72% 저평가, ROE 47%·영업이익률 26%로 수익성 양호",
+            "reason": "업종 평균 PER 37.4·PBR 32.9 대비 PER 14.2·PBR 5.9로 72% 저평가, ROE 47%·영업이익률 26%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.18(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -951,15 +960,6 @@
             "score": 100.0,
             "horizon": "장기",
             "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 66.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.05(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1007,7 +1007,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 21.85,
-        "overall_score": 70.1,
+        "overall_score": 69.6,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1055,7 +1055,7 @@
             "label": "저평가 우량주",
             "score": 83.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 21.9·PBR 4.6 대비 PER 12.1·PBR 1.1로 60% 저평가, ROE 10%·영업이익률 23%로 수익성 양호",
+            "reason": "업종 평균 PER 22.0·PBR 4.6 대비 PER 12.1·PBR 1.1로 61% 저평가, ROE 10%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1069,20 +1069,20 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 55.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Coinbase 최근 5일 +12% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.23(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 47.0,
             "horizon": "중기",
             "reason": "증권사 평균 목표가 25 vs 현재가 22, 상승여력 +16% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 55.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Coinbase 최근 5일 +12% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.23(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1103,7 +1103,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 117.25,
-        "overall_score": 69.9,
+        "overall_score": 69.4,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1113,9 +1113,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 61.0,
+            "score": 62.9,
             "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 25%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 25%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1149,9 +1149,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 81.7,
+            "score": 79.7,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +31% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +30% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1178,112 +1178,103 @@
             "label": "간접 수혜주(리드-래그)",
             "score": 47.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Alexandria Real Estate Equities 최근 5일 +9% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.46(시차 추종관계 약함)",
+            "reason": "연관 대장주 Alexandria Real Estate Equities 최근 5일 +9% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.45(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "ABBV",
-        "name": "AbbVie",
+        "ticker": "CAH",
+        "name": "Cardinal Health",
         "market": "US",
         "currency": "USD",
-        "current_price": 261.83,
+        "current_price": 228.46,
         "overall_score": 69.0,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 34.6,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 22%",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +46% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 68.3,
+            "score": 65.8,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.16(시차 추종관계 약함)",
+            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.04(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.11 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 58.3,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 61.8,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 60.9,
-            "horizon": "장기",
-            "reason": "ROIC 13.1% vs WACC 9.0% → 스프레드 +4.1%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +19.1% 상회 (발표 50일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 44.6,
+            "score": 49.8,
             "horizon": "단기",
-            "reason": "RSI 62, 볼린저밴드 위치 82%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 16%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 50.2,
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 57.6,
             "horizon": "장기",
-            "reason": "FCF 수익률 4.0% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "ROIC 12.6% vs WACC 9.0% → 스프레드 +3.6%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 55.0,
+            "score": 68.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 36.9·PBR 32.9 대비 PER 69.7·PBR 94.4로 0% 저평가, ROE 96%·영업이익률 26%로 수익성 양호",
+            "reason": "업종 평균 PER 37.4·PBR 32.9 대비 PER 34.6·PBR 9.2로 40% 저평가, ROE 37%·영업이익률 1%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 43.6,
+            "horizon": "장기",
+            "reason": "FCF 수익률 3.5% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 57.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1295,7 +1286,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 353.77,
-        "overall_score": 73.9,
+        "overall_score": 74.1,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1314,9 +1305,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 65.7,
+            "score": 67.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
+            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1341,18 +1332,18 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 50.7,
+            "score": 50.8,
             "horizon": "단기",
-            "reason": "RSI 56, MACD 골든크로스 발생, 볼린저밴드 위치 74%(하단 지지)",
+            "reason": "RSI 56, MACD 골든크로스 발생, 볼린저밴드 위치 77%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 80.5,
+            "score": 81.1,
             "horizon": "장기",
-            "reason": "업종 평균 PER 36.9·PBR 32.9 대비 PER 43.9·PBR 6.2로 31% 저평가, ROE 19%·영업이익률 20%로 수익성 양호",
+            "reason": "업종 평균 PER 37.4·PBR 32.9 대비 PER 43.9·PBR 6.2로 32% 저평가, ROE 19%·영업이익률 20%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1382,7 +1373,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 16.12,
-        "overall_score": 73.8,
+        "overall_score": 72.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1394,25 +1385,25 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +65% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 62.7,
-            "horizon": "단기",
-            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 24%(하단 지지)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +59% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
+            "score": 67.2,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
+            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.10(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 62.6,
+            "horizon": "단기",
+            "reason": "RSI 40, 볼린저밴드 위치 24%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1428,9 +1419,9 @@
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
+            "score": 57.4,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +12.6% 상회 (발표 45일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +12.6% 상회 (발표 52일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           }
@@ -1454,16 +1445,16 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +72% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +69% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 65.4,
+            "score": 65.5,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.02(시차 추종관계 약함)",
+            "reason": "연관 대장주 Moderna 최근 5일 +109% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1517,7 +1508,7 @@
             "label": "저평가 우량주",
             "score": 48.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 36.9·PBR 32.9 대비 PER 13.6·PBR 101.2로 0% 저평가, ROE 181%·영업이익률 15%로 수익성 양호",
+            "reason": "업종 평균 PER 37.4·PBR 32.9 대비 PER 13.6·PBR 101.2로 0% 저평가, ROE 181%·영업이익률 15%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1532,7 +1523,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-20T21:38:07.269730+00:00"
+      "as_of": "2026-08-21T07:52:31.188195+00:00"
     }
   }
 }

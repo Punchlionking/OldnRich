@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T21:31:55.196553+00:00",
+  "generated_at": "2026-08-24T08:02:26.065349+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 67.01,
-        "overall_score": 75.1,
+        "overall_score": 75.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1085,7 +1085,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 21.87,
-        "overall_score": 73.3,
+        "overall_score": 73.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1227,6 +1227,93 @@
         ]
       },
       {
+        "ticker": "WST",
+        "name": "West Pharmaceutical Services",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 353.08,
+        "overall_score": 75.8,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +43% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.5,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.4%p 변화, 직전 실적 컨센서스 +12.8% 상회 (발표 52일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 67.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +129% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 80.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 80.8,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 37.3·PBR 32.5 대비 PER 43.9·PBR 6.2로 32% 저평가, ROE 19%·영업이익률 20%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 58.5,
+            "horizon": "장기",
+            "reason": "ROIC 12.8% vs WACC 9.0% → 스프레드 +3.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "DVA",
         "name": "DaVita",
         "market": "US",
@@ -1323,81 +1410,12 @@
         ]
       },
       {
-        "ticker": "ALB",
-        "name": "Albemarle Corporation",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 143.25,
-        "overall_score": 72.2,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.11 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 187 vs 현재가 143, 상승여력 +31% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 65.3,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.8%p 변화, 직전 실적 컨센서스 +14.7% 상회 (발표 49일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 51.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Freeport-McMoRan 최근 5일 +15% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.38(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "BIIB",
         "name": "Biogen",
         "market": "US",
         "currency": "USD",
         "current_price": 216.78,
-        "overall_score": 72.1,
+        "overall_score": 72.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1487,7 +1505,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-22T21:31:55.196553+00:00"
+      "as_of": "2026-08-24T08:02:26.065349+00:00"
     }
   }
 }

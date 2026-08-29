@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T19:23:53.333753+00:00",
+  "generated_at": "2026-08-29T03:08:37.162569+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -859,8 +859,8 @@
         "name": "TSMC",
         "market": "US",
         "currency": "USD",
-        "current_price": 418.78,
-        "overall_score": 75.6,
+        "current_price": 417.52,
+        "overall_score": 72.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -872,7 +872,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +69% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +75% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -897,114 +897,132 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 67.3,
+            "score": 67.4,
             "horizon": "중기",
-            "reason": "연관 대장주 Okta 최근 5일 +25% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 57.4,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.9% 상회 (발표 52일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "연관 대장주 Okta 최근 5일 +23% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 72.8,
+            "score": 73.9,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 520 vs 현재가 419, 상승여력 +24% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 48.8,
-            "horizon": "단기",
-            "reason": "RSI 50, 볼린저밴드 위치 48%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "FRT",
-        "name": "Federal Realty Investment Trust",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 117.28,
-        "overall_score": 68.5,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 77.3,
-            "horizon": "단기",
-            "reason": "RSI 39(과매도 반등), MACD 골든크로스 발생, 볼린저밴드 위치 36%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "reason": "증권사 평균 목표가 520 vs 현재가 418, 상승여력 +25% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 64.5,
+            "score": 53.5,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +1.3%p 변화, 직전 실적 컨센서스 +34.9% 상회 (발표 59일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.9% 상회 (발표 60일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 87.7,
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 50.4,
+            "horizon": "단기",
+            "reason": "RSI 50, 볼린저밴드 위치 44%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "ATO",
+        "name": "Atmos Energy",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 166.65,
+        "overall_score": 67.0,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 53.0,
+            "horizon": "단기",
+            "reason": "'Utilities' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 18%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 72.4,
+            "horizon": "단기",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 9%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 62.4,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +3.5%p 변화, 직전 실적 컨센서스 +4.7% 상회 (발표 55일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
             "horizon": "장기",
-            "reason": "업종 평균 PER 48.1·PBR 7.7 대비 PER 23.8·PBR 2.7로 58% 저평가, ROE 13%·영업이익률 48%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 68.6,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +24% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 64.2,
+            "score": 90.5,
             "horizon": "장기",
-            "reason": "FCF 수익률 5.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 7.2% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 40.1,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 189 vs 현재가 167, 상승여력 +13% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 68.9,
+            "score": 65.1,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 59.1,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 20.7·PBR 3.1 대비 PER 20.5·PBR 2.0로 18% 저평가, ROE 10%·영업이익률 37%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1015,8 +1033,8 @@
         "name": "West Pharmaceutical Services",
         "market": "US",
         "currency": "USD",
-        "current_price": 338.33,
-        "overall_score": 67.0,
+        "current_price": 337.47,
+        "overall_score": 66.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1026,7 +1044,7 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 96.7,
+            "score": 95.0,
             "horizon": "중기",
             "reason": "최근 1개월 제외 과거 12개월 수익률 +38% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
@@ -1044,16 +1062,16 @@
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 60.5,
+            "score": 56.6,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.4%p 변화, 직전 실적 컨센서스 +12.8% 상회 (발표 52일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.4%p 변화, 직전 실적 컨센서스 +12.8% 상회 (발표 60일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 60.2,
+            "score": 61.0,
             "horizon": "단기",
             "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
             "risk": "보통",
@@ -1062,9 +1080,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 51.3,
+            "score": 51.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Veeva Systems 최근 5일 +12% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.02(시차 추종관계 약함)",
+            "reason": "연관 대장주 Veeva Systems 최근 5일 +12% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1107,11 +1125,11 @@
         ]
       },
       {
-        "ticker": "XEL",
-        "name": "Xcel Energy",
+        "ticker": "FRT",
+        "name": "Federal Realty Investment Trust",
         "market": "US",
         "currency": "USD",
-        "current_price": 76.22,
+        "current_price": 116.75,
         "overall_score": 66.7,
         "target_horizon": "단기",
         "primary_criterion": "quant",
@@ -1122,25 +1140,121 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 71.8,
+            "score": 66.2,
             "horizon": "단기",
-            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 8%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 30%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 57.4,
+            "score": 64.5,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +17.8% 상회 (발표 52일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +1.3%p 변화, 직전 실적 컨센서스 +34.9% 상회 (발표 59일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 87.7,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 48.1·PBR 7.7 대비 PER 23.8·PBR 2.7로 58% 저평가, ROE 13%·영업이익률 48%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 66.8,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +23% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 64.2,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 62.8,
+            "score": 40.5,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 132 vs 현재가 117, 상승여력 +13% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 68.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "XEL",
+        "name": "Xcel Energy",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 76.45,
+        "overall_score": 66.7,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 53.0,
+            "horizon": "단기",
+            "reason": "'Utilities' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 18%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 68.5,
+            "horizon": "단기",
+            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 13%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 53.5,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +17.8% 상회 (발표 60일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 61.7,
             "horizon": "중기",
             "reason": "증권사 평균 목표가 92 vs 현재가 76, 상승여력 +21% (애널리스트 5명 커버)",
             "risk": "보통",
@@ -1158,159 +1272,12 @@
         ]
       },
       {
-        "ticker": "TDY",
-        "name": "Teledyne Technologies",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 623.16,
-        "overall_score": 63.8,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 37.0,
-            "horizon": "단기",
-            "reason": "'Information Technology' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 8%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Okta 최근 5일 +25% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.04(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 57.0,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 12%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 81.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 58.2·PBR 13.7 대비 PER 32.1·PBR 2.3로 64% 저평가, ROE 9%·영업이익률 20%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 56.9,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 741 vs 현재가 623, 상승여력 +19% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 59.5,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +20% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 46.5,
-            "horizon": "장기",
-            "reason": "FCF 수익률 3.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 59.7,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "ARM",
-        "name": "Arm Holdings",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 240.91,
-        "overall_score": 78.8,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +69% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.4,
-            "horizon": "중기",
-            "reason": "연관 대장주 Okta 최근 5일 +25% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 64.1,
-            "horizon": "단기",
-            "reason": "RSI 41, 볼린저밴드 위치 18%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 78.5,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 304 vs 현재가 241, 상승여력 +26% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "MU",
         "name": "Micron Technology",
         "market": "US",
         "currency": "USD",
-        "current_price": 928.47,
-        "overall_score": 78.4,
+        "current_price": 932.86,
+        "overall_score": 76.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1322,7 +1289,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +617% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +635% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1349,7 +1316,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 1,515 vs 현재가 928, 상승여력 +63% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 1,515 vs 현재가 933, 상승여력 +62% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1358,7 +1325,7 @@
             "label": "간접 수혜주(리드-래그)",
             "score": 66.8,
             "horizon": "중기",
-            "reason": "연관 대장주 Okta 최근 5일 +25% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
+            "reason": "연관 대장주 Okta 최근 5일 +23% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.09(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1372,20 +1339,20 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 57.7,
-            "horizon": "단기",
-            "reason": "RSI 50, 볼린저밴드 위치 54%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
             "score": 54.5,
             "horizon": "중기",
             "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +17.3% 상회 (발표 58일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 57.1,
+            "horizon": "단기",
+            "reason": "RSI 51, 볼린저밴드 위치 57%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1401,12 +1368,12 @@
         ]
       },
       {
-        "ticker": "AMAT",
-        "name": "Applied Materials",
+        "ticker": "ARM",
+        "name": "Arm Holdings",
         "market": "US",
         "currency": "USD",
-        "current_price": 463.32,
-        "overall_score": 76.7,
+        "current_price": 239.05,
+        "overall_score": 75.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1418,7 +1385,58 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +204% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +75% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.4,
+            "horizon": "중기",
+            "reason": "연관 대장주 Okta 최근 5일 +23% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 64.0,
+            "horizon": "단기",
+            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 16%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 81.5,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 304 vs 현재가 239, 상승여력 +27% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "AMAT",
+        "name": "Applied Materials",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 461.67,
+        "overall_score": 74.6,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +212% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1427,7 +1445,7 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 629 vs 현재가 463, 상승여력 +36% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 629 vs 현재가 462, 상승여력 +36% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1445,16 +1463,16 @@
             "label": "간접 수혜주(리드-래그)",
             "score": 66.4,
             "horizon": "중기",
-            "reason": "연관 대장주 Okta 최근 5일 +25% 급등, 본 종목은 -6%에 그쳐 갭 존재 — 동시점 상관 0.07(시차 추종관계 약함)",
+            "reason": "연관 대장주 Okta 최근 5일 +23% 급등, 본 종목은 -6%에 그쳐 갭 존재 — 동시점 상관 0.07(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 60.8,
+            "score": 61.8,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 2%(하단 지지)",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1496,7 +1514,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-08-28T19:23:53.333753+00:00"
+      "as_of": "2026-08-29T03:08:37.162569+00:00"
     }
   }
 }

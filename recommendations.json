@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T23:21:30.542810+00:00",
+  "generated_at": "2026-09-09T12:17:56.118372+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -860,7 +860,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 78.96,
-        "overall_score": 69.9,
+        "overall_score": 69.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -957,18 +957,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 27.6,
+            "score": 28.6,
             "horizon": "단기",
             "reason": "'Industrials' 테마 거래량이 평소 대비 1.2배 급증, 섹터 강도 상위 48%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 154 vs 현재가 109, 상승여력 +41% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -987,6 +978,15 @@
             "score": 67.9,
             "horizon": "중기",
             "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.14(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 154 vs 현재가 109, 상승여력 +41% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1373,7 +1373,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 822.48,
-        "overall_score": 77.7,
+        "overall_score": 77.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1446,12 +1446,12 @@
         ]
       },
       {
-        "ticker": "TSM",
-        "name": "TSMC",
+        "ticker": "HWM",
+        "name": "Howmet Aerospace",
         "market": "US",
         "currency": "USD",
-        "current_price": 439.0,
-        "overall_score": 75.2,
+        "current_price": 231.53,
+        "overall_score": 75.1,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1463,61 +1463,79 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +67% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +57% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "rumor",
+            "label": "호재 모멘텀",
+            "score": 55.0,
+            "horizon": "단기",
+            "reason": "거래량 20일 평균 대비 3.6배, 최근 5일 -5%, 뉴스량 6.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
+            "risk": "높음",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "insider",
             "label": "내부자 군집매수",
-            "score": 100.0,
+            "score": 55.0,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 31명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 103.5·PBR 13.5 대비 PER 27.4·PBR 7.3로 60% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 50.6,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 77.5,
+            "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 552 vs 현재가 439, 상승여력 +26% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 335 vs 현재가 232, 상승여력 +45% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 55.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Dell Technologies 최근 5일 +17% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 44.5,
-            "horizon": "단기",
-            "reason": "RSI 62, 볼린저밴드 위치 100%(하단 지지)",
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 87.9,
+            "horizon": "장기",
+            "reason": "ROIC 17.2% vs WACC 9.0% → 스프레드 +8.2%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 66.8,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 55.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 55.4·PBR 15.4로 0% 저평가, ROE 34%·영업이익률 27%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1532,7 +1550,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-09-08T23:21:30.542810+00:00"
+      "as_of": "2026-09-09T12:17:56.118372+00:00"
     }
   }
 }

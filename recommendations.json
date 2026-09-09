@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T12:17:56.118372+00:00",
+  "generated_at": "2026-09-09T23:10:22.842563+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -855,12 +855,12 @@
     ],
     "US": [
       {
-        "ticker": "DAL",
-        "name": "Delta Air Lines",
+        "ticker": "TSM",
+        "name": "TSMC",
         "market": "US",
         "currency": "USD",
-        "current_price": 78.96,
-        "overall_score": 69.8,
+        "current_price": 435.36,
+        "overall_score": 72.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -872,16 +872,94 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +51% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +61% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 31명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 69.6,
+            "score": 71.6,
             "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.22(시차 추종관계 약함)",
+            "reason": "연관 대장주 Dell Technologies 최근 5일 +26% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 100.1·PBR 13.5 대비 PER 27.4·PBR 7.3로 59% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 50.6,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 80.6,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 552 vs 현재가 435, 상승여력 +27% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 47.5,
+            "horizon": "단기",
+            "reason": "RSI 59, 볼린저밴드 위치 92%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "XYL",
+        "name": "Xylem Inc.",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 107.64,
+        "overall_score": 70.2,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
@@ -890,7 +968,76 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 106 vs 현재가 79, 상승여력 +34% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 154 vs 현재가 108, 상승여력 +43% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 54.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +1.4%p 변화, 직전 실적 컨센서스 +8.1% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.14(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 59.8,
+            "horizon": "단기",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 74.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 24.2·PBR 2.9로 49% 저평가, ROE 9%·영업이익률 14%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "DAL",
+        "name": "Delta Air Lines",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 78.75,
+        "overall_score": 69.7,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +45% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
@@ -900,6 +1047,24 @@
             "score": 100.0,
             "horizon": "장기",
             "reason": "FCF 수익률 14.8% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.22(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 106 vs 현재가 79, 상승여력 +34% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -915,9 +1080,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 57.7,
+            "score": 59.6,
             "horizon": "단기",
-            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 27%(하단 지지)",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 28%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -942,177 +1107,12 @@
         ]
       },
       {
-        "ticker": "XYL",
-        "name": "Xylem Inc.",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 108.81,
-        "overall_score": 69.5,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 28.6,
-            "horizon": "단기",
-            "reason": "'Industrials' 테마 거래량이 평소 대비 1.2배 급증, 섹터 강도 상위 48%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 67.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.14(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 154 vs 현재가 109, 상승여력 +41% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 54.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +1.4%p 변화, 직전 실적 컨센서스 +8.1% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 52.8,
-            "horizon": "단기",
-            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 26%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 74.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 24.2·PBR 2.9로 49% 저평가, ROE 9%·영업이익률 14%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "GWW",
-        "name": "W. W. Grainger",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 1289.17,
-        "overall_score": 68.3,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 74.1,
-            "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 4%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.18(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 28.1% vs WACC 9.0% → 스프레드 +19.1%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 76.8,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +28% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 67.2,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 48.2,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 33.4·PBR 12.8로 0% 저평가, ROE 49%·영업이익률 15%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "WM",
         "name": "Waste Management",
         "market": "US",
         "currency": "USD",
-        "current_price": 217.78,
-        "overall_score": 67.5,
+        "current_price": 216.44,
+        "overall_score": 67.0,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1122,9 +1122,18 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 69.6,
+            "score": 73.5,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 11%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 5%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
@@ -1138,20 +1147,20 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
             "score": 83.3,
             "horizon": "장기",
             "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 65.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1167,9 +1176,9 @@
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 58.0,
+            "score": 60.3,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 260 vs 현재가 218, 상승여력 +19% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 260 vs 현재가 216, 상승여력 +20% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1185,42 +1194,51 @@
         ]
       },
       {
-        "ticker": "IEX",
-        "name": "IDEX Corporation",
+        "ticker": "SWK",
+        "name": "Stanley Black & Decker",
         "market": "US",
         "currency": "USD",
-        "current_price": 225.66,
-        "overall_score": 67.2,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
+        "current_price": 91.68,
+        "overall_score": 66.3,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +45% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 84.3,
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.0%p 변화, 직전 실적 컨센서스 +8.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 68.0,
+            "score": 69.3,
             "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.14(시차 추종관계 약함)",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.21(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 51.1,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +27.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1229,41 +1247,50 @@
             "label": "퀄리티(F-Score)",
             "score": 83.3,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 76.6,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 31.7·PBR 3.3로 36% 저평가, ROE 13%·영업이익률 21%로 수익성 양호",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 45.0,
+            "score": 61.8,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 21%(하단 지지)",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 86.7,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +33% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 45.9,
+            "score": 62.7,
             "horizon": "장기",
-            "reason": "FCF 수익률 3.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 5.0% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 63.6,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 23.7·PBR 1.3로 58% 저평가, ROE 7%·영업이익률 8%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 64.2,
+            "score": 63.4,
             "horizon": "장기",
             "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
@@ -1276,8 +1303,8 @@
         "name": "Comfort Systems USA",
         "market": "US",
         "currency": "USD",
-        "current_price": 1648.47,
-        "overall_score": 79.2,
+        "current_price": 1615.14,
+        "overall_score": 79.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1289,16 +1316,16 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +139% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +123% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 +7%에 그쳐 갭 존재 — 동시점 상관 0.22(시차 추종관계 약함)",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
@@ -1312,11 +1339,20 @@
             "available": true
           },
           {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.7,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.23(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 2,211 vs 현재가 1,648, 상승여력 +34% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 2,211 vs 현재가 1,615, 상승여력 +37% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1330,20 +1366,20 @@
             "available": true
           },
           {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 65.9,
+            "horizon": "단기",
+            "reason": "RSI 47, 볼린저밴드 위치 41%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
             "score": 83.3,
             "horizon": "장기",
             "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 58.4,
-            "horizon": "단기",
-            "reason": "RSI 50, MACD 골든크로스 발생, 볼린저밴드 위치 50%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1368,12 +1404,12 @@
         ]
       },
       {
-        "ticker": "CAT",
-        "name": "Caterpillar Inc.",
+        "ticker": "AMAT",
+        "name": "Applied Materials",
         "market": "US",
         "currency": "USD",
-        "current_price": 822.48,
-        "overall_score": 77.6,
+        "current_price": 468.85,
+        "overall_score": 79.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1385,16 +1421,112 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +101% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +219% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 70.0,
+            "score": 71.8,
             "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "reason": "연관 대장주 Dell Technologies 최근 5일 +26% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.32(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 98.4,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 100.1·PBR 13.5 대비 PER 37.5·PBR 9.0로 48% 저평가, ROE 40%·영업이익률 30%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 70.4,
+            "horizon": "단기",
+            "reason": "RSI 44, MACD 골든크로스 발생, 볼린저밴드 위치 38%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 23.1% vs WACC 9.0% → 스프레드 +14.1%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 629 vs 현재가 469, 상승여력 +34% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 63.2,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "CAT",
+        "name": "Caterpillar Inc.",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 815.56,
+        "overall_score": 79.1,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +98% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 70.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 ChargePoint 최근 5일 +69% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 1.4배 급증, 섹터 강도 상위 38%",
             "risk": "보통",
             "available": true
           },
@@ -1410,9 +1542,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 60.5,
+            "score": 65.4,
             "horizon": "단기",
-            "reason": "RSI 48, 볼린저밴드 위치 50%(하단 지지)",
+            "reason": "RSI 46, 볼린저밴드 위치 44%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1428,9 +1560,9 @@
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 54.9,
+            "score": 57.9,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 973 vs 현재가 822, 상승여력 +18% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 973 vs 현재가 816, 상승여력 +19% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1440,102 +1572,6 @@
             "score": 51.9,
             "horizon": "장기",
             "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 33.9·PBR 12.6로 0% 저평가, ROE 54%·영업이익률 18%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "HWM",
-        "name": "Howmet Aerospace",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 231.53,
-        "overall_score": 75.1,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +57% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 55.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 3.6배, 최근 5일 -5%, 뉴스량 6.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.2,
-            "horizon": "중기",
-            "reason": "연관 대장주 ChargePoint 최근 5일 +70% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 335 vs 현재가 232, 상승여력 +45% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 87.9,
-            "horizon": "장기",
-            "reason": "ROIC 17.2% vs WACC 9.0% → 스프레드 +8.2%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 66.8,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 55.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 33.7·PBR 9.7 대비 PER 55.4·PBR 15.4로 0% 저평가, ROE 34%·영업이익률 27%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1550,7 +1586,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-09-09T12:17:56.118372+00:00"
+      "as_of": "2026-09-09T23:10:22.842563+00:00"
     }
   }
 }

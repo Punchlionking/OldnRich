@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T13:56:29.996032+00:00",
+  "generated_at": "2026-09-15T12:37:43.089286+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -859,8 +859,8 @@
         "name": "TSMC",
         "market": "US",
         "currency": "USD",
-        "current_price": 420.68,
-        "overall_score": 77.6,
+        "current_price": 418.01,
+        "overall_score": 77.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -897,9 +897,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 59.7,
+            "score": 63.7,
             "horizon": "중기",
-            "reason": "연관 대장주 Cloudflare 최근 5일 +15% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
+            "reason": "연관 대장주 Cloudflare 최근 5일 +18% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -908,16 +908,16 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 552 vs 현재가 421, 상승여력 +31% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 552 vs 현재가 418, 상승여력 +32% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 57.3,
+            "score": 59.7,
             "horizon": "단기",
-            "reason": "RSI 49, 볼린저밴드 위치 48%(하단 지지)",
+            "reason": "RSI 48, 볼린저밴드 위치 40%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -937,20 +937,20 @@
         "name": "Expand Energy",
         "market": "US",
         "currency": "USD",
-        "current_price": 94.82,
-        "overall_score": 72.9,
+        "current_price": 93.4,
+        "overall_score": 71.7,
         "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 37.0,
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 63.7,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 8%",
+            "reason": "RSI 41, 볼린저밴드 위치 1%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -995,16 +995,16 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 126 vs 현재가 95, 상승여력 +32% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 126 vs 현재가 93, 상승여력 +34% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 48.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +14.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 40.4,
+            "horizon": "단기",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 12%",
             "risk": "보통",
             "available": true
           },
@@ -1018,20 +1018,11 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 45.3,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 45.4,
             "horizon": "중기",
-            "reason": "연관 대장주 APA Corporation 최근 5일 +8% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.39(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 51.7,
-            "horizon": "단기",
-            "reason": "RSI 45, 볼린저밴드 위치 18%(하단 지지)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +14.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           }
@@ -1042,8 +1033,8 @@
         "name": "ASML",
         "market": "US",
         "currency": "USD",
-        "current_price": 1600.21,
-        "overall_score": 69.8,
+        "current_price": 1575.15,
+        "overall_score": 68.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1060,29 +1051,29 @@
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 57.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Cloudflare 최근 5일 +15% 급등, 본 종목은 -7%에 그쳐 갭 존재 — 동시점 상관 0.12(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 2,166 vs 현재가 1,600, 상승여력 +35% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 2,166 vs 현재가 1,575, 상승여력 +37% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 61.8,
+            "score": 63.8,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 61.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Cloudflare 최근 5일 +18% 급등, 본 종목은 -8%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1111,8 +1102,8 @@
         "name": "Williams Companies",
         "market": "US",
         "currency": "USD",
-        "current_price": 72.18,
-        "overall_score": 68.1,
+        "current_price": 71.95,
+        "overall_score": 65.1,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1122,9 +1113,9 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 37.0,
+            "score": 40.4,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 8%",
+            "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 12%",
             "risk": "보통",
             "available": true
           },
@@ -1147,20 +1138,20 @@
             "available": true
           },
           {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 56.4,
+            "horizon": "단기",
+            "reason": "RSI 44, 볼린저밴드 위치 25%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "accruals",
             "label": "발생액 품질",
             "score": 78.0,
             "horizon": "장기",
             "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 54.2,
-            "horizon": "단기",
-            "reason": "RSI 45, 볼린저밴드 위치 28%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1176,9 +1167,9 @@
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 55.2,
+            "score": 56.4,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 85 vs 현재가 72, 상승여력 +18% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 85 vs 현재가 72, 상승여력 +19% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1194,12 +1185,12 @@
         ]
       },
       {
-        "ticker": "UDR",
-        "name": "UDR",
+        "ticker": "SYF",
+        "name": "Synchrony Financial",
         "market": "US",
         "currency": "USD",
-        "current_price": 35.08,
-        "overall_score": 64.9,
+        "current_price": 75.88,
+        "overall_score": 64.3,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1209,43 +1200,52 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 63.8,
+            "score": 58.7,
             "horizon": "단기",
-            "reason": "RSI 25(과매도 반등), 볼린저밴드 위치 7%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 91.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 48.3·PBR 8.0 대비 PER 22.4·PBR 3.7로 54% 저평가, ROE 16%·영업이익률 41%로 수익성 양호",
+            "reason": "RSI 43, 볼린저밴드 위치 11%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
-            "score": 83.3,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 76.2,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "FCF 수익률 6.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 40.4% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 95.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 20.2·PBR 5.1 대비 PER 7.4·PBR 1.8로 64% 저평가, ROE 21%·영업이익률 18%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 47.3,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +21.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 74.8,
+            "score": 76.4,
             "horizon": "장기",
             "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
@@ -1254,9 +1254,9 @@
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 59.4,
+            "score": 53.1,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 42 vs 현재가 35, 상승여력 +20% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 89 vs 현재가 76, 상승여력 +18% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           }
@@ -1267,8 +1267,8 @@
         "name": "Qnity Electronics",
         "market": "US",
         "currency": "USD",
-        "current_price": 121.42,
-        "overall_score": 80.4,
+        "current_price": 117.23,
+        "overall_score": 79.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1287,18 +1287,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 67.4,
+            "score": 75.0,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 35%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 57.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Cloudflare 최근 5일 +15% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 19%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1312,11 +1303,20 @@
             "available": true
           },
           {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 62.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Cloudflare 최근 5일 +18% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "target_gap",
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 177 vs 현재가 121, 상승여력 +46% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 177 vs 현재가 117, 상승여력 +51% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1350,12 +1350,12 @@
         ]
       },
       {
-        "ticker": "ADI",
-        "name": "Analog Devices",
+        "ticker": "GLW",
+        "name": "Corning Inc.",
         "market": "US",
         "currency": "USD",
-        "current_price": 364.59,
-        "overall_score": 78.4,
+        "current_price": 143.6,
+        "overall_score": 78.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1367,7 +1367,94 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +56% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +103% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 81.5,
+            "horizon": "단기",
+            "reason": "RSI 42, 볼린저밴드 위치 20%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.0,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +4.8%p 변화, 직전 실적 컨센서스 +2.2% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 191 vs 현재가 144, 상승여력 +33% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 62.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Cloudflare 최근 5일 +18% 급등, 본 종목은 -7%에 그쳐 갭 존재 — 동시점 상관 0.12(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 76.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 98.8·PBR 13.5 대비 PER 76.5·PBR 6.4로 38% 저평가, ROE 16%·영업이익률 15%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 67.7,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "CASY",
+        "name": "Casey's",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 621.61,
+        "overall_score": 78.1,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 46.7,
+            "horizon": "단기",
+            "reason": "'Consumer Staples' 테마 거래량이 평소 대비 1.5배 급증, 섹터 강도 상위 32%",
             "risk": "보통",
             "available": true
           },
@@ -1381,98 +1468,11 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 66.8,
-            "horizon": "단기",
-            "reason": "RSI 47, 볼린저밴드 위치 40%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 57.4,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.3%p 변화, 직전 실적 컨센서스 +5.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 55.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 Cloudflare 최근 5일 +15% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 86.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 98.8·PBR 13.5 대비 PER 42.5·PBR 3.4로 66% 저평가, ROE 12%·영업이익률 36%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 76.6,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 458 vs 현재가 365, 상승여력 +26% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 76.5,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "JBL",
-        "name": "Jabil",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 301.7,
-        "overall_score": 78.2,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +71% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 58.7,
-            "horizon": "중기",
-            "reason": "연관 대장주 Cloudflare 최근 5일 +15% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 58.1,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.9%p 변화, 직전 실적 컨센서스 +0.9% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +54% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1481,25 +1481,52 @@
             "label": "목표가 갭",
             "score": 90.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 441 vs 현재가 302, 상승여력 +46% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 957 vs 현재가 622, 상승여력 +54% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 87.1,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 47.8,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +30.0% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 63.8,
+            "score": 59.4,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 32%(하단 지지)",
+            "reason": "RSI 21(과매도 반등), 볼린저밴드 위치 6%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 48.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Philip Morris International 최근 5일 +7% 급등, 본 종목은 -18%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 63.0,
+            "score": 68.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 98.8·PBR 13.5 대비 PER 38.7·PBR 14.5로 27% 저평가, ROE 62%·영업이익률 4%로 수익성 양호",
+            "reason": "업종 평균 PER 40.9·PBR 17.8 대비 PER 33.0·PBR 7.7로 38% 저평가, ROE 19%·영업이익률 6%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1514,7 +1541,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-09-14T13:56:29.996032+00:00"
+      "as_of": "2026-09-15T12:37:43.089286+00:00"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-15T23:30:39.802438+00:00",
+  "generated_at": "2026-09-16T12:33:47.172368+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -947,7 +947,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 413.75,
-        "overall_score": 71.2,
+        "overall_score": 71.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -977,7 +977,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 99.0·PBR 13.4 대비 PER 27.6·PBR 7.3로 59% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "reason": "업종 평균 PER 99.1·PBR 13.4 대비 PER 27.6·PBR 7.3로 59% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1025,7 +1025,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 94.23,
-        "overall_score": 70.1,
+        "overall_score": 69.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1035,7 +1035,7 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 35.3,
+            "score": 36.2,
             "horizon": "단기",
             "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 18%",
             "risk": "보통",
@@ -1140,7 +1140,7 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 35.3,
+            "score": 36.2,
             "horizon": "단기",
             "reason": "'Energy' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 18%",
             "risk": "보통",
@@ -1295,7 +1295,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 114.59,
-        "overall_score": 76.5,
+        "overall_score": 76.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1352,7 +1352,7 @@
             "label": "저평가 우량주",
             "score": 80.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 99.0·PBR 13.4 대비 PER 45.1·PBR 2.4로 68% 저평가, ROE 8%·영업이익률 21%로 수익성 양호",
+            "reason": "업종 평균 PER 99.1·PBR 13.4 대비 PER 45.1·PBR 2.4로 68% 저평가, ROE 8%·영업이익률 21%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1382,7 +1382,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 1591.48,
-        "overall_score": 74.2,
+        "overall_score": 74.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1437,9 +1437,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 76.3,
+            "score": 76.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 99.0·PBR 13.4 대비 PER 54.2·PBR 14.5로 18% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
+            "reason": "업종 평균 PER 99.1·PBR 13.4 대비 PER 54.2·PBR 14.5로 18% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1488,9 +1488,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 95.4,
+            "score": 95.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 99.0·PBR 13.4 대비 PER 39.4·PBR 9.7로 44% 저평가, ROE 36%·영업이익률 37%로 수익성 양호",
+            "reason": "업종 평균 PER 99.1·PBR 13.4 대비 PER 39.4·PBR 9.7로 44% 저평가, ROE 36%·영업이익률 37%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1550,7 +1550,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-09-15T23:30:39.802438+00:00"
+      "as_of": "2026-09-16T12:33:47.172368+00:00"
     }
   }
 }

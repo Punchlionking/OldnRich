@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T01:10:27.167423+00:00",
+  "generated_at": "2026-10-09T14:19:26.535938+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -855,12 +855,12 @@
     ],
     "US": [
       {
-        "ticker": "TDY",
-        "name": "Teledyne Technologies",
+        "ticker": "FRT",
+        "name": "Federal Realty Investment Trust",
         "market": "US",
         "currency": "USD",
-        "current_price": 604.15,
-        "overall_score": 71.1,
+        "current_price": 105.31,
+        "overall_score": 69.1,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -870,48 +870,75 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 73.9,
+            "score": 72.1,
             "horizon": "단기",
-            "reason": "RSI 42, 볼린저밴드 위치 36%(하단 지지)",
+            "reason": "RSI 20(과매도 반등), 볼린저밴드 위치 14%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
+            "score": 58.5,
             "horizon": "중기",
-            "reason": "연관 대장주 PTC Inc. 최근 5일 +38% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
+            "reason": "연관 대장주 SBA Communications 최근 5일 +15% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 56.4,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +18% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 67.1,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.4% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 68.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 81.8,
+            "score": 66.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 130.1·PBR 12.4 대비 PER 29.7·PBR 2.3로 79% 저평가, ROE 9%·영업이익률 20%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 76.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 757 vs 현재가 604, 상승여력 +25% (애널리스트 5명 커버)",
+            "reason": "업종 평균 PER 43.0·PBR 2.5 대비 PER 21.4·PBR 2.7로 22% 저평가, ROE 13%·영업이익률 48%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "USB",
-        "name": "U.S. Bancorp",
+        "ticker": "AIZ",
+        "name": "Assurant",
         "market": "US",
         "currency": "USD",
-        "current_price": 56.17,
-        "overall_score": 69.6,
+        "current_price": 268.29,
+        "overall_score": 68.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -921,9 +948,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 85.4,
+            "score": 77.2,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +33% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +29% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -932,7 +959,7 @@
             "label": "퀄리티(F-Score)",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
             "risk": "보통",
             "available": true
           },
@@ -941,64 +968,64 @@
             "label": "FCF 수익률",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "FCF 수익률 8.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 86.6,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 19.5·PBR 5.4 대비 PER 11.0·PBR 1.3로 60% 저평가, ROE 12%·영업이익률 25%로 수익성 양호",
+            "reason": "FCF 수익률 11.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 57.9,
+            "score": 60.8,
             "horizon": "단기",
-            "reason": "RSI 26(과매도 반등), 볼린저밴드 위치 9%(하단 지지)",
+            "reason": "RSI 44, 볼린저밴드 위치 40%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 82.4,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 19.8·PBR 5.5 대비 PER 12.4·PBR 2.1로 50% 저평가, ROE 18%·영업이익률 11%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 46.4,
+            "score": 50.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Affirm 최근 5일 +9% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.37(시차 추종관계 약함)",
+            "reason": "연관 대장주 Affirm 최근 5일 +13% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 75.6,
+            "score": 69.0,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 70 vs 현재가 56, 상승여력 +25% (애널리스트 5명 커버)",
+            "reason": "증권사 평균 목표가 330 vs 현재가 268, 상승여력 +23% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 50.3,
+            "score": 63.2,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "RF",
-        "name": "Regions Financial Corporation",
+        "ticker": "BEN",
+        "name": "Franklin Resources",
         "market": "US",
         "currency": "USD",
-        "current_price": 26.7,
-        "overall_score": 69.5,
+        "current_price": 31.94,
+        "overall_score": 68.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1008,18 +1035,18 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 57.6,
+            "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +19% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +42% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 78.6,
+            "horizon": "단기",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1033,68 +1060,110 @@
             "available": true
           },
           {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "FCF 수익률 8.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 85.7,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 19.5·PBR 5.4 대비 PER 10.4·PBR 1.2로 62% 저평가, ROE 12%·영업이익률 39%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 57.4,
-            "horizon": "단기",
-            "reason": "RSI 25(과매도 반등), 볼린저밴드 위치 21%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 41.5,
+            "score": 60.1,
             "horizon": "중기",
-            "reason": "연관 대장주 Affirm 최근 5일 +9% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.37(시차 추종관계 약함)",
+            "reason": "연관 대장주 Affirm 최근 5일 +13% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.38(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 70.1,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 33 vs 현재가 27, 상승여력 +23% (애널리스트 5명 커버)",
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 65.6,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.2% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 50.1,
+            "score": 58.4,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "BKR",
-        "name": "Baker Hughes",
+        "ticker": "VMRK",
+        "name": "Vivmark Residential",
         "market": "US",
         "currency": "USD",
-        "current_price": 55.41,
-        "overall_score": 69.2,
+        "current_price": 60.31,
+        "overall_score": 67.8,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 79.2,
+            "horizon": "단기",
+            "reason": "RSI 39(과매도 반등), MACD 골든크로스 발생, 볼린저밴드 위치 33%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +5.3%p 변화, 직전 실적 컨센서스 -29.7% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 58.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 SBA Communications 최근 5일 +15% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.30(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 67.7,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 74 vs 현재가 60, 상승여력 +23% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 57.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 46.1·PBR 9.3 대비 PER 52.9·PBR 4.4로 19% 저평가, ROE 8%·영업이익률 41%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "NEE",
+        "name": "NextEra Energy",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 77.35,
+        "overall_score": 66.3,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1104,63 +1173,54 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 39.0,
+            "score": 37.0,
             "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 2%",
+            "reason": "'Utilities' 테마 거래량이 평소 대비 0.2배 급증, 섹터 강도 상위 8%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 72.8,
+            "score": 60.2,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 14%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 72 vs 현재가 55, 상승여력 +30% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 41.6,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.7%p 변화, 직전 실적 컨센서스 +26.2% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 86.9,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +33% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 47.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Marathon Petroleum 최근 5일 +12% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
+            "reason": "RSI 40, 볼린저밴드 위치 43%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 77.8,
+            "score": 88.8,
             "horizon": "장기",
-            "reason": "FCF 수익률 6.2% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 7.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 55.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Constellation Energy 최근 5일 +14% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.22(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 81.6,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 98 vs 현재가 77, 상승여력 +27% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
@@ -1169,115 +1229,37 @@
             "label": "퀄리티(F-Score)",
             "score": 50.0,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 7개 항목 환산)",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 61.6,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 19.0·PBR 3.3 대비 PER 17.2·PBR 3.1로 9% 저평가, ROE 17%·영업이익률 30%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 64.9,
+            "score": 63.3,
             "horizon": "장기",
             "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 60.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 19.7·PBR 3.4 대비 PER 17.9·PBR 2.4로 19% 저평가, ROE 16%·영업이익률 14%로 수익성 양호",
-            "risk": "보통",
-            "available": true
           }
         ]
       },
       {
-        "ticker": "OXY",
-        "name": "Occidental Petroleum",
+        "ticker": "SLB",
+        "name": "Schlumberger",
         "market": "US",
         "currency": "USD",
-        "current_price": 58.21,
-        "overall_score": 68.4,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 39.0,
-            "horizon": "단기",
-            "reason": "'Energy' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 2%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 95.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 19.7·PBR 3.4 대비 PER 8.2·PBR 1.1로 63% 저평가, ROE 19%·영업이익률 26%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 92.5,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +36% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 87.6,
-            "horizon": "장기",
-            "reason": "FCF 수익률 7.0% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 59.0,
-            "horizon": "단기",
-            "reason": "RSI 50, MACD 골든크로스 발생, 볼린저밴드 위치 48%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 42.2,
-            "horizon": "중기",
-            "reason": "연관 대장주 Marathon Petroleum 최근 5일 +12% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.52(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 44.4,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 67 vs 현재가 58, 상승여력 +15% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "JBL",
-        "name": "Jabil",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 299.47,
-        "overall_score": 77.1,
+        "current_price": 48.87,
+        "overall_score": 70.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1289,91 +1271,142 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +53% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +69% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 63.7,
+            "horizon": "단기",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 80.2,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 62 vs 현재가 49, 상승여력 +27% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 41.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Marathon Petroleum 최근 5일 +10% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.27(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 43.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 19.9·PBR 3.4 대비 PER 24.0·PBR 2.2로 7% 저평가, ROE 12%·영업이익률 11%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "DLTR",
+        "name": "Dollar Tree",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 117.91,
+        "overall_score": 69.1,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 35.0,
+            "horizon": "단기",
+            "reason": "'Consumer Staples' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 12%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 86.9,
+            "score": 60.7,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.9%p 변화, 직전 실적 컨센서스 +7.1% 상회 (발표 7일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 19.3% vs WACC 9.0% → 스프레드 +10.3%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 441 vs 현재가 299, 상승여력 +47% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 PTC Inc. 최근 5일 +38% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 58.6,
-            "horizon": "단기",
-            "reason": "RSI 45, 볼린저밴드 위치 35%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 76.5,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 44.2,
-            "horizon": "장기",
-            "reason": "FCF 수익률 3.5% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +131.9% 상회 (발표 9일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 49.8,
+            "score": 88.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 130.1·PBR 12.4 대비 PER 30.6·PBR 19.8로 9% 저평가, ROE 74%·영업이익률 5%로 수익성 양호",
+            "reason": "업종 평균 PER 26.0·PBR 68.2 대비 PER 13.1·PBR 6.2로 70% 저평가, ROE 46%·영업이익률 11%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 86.6,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +33% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 56.9,
+            "horizon": "단기",
+            "reason": "RSI 51, 볼린저밴드 위치 90%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 58.4,
+            "horizon": "장기",
+            "reason": "ROIC 12.8% vs WACC 9.0% → 스프레드 +3.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 48.1,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 137 vs 현재가 118, 상승여력 +16% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "TSM",
-        "name": "TSMC",
+        "ticker": "COP",
+        "name": "ConocoPhillips",
         "market": "US",
         "currency": "USD",
-        "current_price": 472.2,
-        "overall_score": 76.3,
+        "current_price": 135.15,
+        "overall_score": 67.9,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1385,139 +1418,52 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +46% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +49% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 100.0,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 59.2,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 31명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 130.1·PBR 12.4 대비 PER 29.5·PBR 7.3로 59% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 PTC Inc. 최근 5일 +38% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.01(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 50.9,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 552 vs 현재가 472, 상승여력 +17% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.3,
-            "horizon": "단기",
-            "reason": "RSI 64, 볼린저밴드 위치 80%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "Q",
-        "name": "Qnity Electronics",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 129.72,
-        "overall_score": 72.6,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 37.0,
-            "horizon": "단기",
-            "reason": "'Information Technology' 테마 거래량이 평소 대비 0.8배 급증, 섹터 강도 상위 8%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 177 vs 현재가 130, 상승여력 +36% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 PTC Inc. 최근 5일 +38% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 78.7,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +29% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 80.2,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 130.1·PBR 12.4 대비 PER 47.0·PBR 2.4로 72% 저평가, ROE 8%·영업이익률 21%로 수익성 양호",
+            "reason": "애널리스트 강세 비중 +3.2%p 변화, 직전 실적 컨센서스 +11.3% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 63.2,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "FCF 수익률 5.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "reason": "FCF 수익률 13.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 51.5,
-            "horizon": "단기",
-            "reason": "RSI 56, 볼린저밴드 위치 76%(하단 지지)",
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 98.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.10 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 75.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 19.9·PBR 3.4 대비 PER 16.4·PBR 1.8로 32% 저평가, ROE 14%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1532,7 +1478,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-10-09T01:10:27.167423+00:00"
+      "as_of": "2026-10-09T14:19:26.535938+00:00"
     }
   }
 }

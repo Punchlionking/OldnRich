@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T23:39:19.263894+00:00",
+  "generated_at": "2026-10-16T12:18:57.866218+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -906,7 +906,7 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 43.8,
+            "score": 44.5,
             "horizon": "단기",
             "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
@@ -951,12 +951,12 @@
         ]
       },
       {
-        "ticker": "TSM",
-        "name": "TSMC",
+        "ticker": "BNY",
+        "name": "BNY Mellon",
         "market": "US",
         "currency": "USD",
-        "current_price": 422.25,
-        "overall_score": 70.2,
+        "current_price": 142.09,
+        "overall_score": 70.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -966,54 +966,36 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 98.6,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +39% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 31명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 150.5·PBR 12.4 대비 PER 29.1·PBR 7.3로 61% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +44% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 61.9,
+            "score": 64.3,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 28%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 88.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 17.8·PBR 3.8 대비 PER 15.5·PBR 0.0로 57% 저평가, ROE 14%·영업이익률 40%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "target_gap",
             "label": "목표가 갭",
-            "score": 90.0,
+            "score": 53.4,
             "horizon": "중기",
-            "reason": "증권사 평균 목표가 552 vs 현재가 422, 상승여력 +31% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 49.4,
-            "horizon": "중기",
-            "reason": "연관 대장주 CDW Corporation 최근 5일 +10% 급등, 본 종목은 -8%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
+            "reason": "증권사 평균 목표가 167 vs 현재가 142, 상승여력 +18% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           }
@@ -1035,7 +1017,7 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 43.8,
+            "score": 44.5,
             "horizon": "단기",
             "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
             "risk": "보통",
@@ -1101,6 +1083,84 @@
             "score": 63.4,
             "horizon": "장기",
             "reason": "FCF 수익률 5.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "MAA",
+        "name": "Mid-America Apartment Communities",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 116.27,
+        "overall_score": 69.0,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 69.9,
+            "horizon": "단기",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 34%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 64.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 Crown Castle 최근 5일 +16% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.39(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 70.6,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 75.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 39.3·PBR 10.9 대비 PER 33.6·PBR 2.9로 44% 저평가, ROE 7%·영업이익률 24%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 66.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1203,90 +1263,12 @@
         ]
       },
       {
-        "ticker": "MAA",
-        "name": "Mid-America Apartment Communities",
+        "ticker": "TSM",
+        "name": "TSMC",
         "market": "US",
         "currency": "USD",
-        "current_price": 116.27,
-        "overall_score": 68.9,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 69.9,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 34%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 64.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Crown Castle 최근 5일 +16% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.39(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 70.6,
-            "horizon": "장기",
-            "reason": "FCF 수익률 5.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 75.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 39.3·PBR 10.9 대비 PER 33.6·PBR 2.9로 44% 저평가, ROE 7%·영업이익률 24%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 66.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "DVA",
-        "name": "DaVita",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 189.16,
-        "overall_score": 70.5,
+        "current_price": 422.25,
+        "overall_score": 75.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1296,99 +1278,54 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
+            "score": 98.6,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +39% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +55% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 43.8,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.1배 급증, 섹터 강도 상위 2%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 59.0,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +7.7%p 변화, 직전 실적 컨센서스 +2.5% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "FCF 수익률 11.3% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 57.7,
-            "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +20% 급등, 본 종목은 +7%에 그쳐 갭 존재 — 동시점 상관 0.01(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 82.6,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 48.4,
-            "horizon": "장기",
-            "reason": "ROIC 11.3% vs WACC 9.0% → 스프레드 +2.3%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 45.6,
-            "horizon": "단기",
-            "reason": "RSI 61, 볼린저밴드 위치 100%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 48.7,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 220 vs 현재가 189, 상승여력 +16% (애널리스트 5명 커버)",
+            "reason": "최근 90일 내부자 31명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 48.8,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 37.0·PBR 10.4 대비 PER 13.5·PBR 101.2로 0% 저평가, ROE 181%·영업이익률 15%로 수익성 양호",
+            "reason": "업종 평균 PER 155.1·PBR 12.1 대비 PER 29.1·PBR 7.3로 61% 저평가, ROE 40%·영업이익률 56%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 61.9,
+            "horizon": "단기",
+            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 552 vs 현재가 422, 상승여력 +31% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 49.4,
+            "horizon": "중기",
+            "reason": "연관 대장주 CDW Corporation 최근 5일 +10% 급등, 본 종목은 -8%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -1482,9 +1419,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 60.1,
+            "score": 59.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 150.5·PBR 12.4 대비 PER 32.7·PBR 18.5로 14% 저평가, ROE 131%·영업이익률 9%로 수익성 양호",
+            "reason": "업종 평균 PER 155.1·PBR 12.1 대비 PER 32.7·PBR 18.5로 13% 저평가, ROE 131%·영업이익률 9%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1496,7 +1433,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 31.38,
-        "overall_score": 70.4,
+        "overall_score": 70.5,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1551,9 +1488,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 61.1,
+            "score": 63.1,
             "horizon": "장기",
-            "reason": "업종 평균 PER 21.1·PBR 5.4 대비 PER 20.0·PBR 1.0로 43% 저평가, ROE 7%·영업이익률 10%로 수익성 양호",
+            "reason": "업종 평균 PER 21.5·PBR 6.6 대비 PER 20.0·PBR 1.0로 46% 저평가, ROE 7%·영업이익률 10%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1577,7 +1514,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-10-15T23:39:19.263894+00:00"
+      "as_of": "2026-10-16T12:18:57.866218+00:00"
     }
   }
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-27T13:08:21.147227+00:00",
+  "generated_at": "2026-10-28T00:27:26.953533+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -855,12 +855,12 @@
     ],
     "US": [
       {
-        "ticker": "IVZ",
-        "name": "Invesco",
+        "ticker": "VRTX",
+        "name": "Vertex Pharmaceuticals",
         "market": "US",
         "currency": "USD",
-        "current_price": 28.53,
-        "overall_score": 72.5,
+        "current_price": 517.49,
+        "overall_score": 73.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -870,9 +870,69 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 83.6,
+            "score": 69.1,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +32% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 99.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 32.9·PBR 48.1 대비 PER 28.8·PBR 6.2로 50% 저평가, ROE 23%·영업이익률 38%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 67.5,
+            "horizon": "중기",
+            "reason": "연관 대장주 Charles River Laboratories 최근 5일 +19% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.34(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 55.9,
+            "horizon": "단기",
+            "reason": "RSI 52, 볼린저밴드 위치 66%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "IVZ",
+        "name": "Invesco",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 28.53,
+        "overall_score": 72.1,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 78.1,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +29% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -906,78 +966,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 50.9,
+            "score": 51.0,
             "horizon": "중기",
             "reason": "연관 대장주 Blackstone Inc. 최근 5일 +11% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.57(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TSM",
-        "name": "TSMC",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 424.37,
-        "overall_score": 70.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +51% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 30명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 195.5·PBR 12.3 대비 PER 24.6·PBR 7.3로 64% 저평가, ROE 41%·영업이익률 58%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 59.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 -0.1%p 변화, 직전 실적 컨센서스 +409.4% 상회 (발표 23일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 90.0,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 552 vs 현재가 424, 상승여력 +30% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 65.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 Zscaler 최근 5일 +23% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -989,7 +980,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 221.8,
-        "overall_score": 70.4,
+        "overall_score": 70.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1028,16 +1019,16 @@
             "label": "저평가 우량주",
             "score": 84.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.6·PBR 5.2 대비 PER 10.2·PBR 1.1로 62% 저평가, ROE 11%·영업이익률 41%로 수익성 양호",
+            "reason": "업종 평균 PER 18.9·PBR 5.4 대비 PER 10.6·PBR 1.1로 62% 저평가, ROE 11%·영업이익률 41%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 61.8,
+            "score": 63.9,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +22% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1076,7 +1067,7 @@
         "market": "US",
         "currency": "USD",
         "current_price": 135.94,
-        "overall_score": 66.1,
+        "overall_score": 66.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1106,7 +1097,7 @@
             "label": "저평가 우량주",
             "score": 97.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.6·PBR 5.2 대비 PER 8.6·PBR 2.0로 58% 저평가, ROE 23%·영업이익률 18%로 수익성 양호",
+            "reason": "업종 평균 PER 18.9·PBR 5.4 대비 PER 8.6·PBR 2.0로 59% 저평가, ROE 23%·영업이익률 18%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1193,7 +1184,7 @@
             "label": "저평가 우량주",
             "score": 95.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.6·PBR 5.2 대비 PER 6.9·PBR 1.8로 64% 저평가, ROE 21%·영업이익률 18%로 수익성 양호",
+            "reason": "업종 평균 PER 18.9·PBR 5.4 대비 PER 6.9·PBR 1.8로 65% 저평가, ROE 21%·영업이익률 18%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1236,6 +1227,75 @@
         ]
       },
       {
+        "ticker": "TSM",
+        "name": "TSMC",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 424.37,
+        "overall_score": 79.0,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +49% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 30명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 195.5·PBR 12.3 대비 PER 24.6·PBR 7.3로 64% 저평가, ROE 41%·영업이익률 58%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 59.8,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 -0.1%p 변화, 직전 실적 컨센서스 +409.4% 상회 (발표 23일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 552 vs 현재가 424, 상승여력 +30% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 65.0,
+            "horizon": "중기",
+            "reason": "연관 대장주 Zscaler 최근 5일 +23% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "ASML",
         "name": "ASML",
         "market": "US",
@@ -1253,7 +1313,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +65% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +66% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1322,7 +1382,7 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +64% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +67% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1338,9 +1398,9 @@
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 89.3,
+            "score": 90.6,
             "horizon": "장기",
-            "reason": "업종 평균 PER 59.9·PBR 16.2 대비 PER 41.2·PBR 9.7로 36% 저평가, ROE 36%·영업이익률 37%로 수익성 양호",
+            "reason": "업종 평균 PER 62.9·PBR 16.2 대비 PER 41.2·PBR 9.7로 37% 저평가, ROE 36%·영업이익률 37%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1363,102 +1423,6 @@
             "available": true
           }
         ]
-      },
-      {
-        "ticker": "DELL",
-        "name": "Dell Technologies",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 467.09,
-        "overall_score": 71.7,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +247% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 88.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.6%p 변화, 직전 실적 컨센서스 +40.5% 상회 (발표 24일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 66.7,
-            "horizon": "중기",
-            "reason": "연관 대장주 Zscaler 최근 5일 +23% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.08(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 86.2,
-            "horizon": "장기",
-            "reason": "ROIC 16.9% vs WACC 9.0% → 스프레드 +7.9%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 75.9,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 46.7,
-            "horizon": "단기",
-            "reason": "RSI 41, 볼린저밴드 위치 24%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "target_gap",
-            "label": "목표가 갭",
-            "score": 75.1,
-            "horizon": "중기",
-            "reason": "증권사 평균 목표가 584 vs 현재가 467, 상승여력 +25% (애널리스트 5명 커버)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 50.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 62.7,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 195.5·PBR 12.3 대비 PER 26.3·PBR 18.5로 18% 저평가, ROE 131%·영업이익률 9%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
       }
     ]
   },
@@ -1469,7 +1433,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-10-27T13:08:21.147227+00:00"
+      "as_of": "2026-10-28T00:27:26.953533+00:00"
     }
   }
 }

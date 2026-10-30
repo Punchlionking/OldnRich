@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T00:52:09.102736+00:00",
+  "generated_at": "2026-10-30T14:02:06.590997+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -859,8 +859,8 @@
         "name": "W. W. Grainger",
         "market": "US",
         "currency": "USD",
-        "current_price": 1340.76,
-        "overall_score": 71.6,
+        "current_price": 1374.65,
+        "overall_score": 72.0,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -870,9 +870,18 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 81.2,
+            "score": 88.1,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +31% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +34% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.3,
+            "horizon": "중기",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.19(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -882,24 +891,6 @@
             "score": 55.0,
             "horizon": "중기",
             "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 67.7,
-            "horizon": "중기",
-            "reason": "연관 대장주 Pentair 최근 5일 +22% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 47.9,
-            "horizon": "단기",
-            "reason": "RSI 59, 볼린저밴드 위치 70%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -915,102 +906,24 @@
         ]
       },
       {
-        "ticker": "ESS",
-        "name": "Essex Property Trust",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 261.42,
-        "overall_score": 71.3,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 81.2,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 41.9,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.5배, 최근 5일 -5%, 뉴스량 5.0배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 56.1,
-            "horizon": "중기",
-            "reason": "연관 대장주 Crown Castle 최근 5일 +12% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.27(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 45.5,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 -1.9%p 변화, 직전 실적 컨센서스 +169.8% 상회 (발표 30일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 67.8,
-            "horizon": "장기",
-            "reason": "FCF 수익률 5.4% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 66.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 42.7·PBR 8.7 대비 PER 42.8·PBR 3.1로 32% 저평가, ROE 8%·영업이익률 33%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "UNP",
         "name": "Union Pacific Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 297.8,
-        "overall_score": 71.2,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
+        "current_price": 301.74,
+        "overall_score": 70.8,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 70.6,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Pentair 최근 5일 +22% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.27(시차 추종관계 약함)",
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 29.0,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
@@ -1024,11 +937,11 @@
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 57.8,
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 64.9,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.6%p 변화, 직전 실적 컨센서스 +0.6% 상회 (발표 23일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1038,6 +951,15 @@
             "score": 83.3,
             "horizon": "장기",
             "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 69.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +24% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1056,15 +978,6 @@
             "score": 53.5,
             "horizon": "장기",
             "reason": "ROIC 12.0% vs WACC 9.0% → 스프레드 +3.0%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 41.2,
-            "horizon": "단기",
-            "reason": "RSI 65, 볼린저밴드 위치 87%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1089,198 +1002,33 @@
         ]
       },
       {
-        "ticker": "ODFL",
-        "name": "Old Dominion",
+        "ticker": "DE",
+        "name": "Deere & Company",
         "market": "US",
         "currency": "USD",
-        "current_price": 173.32,
-        "overall_score": 71.1,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 75.5,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 70.8,
-            "horizon": "중기",
-            "reason": "연관 대장주 Pentair 최근 5일 +22% 급등, 본 종목은 -8%에 그쳐 갭 존재 — 동시점 상관 0.32(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 41.4,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.6배, 최근 5일 -8%, 뉴스량 2.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 21.6% vs WACC 9.0% → 스프레드 +12.6%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 78.6,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +29% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 41.3,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +3.2%p 변화, 직전 실적 컨센서스 +0.1% 상회 (발표 29일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 64.8,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 29.4·PBR 10.2 대비 PER 35.0·PBR 7.6로 3% 저평가, ROE 25%·영업이익률 26%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 41.3,
-            "horizon": "장기",
-            "reason": "FCF 수익률 3.3% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TXT",
-        "name": "Textron",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 78.32,
-        "overall_score": 66.1,
-        "target_horizon": "중기",
-        "primary_criterion": "beneficiary",
-        "primary_label": "간접 수혜주(리드-래그)",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 69.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 Pentair 최근 5일 +22% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.25(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "FCF 수익률 9.6% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 55.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +4.6%p 변화, 직전 실적 컨센서스 +3.7% 상회 — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 45.2,
-            "horizon": "단기",
-            "reason": "RSI 55, 볼린저밴드 위치 84%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 69.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 29.4·PBR 10.2 대비 PER 14.3·PBR 2.0로 66% 저평가, ROE 12%·영업이익률 7%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 60.8,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "NEM",
-        "name": "Newmont",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 113.92,
-        "overall_score": 76.9,
+        "current_price": 665.33,
+        "overall_score": 70.7,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
+        "risk_level": "보통",
+        "pick_type": "core",
         "reasons": [
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +42% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +43% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 82.9,
+            "score": 79.2,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +5.9%p 변화, 직전 실적 컨센서스 +6.2% 상회 (발표 29일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +5.9%p 변화, 직전 실적 컨센서스 +5.4% 상회 (발표 30일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
@@ -1294,36 +1042,174 @@
             "available": true
           },
           {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 68.9,
+            "horizon": "중기",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.22(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 51.0,
+            "horizon": "단기",
+            "reason": "RSI 56, 볼린저밴드 위치 78%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 89.1,
+            "score": 75.9,
             "horizon": "장기",
-            "reason": "업종 평균 PER 32.2·PBR 3.6 대비 PER 12.7·PBR 3.2로 35% 저평가, ROE 26%·영업이익률 52%로 수익성 양호",
+            "reason": "업종 평균 PER 37.4·PBR 9.1 대비 PER 35.3·PBR 4.8로 27% 저평가, ROE 18%·영업이익률 19%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fcf_yield",
             "label": "FCF 수익률",
-            "score": 93.2,
+            "score": 51.4,
             "horizon": "장기",
-            "reason": "FCF 수익률 7.5% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 52.1,
-            "horizon": "중기",
-            "reason": "연관 대장주 Dow Inc. 최근 5일 +12% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
+            "reason": "FCF 수익률 4.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "accruals",
             "label": "발생액 품질",
-            "score": 78.4,
+            "score": 60.5,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "SNA",
+        "name": "Snap-on",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 358.8,
+        "overall_score": 70.2,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 63.5,
+            "horizon": "단기",
+            "reason": "RSI 40, 볼린저밴드 위치 32%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 69.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.23(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 92.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 29.4·PBR 10.2 대비 PER 18.2·PBR 3.1로 54% 저평가, ROE 17%·영업이익률 25%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 66.6,
+            "horizon": "장기",
+            "reason": "ROIC 14.0% vs WACC 9.0% → 스프레드 +5.0%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 68.6,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.5% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 50.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 6/9 (수익성·재무건전성·영업효율 종합) — 보통 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 53.9,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.01 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "ROK",
+        "name": "Rockwell Automation",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 445.12,
+        "overall_score": 69.1,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 29.0,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 73.8,
+            "horizon": "중기",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.45(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 80.1,
             "horizon": "장기",
             "reason": "발생액 비율 -0.06 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
@@ -1332,21 +1218,48 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 46.4,
+            "score": 49.8,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 39%(하단 지지)",
+            "reason": "RSI 57, 볼린저밴드 위치 75%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 62.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +21% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 40.9,
+            "horizon": "장기",
+            "reason": "FCF 수익률 3.3% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 48.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 29.4·PBR 10.2 대비 PER 40.5·PBR 10.8로 0% 저평가, ROE 33%·영업이익률 15%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "TSM",
-        "name": "TSMC",
+        "ticker": "FIX",
+        "name": "Comfort Systems USA",
         "market": "US",
         "currency": "USD",
-        "current_price": 439.51,
-        "overall_score": 76.5,
+        "current_price": 1266.18,
+        "overall_score": 79.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1358,94 +1271,253 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +51% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 30명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 73.5·PBR 16.4 대비 PER 24.3·PBR 7.3로 61% 저평가, ROE 41%·영업이익률 58%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 59.8,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 -0.1%p 변화, 직전 실적 컨센서스 +409.4% 상회 (발표 23일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +75% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 48.6,
+            "score": 74.6,
             "horizon": "중기",
-            "reason": "연관 대장주 Palo Alto Networks 최근 5일 +14% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.13(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TER",
-        "name": "Teradyne",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 313.24,
-        "overall_score": 75.1,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +128% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +9%에 그쳐 갭 존재 — 동시점 상관 0.72(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 90.0,
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 73.5·PBR 16.4 대비 PER 44.6·PBR 10.8로 37% 저평가, ROE 38%·영업이익률 30%로 수익성 양호",
+            "reason": "ROIC 34.1% vs WACC 9.0% → 스프레드 +25.1%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 2,197 vs 현재가 1,266, 상승여력 +74% (애널리스트 5명 커버)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 52.6,
+            "score": 53.9,
             "horizon": "단기",
-            "reason": "RSI 36(과매도 반등), 볼린저밴드 위치 22%(하단 지지)",
+            "reason": "RSI 35(과매도 반등), 볼린저밴드 위치 22%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 47.2,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +7.0% 상회 (발표 30일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 62.7,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.03 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 50.6,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 37.4·PBR 9.1 대비 PER 28.9·PBR 13.4로 0% 저평가, ROE 54%·영업이익률 16%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "VRT",
+        "name": "Vertiv",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 237.1,
+        "overall_score": 76.8,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 29.0,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 28%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +19.5% 상회 (발표 30일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 53.8,
+            "horizon": "단기",
+            "reason": "RSI 54, 볼린저밴드 위치 65%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 74.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +27% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 53.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 29.4·PBR 10.2 대비 PER 47.3·PBR 15.7로 0% 저평가, ROE 42%·영업이익률 18%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "EME",
+        "name": "Emcor",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 680.28,
+        "overall_score": 76.2,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 29.0,
+            "horizon": "단기",
+            "reason": "'Industrials' 테마 거래량이 평소 대비 0.1배 급증, 섹터 강도 상위 28%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 53.9,
+            "score": 77.4,
             "horizon": "중기",
-            "reason": "연관 대장주 Palo Alto Networks 최근 5일 +14% 급등, 본 종목은 -9%에 그쳐 갭 존재 — 동시점 상관 0.04(시차 추종관계 약함)",
+            "reason": "연관 대장주 Vertiv 최근 5일 +22% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.62(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 30.6% vs WACC 9.0% → 스프레드 +21.6%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +13.7% 상회 (발표 30일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "target_gap",
+            "label": "목표가 갭",
+            "score": 90.0,
+            "horizon": "중기",
+            "reason": "증권사 평균 목표가 1,033 vs 현재가 680, 상승여력 +52% (애널리스트 5명 커버)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 83.3,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 47.0,
+            "horizon": "단기",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 28%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 57.4,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +19% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 74.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 37.4·PBR 9.1 대비 PER 20.4·PBR 7.5로 32% 저평가, ROE 38%·영업이익률 10%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 44.1,
+            "horizon": "장기",
+            "reason": "FCF 수익률 3.5% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 51.6,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.00 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1460,7 +1532,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-10-30T00:52:09.102736+00:00"
+      "as_of": "2026-10-30T14:02:06.590997+00:00"
     }
   }
 }

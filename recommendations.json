@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T15:55:50.884323+00:00",
+  "generated_at": "2026-11-13T01:46:39.954381+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -855,12 +855,12 @@
     ],
     "US": [
       {
-        "ticker": "TSM",
-        "name": "TSMC",
+        "ticker": "FLEX",
+        "name": "Flex Ltd.",
         "market": "US",
         "currency": "USD",
-        "current_price": 409.21,
-        "overall_score": 83.1,
+        "current_price": 78.97,
+        "overall_score": 72.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -872,43 +872,25 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +48% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 30명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 79.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +16%에 그쳐 갭 존재 — 동시점 상관 0.71(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 23.3·PBR 7.3로 57% 저평가, ROE 41%·영업이익률 58%로 수익성 양호",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +86% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 60.1,
+            "score": 72.8,
             "horizon": "단기",
-            "reason": "RSI 48, MACD 골든크로스 발생, 볼린저밴드 위치 49%(하단 지지)",
+            "reason": "RSI 42, MACD 골든크로스 발생, 볼린저밴드 위치 38%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 75.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +20% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.63(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -917,19 +899,28 @@
             "label": "추정치 상향·서프라이즈",
             "score": 60.7,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +409.4% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.4% 상회 (발표 41일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 64.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 60.3·PBR 15.2 대비 PER 28.4·PBR 4.7로 61% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "ASML",
-        "name": "ASML",
+        "ticker": "OXY",
+        "name": "Occidental Petroleum",
         "market": "US",
         "currency": "USD",
-        "current_price": 1525.33,
-        "overall_score": 75.2,
+        "current_price": 57.24,
+        "overall_score": 71.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -941,115 +932,55 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +59% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 79.1,
-            "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +12%에 그쳐 갭 존재 — 동시점 상관 0.67(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 70.3,
-            "horizon": "단기",
-            "reason": "RSI 44, MACD 골든크로스 발생, 볼린저밴드 위치 38%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +17.1% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +47% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 71.3,
+            "score": 97.5,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 49.9·PBR 14.5로 12% 저평가, ROE 42%·영업이익률 35%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "SRE",
-        "name": "Sempra",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 78.71,
-        "overall_score": 69.5,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 59.2,
-            "horizon": "단기",
-            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 15%(하단 지지)",
+            "reason": "업종 평균 PER 15.7·PBR 3.8 대비 PER 6.8·PBR 1.1로 64% 저평가, ROE 21%·영업이익률 31%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
-            "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 54.4,
+            "horizon": "단기",
+            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 19%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 68.0,
+            "score": 61.5,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.9%p 변화, 직전 실적 컨센서스 +13.3% 상회 (발표 43일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.1%p 변화, 직전 실적 컨센서스 +29.3% 상회 (발표 43일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 72.0,
-            "horizon": "중기",
-            "reason": "연관 대장주 NRG Energy 최근 5일 +23% 급등, 본 종목은 -1%에 그쳐 갭 존재 — 동시점 상관 0.33(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 66.2,
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 87.6,
             "horizon": "장기",
-            "reason": "업종 평균 PER 18.3·PBR 3.5 대비 PER 16.7·PBR 1.8로 28% 저평가, ROE 9%·영업이익률 31%로 수익성 양호",
+            "reason": "FCF 수익률 7.0% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "TDY",
-        "name": "Teledyne Technologies",
+        "ticker": "AES",
+        "name": "AES Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 652.19,
-        "overall_score": 67.1,
+        "current_price": 14.92,
+        "overall_score": 67.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1059,45 +990,54 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 33.0,
+            "score": 27.0,
             "horizon": "단기",
-            "reason": "'Information Technology' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 18%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 74.9,
-            "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +10%에 그쳐 갭 존재 — 동시점 상관 0.47(시차 추종관계 약함)",
+            "reason": "'Utilities' 테마 거래량이 평소 대비 0.7배 급증, 섹터 강도 상위 32%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 82.7,
+            "score": 92.8,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 29.3·PBR 2.3로 68% 저평가, ROE 9%·영업이익률 20%로 수익성 양호",
+            "reason": "업종 평균 PER 18.6·PBR 3.4 대비 PER 5.9·PBR 2.5로 47% 저평가, ROE 37%·영업이익률 16%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 51.0,
+            "score": 60.7,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +7.8% 상회 (발표 37일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +18.1% 상회 (발표 42일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 54.4,
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 61.9,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +17% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "연관 대장주 NRG Energy 최근 5일 +17% 급등, 본 종목은 +0%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 82.8,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 46.4,
+            "horizon": "단기",
+            "reason": "RSI 50, 볼린저밴드 위치 38%(하단 지지)",
             "risk": "보통",
             "available": true
           }
@@ -1108,8 +1048,8 @@
         "name": "Pfizer",
         "market": "US",
         "currency": "USD",
-        "current_price": 29.17,
-        "overall_score": 65.4,
+        "current_price": 29.45,
+        "overall_score": 66.3,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1119,9 +1059,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 58.5,
+            "score": 48.6,
             "horizon": "단기",
-            "reason": "RSI 47, 볼린저밴드 위치 14%(하단 지지)",
+            "reason": "RSI 50, 볼린저밴드 위치 27%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1144,11 +1084,11 @@
             "available": true
           },
           {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 71.0,
-            "horizon": "장기",
-            "reason": "FCF 수익률 5.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 50.9,
+            "horizon": "중기",
+            "reason": "연관 대장주 CVS Health 최근 5일 +12% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1162,20 +1102,20 @@
             "available": true
           },
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 45.8,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +13% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 71.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 5.7% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 53.0,
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 40.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Viatris 최근 5일 +11% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.30(시차 추종관계 약함)",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +10% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1200,129 +1140,60 @@
         ]
       },
       {
-        "ticker": "FLEX",
-        "name": "Flex Ltd.",
+        "ticker": "NWS",
+        "name": "News Corp (Class B)",
         "market": "US",
         "currency": "USD",
-        "current_price": 81.07,
-        "overall_score": 85.6,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
+        "current_price": 29.93,
+        "overall_score": 65.1,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
+        "risk_level": "보통",
+        "pick_type": "core",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 62.7,
+            "horizon": "단기",
+            "reason": "RSI 39(과매도 반등), 볼린저밴드 위치 18%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
             "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +59% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "horizon": "장기",
+            "reason": "FCF 수익률 15.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 79.8,
+            "score": 65.0,
             "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +21%에 그쳐 갭 존재 — 동시점 상관 0.71(시차 추종관계 약함)",
+            "reason": "연관 대장주 AppLovin 최근 5일 +49% 급등, 본 종목은 -10%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 45.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 0.1배, 최근 5일 +21%, 뉴스량 4.6배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 58.8,
-            "horizon": "단기",
-            "reason": "RSI 44, 볼린저밴드 위치 47%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 60.7,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.4% 상회 (발표 41일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 73.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 63.9,
+            "score": 68.3,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 25.4·PBR 4.7로 64% 저평가, ROE 10%·영업이익률 5%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "TER",
-        "name": "Teradyne",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 265.96,
-        "overall_score": 85.3,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 100.0,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +101% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 79.3,
-            "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +25%에 그쳐 갭 존재 — 동시점 상관 0.68(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 74.7,
-            "horizon": "단기",
-            "reason": "RSI 41, MACD 골든크로스 발생, 볼린저밴드 위치 37%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 92.4,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 30.2·PBR 10.8로 40% 저평가, ROE 42%·영업이익률 32%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 56.6,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +9.1% 상회 (발표 37일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "업종 평균 PER 40.5·PBR 15.4 대비 PER 25.9·PBR 1.7로 63% 저평가, ROE 7%·영업이익률 12%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1333,29 +1204,29 @@
         "name": "Qnity Electronics",
         "market": "US",
         "currency": "USD",
-        "current_price": 126.01,
-        "overall_score": 83.8,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
+        "current_price": 126.57,
+        "overall_score": 85.5,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
         "risk_level": "높음",
         "pick_type": "longtail",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 33.0,
-            "horizon": "단기",
-            "reason": "'Information Technology' 테마 거래량이 평소 대비 0.6배 급증, 섹터 강도 상위 18%",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +43% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 78.2,
+            "score": 71.9,
             "horizon": "중기",
-            "reason": "연관 대장주 Advanced Micro Devices 최근 5일 +43% 급등, 본 종목은 +15%에 그쳐 갭 존재 — 동시점 상관 0.63(시차 추종관계 약함)",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +20% 급등, 본 종목은 +7%에 그쳐 갭 존재 — 동시점 상관 0.62(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1380,18 +1251,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 51.1,
+            "score": 50.3,
             "horizon": "단기",
-            "reason": "RSI 56, 볼린저밴드 위치 87%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 84.5,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +32% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "RSI 57, 볼린저밴드 위치 94%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1400,7 +1262,7 @@
             "label": "저평가 우량주",
             "score": 80.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 60.8·PBR 15.4 대비 PER 44.6·PBR 2.4로 55% 저평가, ROE 8%·영업이익률 21%로 수익성 양호",
+            "reason": "업종 평균 PER 60.3·PBR 15.2 대비 PER 44.6·PBR 2.4로 55% 저평가, ROE 8%·영업이익률 21%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1410,6 +1272,126 @@
             "score": 63.2,
             "horizon": "장기",
             "reason": "FCF 수익률 5.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "TSM",
+        "name": "TSMC",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 413.35,
+        "overall_score": 82.1,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +58% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 30명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 75.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +20% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.63(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 60.3·PBR 15.2 대비 PER 23.3·PBR 7.3로 57% 저평가, ROE 41%·영업이익률 58%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 60.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +409.4% 상회 (발표 38일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "TER",
+        "name": "Teradyne",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 265.78,
+        "overall_score": 79.9,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +124% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 75.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Coherent Corp. 최근 5일 +20% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.71(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 91.9,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 60.3·PBR 15.2 대비 PER 30.2·PBR 10.8로 39% 저평가, ROE 42%·영업이익률 32%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 56.6,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +9.1% 상회 (발표 37일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 40.8,
+            "horizon": "단기",
+            "reason": "RSI 41, 볼린저밴드 위치 35%(하단 지지)",
             "risk": "보통",
             "available": true
           }
@@ -1424,7 +1406,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-11-12T15:55:50.884323+00:00"
+      "as_of": "2026-11-13T01:46:39.954381+00:00"
     }
   }
 }

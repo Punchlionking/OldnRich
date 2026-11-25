@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T04:05:58.748318+00:00",
+  "generated_at": "2026-11-25T17:55:38.927251+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -859,8 +859,8 @@
         "name": "West Pharmaceutical Services",
         "market": "US",
         "currency": "USD",
-        "current_price": 388.75,
-        "overall_score": 77.1,
+        "current_price": 374.82,
+        "overall_score": 79.1,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -872,25 +872,25 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +41% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 92.4,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 46.6·PBR 34.7 대비 PER 45.4·PBR 6.2로 42% 저평가, ROE 21%·영업이익률 23%로 수익성 양호",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +42% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 55.2,
+            "score": 63.2,
             "horizon": "단기",
-            "reason": "RSI 43, 볼린저밴드 위치 0%(하단 지지)",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 91.8,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 46.2·PBR 33.6 대비 PER 45.4·PBR 6.2로 42% 저평가, ROE 21%·영업이익률 23%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -913,6 +913,15 @@
             "available": true
           },
           {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 54.6,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +13% 급등, 본 종목은 -7%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "roic",
             "label": "자본효율(ROIC)",
             "score": 58.5,
@@ -929,25 +938,16 @@
             "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
             "risk": "보통",
             "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 50.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +10% 급등, 본 종목은 -6%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
           }
         ]
       },
       {
-        "ticker": "ADM",
-        "name": "Archer Daniels Midland",
+        "ticker": "VTRS",
+        "name": "Viatris",
         "market": "US",
         "currency": "USD",
-        "current_price": 64.9,
-        "overall_score": 72.9,
+        "current_price": 19.94,
+        "overall_score": 74.3,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -957,9 +957,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 84.7,
+            "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +32% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +77% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -973,56 +973,20 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 61.9,
-            "horizon": "단기",
-            "reason": "RSI 25(과매도 반등), 볼린저밴드 위치 6%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fcf_yield",
-            "label": "FCF 수익률",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "FCF 수익률 10.8% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 91.7,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.08 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "est_revision",
             "label": "추정치 상향·서프라이즈",
-            "score": 54.0,
+            "score": 54.9,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +9.3% 상회 (발표 53일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +9.3% 상회 (발표 51일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 49.3,
+            "score": 53.6,
             "horizon": "중기",
-            "reason": "연관 대장주 Dollar Tree 최근 5일 +11% 급등, 본 종목은 -7%에 그쳐 갭 존재 — 동시점 상관 0.00(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 62.5,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 65.3 대비 PER 12.8·PBR 1.2로 77% 저평가, ROE 11%·영업이익률 3%로 수익성 양호",
+            "reason": "연관 대장주 Moderna 최근 5일 +13% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -1033,8 +997,8 @@
         "name": "KeyCorp",
         "market": "US",
         "currency": "USD",
-        "current_price": 19.97,
-        "overall_score": 68.2,
+        "current_price": 20.12,
+        "overall_score": 69.2,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -1044,9 +1008,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 67.9,
+            "score": 61.0,
             "horizon": "단기",
-            "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 12%(하단 지지)",
+            "reason": "RSI 42, 볼린저밴드 위치 21%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1060,27 +1024,36 @@
             "available": true
           },
           {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 84.5,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 18.9·PBR 4.8 대비 PER 10.6·PBR 1.1로 61% 저평가, ROE 11%·영업이익률 23%로 수익성 양호",
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 55.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 Global Payments 최근 5일 +12% 급등, 본 종목은 -2%에 그쳐 갭 존재 — 동시점 상관 0.26(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 52.5,
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 84.5,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 18.7·PBR 4.8 대비 PER 9.9·PBR 1.1로 62% 저평가, ROE 11%·영업이익률 23%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 49.5,
             "horizon": "중기",
-            "reason": "연관 대장주 Global Payments 최근 5일 +11% 급등, 본 종목은 -4%에 그쳐 갭 존재 — 동시점 상관 0.26(시차 추종관계 약함)",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +8.5% 상회 (발표 56일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 50.9,
+            "score": 50.3,
             "horizon": "중기",
             "reason": "최근 1개월 제외 과거 12개월 수익률 +15% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
@@ -1098,12 +1071,12 @@
         ]
       },
       {
-        "ticker": "BMY",
-        "name": "Bristol Myers Squibb",
+        "ticker": "PFE",
+        "name": "Pfizer",
         "market": "US",
         "currency": "USD",
-        "current_price": 62.02,
-        "overall_score": 68.0,
+        "current_price": 28.42,
+        "overall_score": 69.0,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1113,9 +1086,105 @@
           {
             "key": "theme",
             "label": "테마 급부상",
-            "score": 35.0,
+            "score": 37.0,
             "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 12%",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 0.3배 급증, 섹터 강도 상위 8%",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 50.2,
+            "horizon": "단기",
+            "reason": "RSI 46, 볼린저밴드 위치 34%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 49.2,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 -1.2%p 변화, 직전 실적 컨센서스 +17.6% 상회 (발표 50일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 66.7,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 51.7,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +16% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 49.4,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +13% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 60.3,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 46.2·PBR 33.6 대비 PER 40.2·PBR 1.6로 54% 저평가, ROE 5%·영업이익률 7%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 59.5,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
+        "ticker": "BMY",
+        "name": "Bristol Myers Squibb",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 61.98,
+        "overall_score": 68.9,
+        "target_horizon": "단기",
+        "primary_criterion": "theme",
+        "primary_label": "테마 급부상",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "theme",
+            "label": "테마 급부상",
+            "score": 37.0,
+            "horizon": "단기",
+            "reason": "'Health Care' 테마 거래량이 평소 대비 0.3배 급증, 섹터 강도 상위 8%",
             "risk": "보통",
             "available": true
           },
@@ -1124,7 +1193,7 @@
             "label": "저평가 우량주",
             "score": 100.0,
             "horizon": "장기",
-            "reason": "업종 평균 PER 46.6·PBR 34.7 대비 PER 13.0·PBR 5.9로 77% 저평가, ROE 44%·영업이익률 24%로 수익성 양호",
+            "reason": "업종 평균 PER 46.2·PBR 33.6 대비 PER 13.0·PBR 5.9로 77% 저평가, ROE 44%·영업이익률 24%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
@@ -1158,9 +1227,9 @@
           {
             "key": "mom_12_1",
             "label": "중기 모멘텀(12-1)",
-            "score": 71.2,
+            "score": 71.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +26% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +25% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1172,28 +1241,37 @@
             "reason": "애널리스트 강세 비중 -2.9%p 변화, 직전 실적 컨센서스 +17.0% 상회 (발표 54일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 41.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +13% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.16(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
           }
         ]
       },
       {
-        "ticker": "PFE",
-        "name": "Pfizer",
+        "ticker": "URI",
+        "name": "United Rentals",
         "market": "US",
         "currency": "USD",
-        "current_price": 28.46,
-        "overall_score": 68.0,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "보통",
-        "pick_type": "core",
+        "current_price": 1004.95,
+        "overall_score": 71.1,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "높음",
+        "pick_type": "longtail",
         "reasons": [
           {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 35.0,
-            "horizon": "단기",
-            "reason": "'Health Care' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 12%",
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 100.0,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +43% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
@@ -1207,77 +1285,68 @@
             "available": true
           },
           {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 49.0,
-            "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 33%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 49.2,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 -1.2%p 변화, 직전 실적 컨센서스 +17.6% 상회 (발표 50일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 66.7,
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 95.1,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 7/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 51.6,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +16% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "발생액 비율 -0.09 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 41.6,
+            "score": 56.5,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +10% 급등, 본 종목은 -0%에 그쳐 갭 존재 — 동시점 상관 0.24(시차 추종관계 약함)",
+            "reason": "연관 대장주 Axon Enterprise 최근 5일 +15% 급등, 본 종목은 -8%에 그쳐 갭 존재 — 동시점 상관 0.10(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 57.8,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +10.6% 상회 (발표 51일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 52.9,
+            "horizon": "단기",
+            "reason": "RSI 41, 볼린저밴드 위치 11%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 60.3,
+            "score": 82.2,
             "horizon": "장기",
-            "reason": "업종 평균 PER 46.6·PBR 34.7 대비 PER 40.4·PBR 1.6로 54% 저평가, ROE 5%·영업이익률 7%로 수익성 양호",
+            "reason": "업종 평균 PER 27.8·PBR 9.5 대비 PER 24.1·PBR 5.7로 26% 저평가, ROE 31%·영업이익률 26%로 수익성 양호",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 59.5,
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 53.7,
             "horizon": "장기",
-            "reason": "발생액 비율 -0.02 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "ROIC 12.1% vs WACC 9.0% → 스프레드 +3.1%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "VTRS",
-        "name": "Viatris",
+        "ticker": "CNC",
+        "name": "Centene Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 19.85,
-        "overall_score": 75.6,
+        "current_price": 65.27,
+        "overall_score": 70.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1294,41 +1363,68 @@
             "available": true
           },
           {
-            "key": "insider",
-            "label": "내부자 군집매수",
-            "score": 55.0,
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 85.5,
             "horizon": "중기",
-            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "reason": "애널리스트 강세 비중 +3.7%p 변화, 직전 실적 컨센서스 +65.1% 상회 (발표 54일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 54.9,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +9.3% 상회 (발표 51일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.15 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 14.1% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 45.7,
+            "score": 52.9,
             "horizon": "중기",
-            "reason": "연관 대장주 Moderna 최근 5일 +10% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
+            "reason": "연관 대장주 Moderna 최근 5일 +13% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.03(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 44.2,
+            "horizon": "단기",
+            "reason": "RSI 44, 볼린저밴드 위치 24%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 54.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 46.2·PBR 33.6 대비 PER 21.6·PBR 1.0로 75% 저평가, ROE 7%·영업이익률 -4%(수익성 부진)",
             "risk": "보통",
             "available": true
           }
         ]
       },
       {
-        "ticker": "OKTA",
-        "name": "Okta",
+        "ticker": "BEN",
+        "name": "Franklin Resources",
         "market": "US",
         "currency": "USD",
-        "current_price": 198.12,
-        "overall_score": 72.5,
+        "current_price": 33.41,
+        "overall_score": 69.8,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1340,121 +1436,52 @@
             "label": "중기 모멘텀(12-1)",
             "score": 100.0,
             "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +171% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +40% — 학술적으로 검증된 중기 모멘텀 팩터",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
+            "horizon": "중기",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 56.9,
+            "horizon": "중기",
+            "reason": "연관 대장주 Global Payments 최근 5일 +12% 급등, 본 종목은 -3%에 그쳐 갭 존재 — 동시점 상관 0.25(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 55.9,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +20.6% 상회 (발표 55일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 55.5,
+            "score": 41.0,
             "horizon": "단기",
-            "reason": "RSI 52, 볼린저밴드 위치 62%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 83.4,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.07 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 43.0,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +6.4% 상회 (발표 50일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
-        "ticker": "DLTR",
-        "name": "Dollar Tree",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 154.65,
-        "overall_score": 72.2,
-        "target_horizon": "단기",
-        "primary_criterion": "theme",
-        "primary_label": "테마 급부상",
-        "risk_level": "높음",
-        "pick_type": "longtail",
-        "reasons": [
-          {
-            "key": "theme",
-            "label": "테마 급부상",
-            "score": 31.0,
-            "horizon": "단기",
-            "reason": "'Consumer Staples' 테마 거래량이 평소 대비 1.0배 급증, 섹터 강도 상위 22%",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "rumor",
-            "label": "호재 모멘텀",
-            "score": 62.0,
-            "horizon": "단기",
-            "reason": "거래량 20일 평균 대비 2.5배, 최근 5일 +11%, 뉴스량 13.8배·감성 급등 — 검증되지 않은 단기 모멘텀(고위험)",
-            "risk": "높음",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 67.9,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +1.6%p 변화, 직전 실적 컨센서스 +131.9% 상회 (발표 56일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "reason": "RSI 50, 볼린저밴드 위치 42%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 88.8,
+            "score": 53.4,
             "horizon": "장기",
-            "reason": "업종 평균 PER 29.7·PBR 65.3 대비 PER 16.2·PBR 6.2로 68% 저평가, ROE 46%·영업이익률 11%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "fscore",
-            "label": "퀄리티(F-Score)",
-            "score": 83.3,
-            "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 7개 항목 환산)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 58.4,
-            "horizon": "장기",
-            "reason": "ROIC 12.8% vs WACC 9.0% → 스프레드 +3.8%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 56.5,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +18% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "reason": "업종 평균 PER 18.7·PBR 4.8 대비 PER 21.1·PBR 1.0로 33% 저평가, ROE 7%·영업이익률 10%로 수익성 양호",
             "risk": "보통",
             "available": true
           }
@@ -1469,7 +1496,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-11-25T04:05:58.748318+00:00"
+      "as_of": "2026-11-25T17:55:38.927251+00:00"
     }
   }
 }

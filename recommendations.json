@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:24:52.840816+00:00",
+  "generated_at": "2026-11-28T03:14:44.779462+00:00",
   "version": 2,
   "markets": {
     "KR": [
@@ -855,72 +855,12 @@
     ],
     "US": [
       {
-        "ticker": "NWSA",
-        "name": "News Corp (Class A)",
-        "market": "US",
-        "currency": "USD",
-        "current_price": 26.33,
-        "overall_score": 70.2,
-        "target_horizon": "단기",
-        "primary_criterion": "quant",
-        "primary_label": "퀀트·차트 신호",
-        "risk_level": "보통",
-        "pick_type": "core",
-        "reasons": [
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 71.6,
-            "horizon": "단기",
-            "reason": "RSI 42, MACD 골든크로스 발생, 볼린저밴드 위치 40%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 68.6,
-            "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +25% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.17(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 49.5,
-            "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.8%p 변화, 직전 실적 컨센서스 +7.0% 상회 (발표 57일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 48.3,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +14% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "undervalued",
-            "label": "저평가 우량주",
-            "score": 68.3,
-            "horizon": "장기",
-            "reason": "업종 평균 PER 34.3·PBR 16.8 대비 PER 25.2·PBR 1.7로 58% 저평가, ROE 7%·영업이익률 12%로 수익성 양호",
-            "risk": "보통",
-            "available": true
-          }
-        ]
-      },
-      {
         "ticker": "PLD",
         "name": "Prologis",
         "market": "US",
         "currency": "USD",
         "current_price": 126.95,
-        "overall_score": 69.7,
+        "overall_score": 69.8,
         "target_horizon": "단기",
         "primary_criterion": "quant",
         "primary_label": "퀀트·차트 신호",
@@ -948,7 +888,7 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 67.2,
+            "score": 67.1,
             "horizon": "중기",
             "reason": "연관 대장주 CoStar Group 최근 5일 +22% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
             "risk": "보통",
@@ -984,87 +924,69 @@
         ]
       },
       {
-        "ticker": "EXPD",
-        "name": "Expeditors International",
+        "ticker": "SYF",
+        "name": "Synchrony Financial",
         "market": "US",
         "currency": "USD",
-        "current_price": 198.99,
-        "overall_score": 68.8,
-        "target_horizon": "중기",
-        "primary_criterion": "mom_12_1",
-        "primary_label": "중기 모멘텀(12-1)",
+        "current_price": 69.77,
+        "overall_score": 69.8,
+        "target_horizon": "단기",
+        "primary_criterion": "quant",
+        "primary_label": "퀀트·차트 신호",
         "risk_level": "보통",
         "pick_type": "core",
         "reasons": [
           {
-            "key": "mom_12_1",
-            "label": "중기 모멘텀(12-1)",
-            "score": 88.4,
-            "horizon": "중기",
-            "reason": "최근 1개월 제외 과거 12개월 수익률 +34% — 학술적으로 검증된 중기 모멘텀 팩터",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 29.5% vs WACC 9.0% → 스프레드 +20.5%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 54.2,
+            "horizon": "단기",
+            "reason": "RSI 41, 볼린저밴드 위치 32%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "fscore",
             "label": "퀄리티(F-Score)",
-            "score": 83.3,
+            "score": 100.0,
             "horizon": "장기",
-            "reason": "Piotroski F-Score 8/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 6개 항목 환산)",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 5개 항목 환산)",
             "risk": "보통",
             "available": true
           },
           {
-            "key": "est_revision",
-            "label": "추정치 상향·서프라이즈",
-            "score": 55.9,
+            "key": "insider",
+            "label": "내부자 군집매수",
+            "score": 55.0,
             "horizon": "중기",
-            "reason": "애널리스트 강세 비중 +0.0%p 변화, 직전 실적 컨센서스 +16.5% 상회 (발표 55일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 63.4,
-            "horizon": "중기",
-            "reason": "연관 대장주 Axon Enterprise 최근 5일 +20% 급등, 본 종목은 +3%에 그쳐 갭 존재 — 동시점 상관 0.06(시차 추종관계 약함)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "quant",
-            "label": "퀀트·차트 신호",
-            "score": 42.2,
-            "horizon": "단기",
-            "reason": "RSI 57, 볼린저밴드 위치 74%(하단 지지)",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "accruals",
-            "label": "발생액 품질",
-            "score": 70.0,
-            "horizon": "장기",
-            "reason": "발생액 비율 -0.04 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
             "risk": "보통",
             "available": true
           },
           {
             "key": "undervalued",
             "label": "저평가 우량주",
-            "score": 58.5,
+            "score": 94.6,
             "horizon": "장기",
-            "reason": "업종 평균 PER 27.6·PBR 9.5 대비 PER 24.5·PBR 8.5로 11% 저평가, ROE 46%·영업이익률 10%로 수익성 양호",
+            "reason": "업종 평균 PER 18.7·PBR 4.9 대비 PER 6.3·PBR 1.8로 65% 저평가, ROE 20%·영업이익률 18%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 64.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Global Payments 최근 5일 +16% 급등, 본 종목은 +1%에 그쳐 갭 존재 — 동시점 상관 0.37(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 76.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.05 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
             "risk": "보통",
             "available": true
           }
@@ -1075,8 +997,8 @@
         "name": "State Street Corporation",
         "market": "US",
         "currency": "USD",
-        "current_price": 165.02,
-        "overall_score": 68.8,
+        "current_price": 164.69,
+        "overall_score": 68.6,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1113,18 +1035,18 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 43.7,
+            "score": 44.7,
             "horizon": "단기",
-            "reason": "RSI 46, 볼린저밴드 위치 39%(하단 지지)",
+            "reason": "RSI 45, 볼린저밴드 위치 38%(하단 지지)",
             "risk": "보통",
             "available": true
           },
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 58.8,
+            "score": 57.5,
             "horizon": "중기",
-            "reason": "연관 대장주 Global Payments 최근 5일 +17% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
+            "reason": "연관 대장주 Global Payments 최근 5일 +16% 급등, 본 종목은 +2%에 그쳐 갭 존재 — 동시점 상관 0.15(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1144,7 +1066,7 @@
         "name": "Federal Realty Investment Trust",
         "market": "US",
         "currency": "USD",
-        "current_price": 114.46,
+        "current_price": 114.49,
         "overall_score": 67.6,
         "target_horizon": "중기",
         "primary_criterion": "beneficiary",
@@ -1155,7 +1077,7 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 69.5,
+            "score": 69.4,
             "horizon": "중기",
             "reason": "연관 대장주 CoStar Group 최근 5일 +22% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.26(시차 추종관계 약함)",
             "risk": "보통",
@@ -1182,9 +1104,9 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 45.5,
+            "score": 45.4,
             "horizon": "단기",
-            "reason": "RSI 61, MACD 골든크로스 발생, 볼린저밴드 위치 84%(하단 지지)",
+            "reason": "RSI 61, MACD 골든크로스 발생, 볼린저밴드 위치 85%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1200,12 +1122,99 @@
         ]
       },
       {
+        "ticker": "BMY",
+        "name": "Bristol Myers Squibb",
+        "market": "US",
+        "currency": "USD",
+        "current_price": 61.12,
+        "overall_score": 67.2,
+        "target_horizon": "중기",
+        "primary_criterion": "mom_12_1",
+        "primary_label": "중기 모멘텀(12-1)",
+        "risk_level": "보통",
+        "pick_type": "core",
+        "reasons": [
+          {
+            "key": "mom_12_1",
+            "label": "중기 모멘텀(12-1)",
+            "score": 66.2,
+            "horizon": "중기",
+            "reason": "최근 1개월 제외 과거 12개월 수익률 +23% — 학술적으로 검증된 중기 모멘텀 팩터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "undervalued",
+            "label": "저평가 우량주",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "업종 평균 PER 46.0·PBR 32.6 대비 PER 13.0·PBR 5.9로 77% 저평가, ROE 44%·영업이익률 24%로 수익성 양호",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fscore",
+            "label": "퀄리티(F-Score)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "Piotroski F-Score 9/9 (수익성·재무건전성·영업효율 종합) — 우량 (평가 8개 항목 환산)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "fcf_yield",
+            "label": "FCF 수익률",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "FCF 수익률 9.8% (잉여현금흐름/기업가치) — 회계조정에 강건한 현금 기반 밸류",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "accruals",
+            "label": "발생액 품질",
+            "score": 89.4,
+            "horizon": "장기",
+            "reason": "발생액 비율 -0.08 (현금흐름이 이익을 뒷받침) — Sloan 발생액 이상현상 필터",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "quant",
+            "label": "퀀트·차트 신호",
+            "score": 45.5,
+            "horizon": "단기",
+            "reason": "RSI 49, 볼린저밴드 위치 39%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "est_revision",
+            "label": "추정치 상향·서프라이즈",
+            "score": 40.7,
+            "horizon": "중기",
+            "reason": "애널리스트 강세 비중 -2.9%p 변화, 직전 실적 컨센서스 +17.0% 상회 (발표 54일 경과, 표류 유효구간) — 목표가 '수준'보다 예측력 높은 '방향' 신호(PEAD)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 46.1,
+            "horizon": "중기",
+            "reason": "연관 대장주 Moderna 최근 5일 +15% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.16(시차 추종관계 약함)",
+            "risk": "보통",
+            "available": true
+          }
+        ]
+      },
+      {
         "ticker": "META",
         "name": "Meta Platforms",
         "market": "US",
         "currency": "USD",
-        "current_price": 630.02,
-        "overall_score": 71.3,
+        "current_price": 628.96,
+        "overall_score": 71.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1217,7 +1226,7 @@
             "label": "테마 급부상",
             "score": 35.0,
             "horizon": "단기",
-            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.3배 급증, 섹터 강도 상위 12%",
+            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.5배 급증, 섹터 강도 상위 12%",
             "risk": "보통",
             "available": true
           },
@@ -1226,7 +1235,7 @@
             "label": "간접 수혜주(리드-래그)",
             "score": 71.5,
             "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +25% 급등, 본 종목은 +6%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
+            "reason": "연관 대장주 Roblox 최근 5일 +24% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.31(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1240,15 +1249,6 @@
             "available": true
           },
           {
-            "key": "roic",
-            "label": "자본효율(ROIC)",
-            "score": 100.0,
-            "horizon": "장기",
-            "reason": "ROIC 20.3% vs WACC 9.0% → 스프레드 +11.3%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
-            "risk": "보통",
-            "available": true
-          },
-          {
             "key": "undervalued",
             "label": "저평가 우량주",
             "score": 98.5,
@@ -1258,11 +1258,20 @@
             "available": true
           },
           {
+            "key": "roic",
+            "label": "자본효율(ROIC)",
+            "score": 100.0,
+            "horizon": "장기",
+            "reason": "ROIC 20.3% vs WACC 9.0% → 스프레드 +11.3%p (가치창출) — 부채 레버리지에 안 휘둘리는 효율 지표",
+            "risk": "보통",
+            "available": true
+          },
+          {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 57.2,
+            "score": 57.5,
             "horizon": "단기",
-            "reason": "RSI 51, MACD 골든크로스 발생, 볼린저밴드 위치 69%(하단 지지)",
+            "reason": "RSI 50, MACD 골든크로스 발생, 볼린저밴드 위치 68%(하단 지지)",
             "risk": "보통",
             "available": true
           },
@@ -1282,8 +1291,8 @@
         "name": "Skydance",
         "market": "US",
         "currency": "USD",
-        "current_price": 6.68,
-        "overall_score": 71.0,
+        "current_price": 6.62,
+        "overall_score": 71.2,
         "target_horizon": "단기",
         "primary_criterion": "theme",
         "primary_label": "테마 급부상",
@@ -1295,16 +1304,25 @@
             "label": "테마 급부상",
             "score": 35.0,
             "horizon": "단기",
-            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.3배 급증, 섹터 강도 상위 12%",
+            "reason": "'Communication Services' 테마 거래량이 평소 대비 0.5배 급증, 섹터 강도 상위 12%",
             "risk": "보통",
             "available": true
           },
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 64.2,
+            "score": 66.5,
             "horizon": "단기",
-            "reason": "RSI 38(과매도 반등), 볼린저밴드 위치 28%(하단 지지)",
+            "reason": "RSI 37(과매도 반등), 볼린저밴드 위치 26%(하단 지지)",
+            "risk": "보통",
+            "available": true
+          },
+          {
+            "key": "beneficiary",
+            "label": "간접 수혜주(리드-래그)",
+            "score": 67.2,
+            "horizon": "중기",
+            "reason": "연관 대장주 Roblox 최근 5일 +24% 급등, 본 종목은 +4%에 그쳐 갭 존재 — 동시점 상관 0.10(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1314,15 +1332,6 @@
             "score": 55.0,
             "horizon": "중기",
             "reason": "최근 90일 내부자 1명 군집 매수(순매수 우위) — 긍정 신호",
-            "risk": "보통",
-            "available": true
-          },
-          {
-            "key": "beneficiary",
-            "label": "간접 수혜주(리드-래그)",
-            "score": 67.2,
-            "horizon": "중기",
-            "reason": "연관 대장주 Roblox 최근 5일 +25% 급등, 본 종목은 +5%에 그쳐 갭 존재 — 동시점 상관 0.11(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           },
@@ -1342,8 +1351,8 @@
         "name": "Hasbro",
         "market": "US",
         "currency": "USD",
-        "current_price": 109.04,
-        "overall_score": 70.5,
+        "current_price": 109.09,
+        "overall_score": 70.4,
         "target_horizon": "중기",
         "primary_criterion": "mom_12_1",
         "primary_label": "중기 모멘텀(12-1)",
@@ -1380,7 +1389,7 @@
           {
             "key": "quant",
             "label": "퀀트·차트 신호",
-            "score": 59.8,
+            "score": 59.7,
             "horizon": "단기",
             "reason": "RSI 40(과매도 반등), 볼린저밴드 위치 0%(하단 지지)",
             "risk": "보통",
@@ -1398,9 +1407,9 @@
           {
             "key": "beneficiary",
             "label": "간접 수혜주(리드-래그)",
-            "score": 57.4,
+            "score": 56.8,
             "horizon": "중기",
-            "reason": "연관 대장주 MercadoLibre 최근 5일 +14% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
+            "reason": "연관 대장주 MercadoLibre 최근 5일 +13% 급등, 본 종목은 -5%에 그쳐 갭 존재 — 동시점 상관 0.20(시차 추종관계 약함)",
             "risk": "보통",
             "available": true
           }
@@ -1415,7 +1424,7 @@
     },
     "US": {
       "source": "real",
-      "as_of": "2026-11-27T17:24:52.840816+00:00"
+      "as_of": "2026-11-28T03:14:44.779462+00:00"
     }
   }
 }
